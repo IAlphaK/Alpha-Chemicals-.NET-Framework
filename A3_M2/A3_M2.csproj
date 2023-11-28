@@ -46,37 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="alpha_chemicalsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB\connection.cs" />
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="loginForm.cs">
+    <Compile Include="Forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginForm.Designer.cs">
+    <Compile Include="Forms\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\login.cs" />
-    <Compile Include="templateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="templateForm.Designer.cs">
-      <DependentUpon>templateForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Dashboard.resx">
+    <Compile Include="Forms\templateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\templateForm.Designer.cs">
+      <DependentUpon>templateForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loginForm.resx">
+    <EmbeddedResource Include="Forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="templateForm.resx">
-      <DependentUpon>templateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +89,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\templateForm.resx">
+      <DependentUpon>templateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="alpha_chemicalsDataSet.xsc">
+      <DependentUpon>alpha_chemicalsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet.xss">
+      <DependentUpon>alpha_chemicalsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

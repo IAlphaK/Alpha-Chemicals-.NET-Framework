@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace A3_M2
 {
-    public partial class Dashboard : Form
+    public partial class templateForm : Form
     {
         string username;
-        public Dashboard(string username)
+        public templateForm(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -238,11 +238,6 @@ namespace A3_M2
         }
 
         private void numCredits_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
         {
 
         }

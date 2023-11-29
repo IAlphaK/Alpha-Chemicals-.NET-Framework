@@ -71,6 +71,18 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\productEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\productEditForm.designer.cs">
+      <DependentUpon>productEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\productInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\productInsertForm.Designer.cs">
+      <DependentUpon>productInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\productEditForm.resx">
+      <DependentUpon>productEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\productInsertForm.resx">
+      <DependentUpon>productInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
@@ -152,6 +170,7 @@
     <None Include="alpha_chemicalsDataSet2.xss">
       <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

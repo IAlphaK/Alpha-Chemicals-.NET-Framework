@@ -56,6 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="alpha_chemicalsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Config\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,6 +85,7 @@
     </Compile>
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\login.cs" />
+    <Compile Include="Models\product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\templateForm.cs">
@@ -108,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\templateForm.resx">
       <DependentUpon>templateForm.cs</DependentUpon>
@@ -134,6 +141,17 @@
     <None Include="alpha_chemicalsDataSet1.xss">
       <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="alpha_chemicalsDataSet2.xsc">
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet2.xss">
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +164,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

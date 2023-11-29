@@ -33,5 +33,15 @@ namespace A3_M2.Properties {
                 return ((string)(this["alpha_chemicalsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=alpha_chemicals;Integrated Security=True")]
+        public string alpha_chemicalsConnectionString1 {
+            get {
+                return ((string)(this["alpha_chemicalsConnectionString1"]));
+            }
+        }
     }
 }

@@ -7,16 +7,16 @@ namespace A3_M2.DB
     {
         private readonly string connectionString;
 
-        //public connection() : this(
-        //    @"Data Source=.; Initial Catalog=alpha_chemicals; Integrated Security=True;")
-        //{
-        //}
-
         public connection() : this(
-            @"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;"
-            )
+            @"Data Source=.; Initial Catalog=alpha_chemicals; Integrated Security=True;")
         {
         }
+
+        //public connection() : this(
+        //    @"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;"
+        //    )
+        //{
+        //}
 
         public connection(string connectionString)
         {

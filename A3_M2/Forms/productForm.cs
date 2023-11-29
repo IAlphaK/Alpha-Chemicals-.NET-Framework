@@ -96,8 +96,10 @@ namespace A3_M2
 
         private void productForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            //this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
             rowsByBox_SelectedIndexChanged(rowsByBox, EventArgs.Empty);
         }
@@ -108,10 +110,10 @@ namespace A3_M2
             string searchText = searchBox.Text.Trim();
 
             // Filter the data in the DataTable based on the search text
-            alpha_chemicalsDataSet.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
+            alpha_chemicalsDataSet2.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
 
             // Update the DataGridView with the filtered data
-            productView.DataSource = alpha_chemicalsDataSet.Product.DefaultView.ToTable();
+            productView.DataSource = alpha_chemicalsDataSet2.Product.DefaultView.ToTable();
         }
 
         private void searchBox_MouseEnter(object sender, EventArgs e)
@@ -144,7 +146,7 @@ namespace A3_M2
             // Sort the DataGridView based on the selected column and sort order
             if (!string.IsNullOrEmpty(selectedColumn))
             {
-                alpha_chemicalsDataSet.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
+                alpha_chemicalsDataSet2.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
                 ApplyPagination();
             }
         }
@@ -162,7 +164,7 @@ namespace A3_M2
         private void ApplyPagination()
         {
             // Clone the DefaultView to avoid affecting the original sorting
-            DataView sortedView = alpha_chemicalsDataSet.Product.DefaultView.ToTable().DefaultView;
+            DataView sortedView = alpha_chemicalsDataSet2.Product.DefaultView.ToTable().DefaultView;
 
             // Display only the specified number of rows
             DataTable paginatedTable = sortedView.ToTable().AsEnumerable().Take(rowsPerPage).CopyToDataTable();

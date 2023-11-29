@@ -56,6 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="alpha_chemicalsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Config\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -133,6 +138,17 @@
     </None>
     <None Include="alpha_chemicalsDataSet1.xss">
       <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet2.xsc">
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet2.xss">
+      <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -266,6 +266,14 @@ namespace A3_M2
             pF.Show();
             this.Close();
         }
+
+        private void companyLogoNav_Click(object sender, EventArgs e)
+        {
+            Dashboard df = new Dashboard(username);
+            df.Show();
+            this.Close();
+
+        }
     }
 
     

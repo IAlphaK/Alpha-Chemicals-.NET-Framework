@@ -1,7 +1,9 @@
-﻿using System;
+﻿using A3_M2.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.AccessControl;
@@ -171,5 +173,40 @@ namespace A3_M2
 
             productView.DataSource = paginatedTable;
         }
+
+        private void productView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (productView.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete this row? Any Related Transactions/Ledgers with corresponding ID in other tables will also be deleted", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Get the ID of the selected row
+                    int productId = Convert.ToInt32(productView.Rows[e.RowIndex].Cells[0].Value);
+
+                    product p = new product();
+                    // Assuming you have a method to delete a row by ID, replace "DeleteProduct" with your actual method
+                    if (p.DeleteProduct(productId))
+                    {
+                        MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the DataGridView after deletion
+                        this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
+                        ApplyPagination();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete the row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            if (productView.Columns[e.ColumnIndex].Name == "Update")
+            {
+                if (MessageBox.Show("Are you sure you want to edit this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    
+                }
+            }
+        }
+
     }
 }

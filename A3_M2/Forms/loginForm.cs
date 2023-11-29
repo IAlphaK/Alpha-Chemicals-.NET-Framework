@@ -110,5 +110,10 @@ namespace A3_M2
         {
             MessageBox.Show("Contact Alpha Developers on i200623@cfd.nu.edu.pk to restore password");
         }
+
+        private void panellogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

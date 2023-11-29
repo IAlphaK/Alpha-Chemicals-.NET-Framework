@@ -33,12 +33,10 @@
             this.topBar = new System.Windows.Forms.Panel();
             this.loggedUserInfoPanel = new System.Windows.Forms.Panel();
             this.logoutPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.imagePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.companyLogoNav = new System.Windows.Forms.PictureBox();
             this.navPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.reportButton = new System.Windows.Forms.Button();
@@ -57,6 +55,15 @@
             this.sortByBox = new System.Windows.Forms.ComboBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.productView = new System.Windows.Forms.DataGridView();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.alpha_chemicalsDataSet2 = new A3_M2.alpha_chemicalsDataSet2();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alpha_chemicalsDataSet = new A3_M2.alpha_chemicalsDataSet();
+            this.productTableAdapter = new A3_M2.alpha_chemicalsDataSetTableAdapters.ProductTableAdapter();
+            this.productTableAdapter1 = new A3_M2.alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.companyLogoNav = new System.Windows.Forms.PictureBox();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,18 +72,11 @@
             this.batchNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.alpha_chemicalsDataSet = new A3_M2.alpha_chemicalsDataSet();
-            this.productTableAdapter = new A3_M2.alpha_chemicalsDataSetTableAdapters.ProductTableAdapter();
-            this.alpha_chemicalsDataSet2 = new A3_M2.alpha_chemicalsDataSet2();
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter1 = new A3_M2.alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.imagePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).BeginInit();
             this.navPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -86,10 +86,12 @@
             this.mainPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).BeginInit();
             this.SuspendLayout();
             // 
             // topBar
@@ -125,20 +127,6 @@
             this.logoutPanel.Name = "logoutPanel";
             this.logoutPanel.Size = new System.Drawing.Size(85, 85);
             this.logoutPanel.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // usernameLabel
             // 
@@ -183,19 +171,6 @@
             this.panel2.Size = new System.Drawing.Size(843, 62);
             this.panel2.TabIndex = 1;
             // 
-            // companyLogoNav
-            // 
-            this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
-            this.companyLogoNav.Location = new System.Drawing.Point(5, 4);
-            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.companyLogoNav.Name = "companyLogoNav";
-            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.companyLogoNav.Size = new System.Drawing.Size(129, 70);
-            this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.companyLogoNav.TabIndex = 0;
-            this.companyLogoNav.TabStop = false;
-            // 
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -235,7 +210,7 @@
             this.reportButton.Location = new System.Drawing.Point(0, 0);
             this.reportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.reportButton.Padding = new System.Windows.Forms.Padding(5);
             this.reportButton.Size = new System.Drawing.Size(131, 82);
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
@@ -266,7 +241,7 @@
             this.companyButton.Location = new System.Drawing.Point(0, 0);
             this.companyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.companyButton.Name = "companyButton";
-            this.companyButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.companyButton.Padding = new System.Windows.Forms.Padding(5);
             this.companyButton.Size = new System.Drawing.Size(131, 82);
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
@@ -297,7 +272,7 @@
             this.creditsButton.Location = new System.Drawing.Point(0, 0);
             this.creditsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditsButton.Name = "creditsButton";
-            this.creditsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.creditsButton.Padding = new System.Windows.Forms.Padding(5);
             this.creditsButton.Size = new System.Drawing.Size(131, 82);
             this.creditsButton.TabIndex = 4;
             this.creditsButton.Text = "Credits";
@@ -328,7 +303,7 @@
             this.productsButton.Location = new System.Drawing.Point(0, 0);
             this.productsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.productsButton.Padding = new System.Windows.Forms.Padding(5);
             this.productsButton.Size = new System.Drawing.Size(131, 82);
             this.productsButton.TabIndex = 3;
             this.productsButton.Text = "Products";
@@ -359,7 +334,7 @@
             this.farmersButton.Location = new System.Drawing.Point(0, 0);
             this.farmersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.farmersButton.Name = "farmersButton";
-            this.farmersButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.farmersButton.Padding = new System.Windows.Forms.Padding(5);
             this.farmersButton.Size = new System.Drawing.Size(131, 82);
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
@@ -373,9 +348,9 @@
             this.mainPanel.Controls.Add(this.panel3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(138, 85);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(11);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(11);
             this.mainPanel.Size = new System.Drawing.Size(1462, 653);
             this.mainPanel.TabIndex = 2;
             // 
@@ -387,7 +362,7 @@
             this.panel3.Controls.Add(this.searchBox);
             this.panel3.Controls.Add(this.productView);
             this.panel3.Location = new System.Drawing.Point(15, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1429, 623);
             this.panel3.TabIndex = 2;
@@ -405,7 +380,7 @@
             "50",
             "100"});
             this.rowsByBox.Location = new System.Drawing.Point(1268, 64);
-            this.rowsByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rowsByBox.Margin = new System.Windows.Forms.Padding(4);
             this.rowsByBox.Name = "rowsByBox";
             this.rowsByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rowsByBox.Size = new System.Drawing.Size(113, 25);
@@ -424,7 +399,7 @@
             "ASC",
             "DESC"});
             this.filterByBox.Location = new System.Drawing.Point(1089, 64);
-            this.filterByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filterByBox.Margin = new System.Windows.Forms.Padding(4);
             this.filterByBox.Name = "filterByBox";
             this.filterByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.filterByBox.Size = new System.Drawing.Size(160, 25);
@@ -448,7 +423,7 @@
             "ExpiryDate",
             "Description"});
             this.sortByBox.Location = new System.Drawing.Point(901, 64);
-            this.sortByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortByBox.Margin = new System.Windows.Forms.Padding(4);
             this.sortByBox.Name = "sortByBox";
             this.sortByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.sortByBox.Size = new System.Drawing.Size(160, 25);
@@ -486,14 +461,80 @@
             this.quantityDataGridViewTextBoxColumn,
             this.batchNoDataGridViewTextBoxColumn,
             this.expiryDateDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
+            this.descriptionDataGridViewTextBoxColumn,
+            this.Delete});
             this.productView.DataSource = this.productBindingSource1;
-            this.productView.Location = new System.Drawing.Point(259, 112);
-            this.productView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productView.Location = new System.Drawing.Point(241, 115);
+            this.productView.Margin = new System.Windows.Forms.Padding(4);
             this.productView.Name = "productView";
             this.productView.RowHeadersWidth = 51;
-            this.productView.Size = new System.Drawing.Size(1124, 439);
+            this.productView.Size = new System.Drawing.Size(1140, 439);
             this.productView.TabIndex = 0;
+            this.productView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productView_CellContentClick);
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.alpha_chemicalsDataSet2;
+            // 
+            // alpha_chemicalsDataSet2
+            // 
+            this.alpha_chemicalsDataSet2.DataSetName = "alpha_chemicalsDataSet2";
+            this.alpha_chemicalsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.alpha_chemicalsDataSet;
+            // 
+            // alpha_chemicalsDataSet
+            // 
+            this.alpha_chemicalsDataSet.DataSetName = "alpha_chemicalsDataSet";
+            this.alpha_chemicalsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Delete";
+            this.dataGridViewImageColumn1.Image = global::A3_M2.Properties.Resources.icons8_delete_30;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // companyLogoNav
+            // 
+            this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
+            this.companyLogoNav.Location = new System.Drawing.Point(5, 4);
+            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.companyLogoNav.Name = "companyLogoNav";
+            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.companyLogoNav.Size = new System.Drawing.Size(129, 70);
+            this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.companyLogoNav.TabIndex = 0;
+            this.companyLogoNav.TabStop = false;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -559,33 +600,13 @@
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
-            // productBindingSource
+            // Delete
             // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.alpha_chemicalsDataSet;
-            // 
-            // alpha_chemicalsDataSet
-            // 
-            this.alpha_chemicalsDataSet.DataSetName = "alpha_chemicalsDataSet";
-            this.alpha_chemicalsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // alpha_chemicalsDataSet2
-            // 
-            this.alpha_chemicalsDataSet2.DataSetName = "alpha_chemicalsDataSet2";
-            this.alpha_chemicalsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataMember = "Product";
-            this.productBindingSource1.DataSource = this.alpha_chemicalsDataSet2;
-            // 
-            // productTableAdapter1
-            // 
-            this.productTableAdapter1.ClearBeforeFill = true;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::A3_M2.Properties.Resources.icons8_delete_20;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // productForm
             // 
@@ -607,9 +628,7 @@
             this.loggedUserInfoPanel.ResumeLayout(false);
             this.loggedUserInfoPanel.PerformLayout();
             this.logoutPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.imagePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).EndInit();
             this.navPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -620,10 +639,12 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -657,6 +678,12 @@
         private System.Windows.Forms.BindingSource productBindingSource;
         private alpha_chemicalsDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.ComboBox sortByBox;
+        private System.Windows.Forms.ComboBox filterByBox;
+        private System.Windows.Forms.ComboBox rowsByBox;
+        private alpha_chemicalsDataSet2 alpha_chemicalsDataSet2;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter productTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -665,11 +692,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn batchNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox sortByBox;
-        private System.Windows.Forms.ComboBox filterByBox;
-        private System.Windows.Forms.ComboBox rowsByBox;
-        private alpha_chemicalsDataSet2 alpha_chemicalsDataSet2;
-        private System.Windows.Forms.BindingSource productBindingSource1;
-        private alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter productTableAdapter1;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

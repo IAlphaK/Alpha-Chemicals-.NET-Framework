@@ -112,6 +112,11 @@ namespace A3_M2.Forms
             }
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // Other methods and events for your InsertProductForm
     }
 }

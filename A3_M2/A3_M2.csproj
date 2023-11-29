@@ -61,6 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="alpha_chemicalsDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Config\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,11 +76,23 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\farmersEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\farmersEditForm.designer.cs">
+      <DependentUpon>farmersEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\farmersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\farmersForm.Designer.cs">
       <DependentUpon>farmersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\farmersInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\farmersInsertForm.designer.cs">
+      <DependentUpon>farmersInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\productEditForm.cs">
       <SubType>Form</SubType>
@@ -118,8 +135,14 @@
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\farmersEditForm.resx">
+      <DependentUpon>farmersEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\farmersForm.resx">
       <DependentUpon>farmersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\farmersInsertForm.resx">
+      <DependentUpon>farmersInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\productEditForm.resx">
       <DependentUpon>productEditForm.cs</DependentUpon>
@@ -178,6 +201,17 @@
     </None>
     <None Include="alpha_chemicalsDataSet2.xss">
       <DependentUpon>alpha_chemicalsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet3.xsc">
+      <DependentUpon>alpha_chemicalsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet3.xss">
+      <DependentUpon>alpha_chemicalsDataSet3.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

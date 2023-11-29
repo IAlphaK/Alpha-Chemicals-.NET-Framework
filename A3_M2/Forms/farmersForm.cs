@@ -97,6 +97,8 @@ namespace A3_M2
 
         private void productForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet3.Farmer' table. You can move, or remove it, as needed.
+            this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
             //this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.

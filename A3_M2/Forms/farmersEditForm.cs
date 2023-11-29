@@ -25,17 +25,17 @@ namespace A3_M2.Forms
         {
 
             // Set the values of the textboxes based on the passed data
-            insProductID.Text = productId.ToString();
+            insFarmerID.Text = productId.ToString();
             insName.Text = name;
-            insPrice.Text = price.ToString();
+            insContact.Text = price.ToString();
             insPolicy.Text = policy;
             insQuantity.Text = quantity.ToString();
             insBatch.Text = batchNo;
             insExpiry.Text = expiryDate.ToString("yyyy-MM-dd");
-            insDescription.Text = description;
+            insAddress.Text = description;
 
             // Disable editing of ProductID textbox
-            insProductID.Enabled = false;
+            insFarmerID.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace A3_M2.Forms
             if (validateinput())
             {
                 product p = new product();
-                p.UpdateProduct(int.Parse(insProductID.Text), insName.Text, Decimal.Parse(insPrice.Text), insBatch.Text, insPolicy.Text, insDescription.Text, int.Parse(insQuantity.Text), DateTime.Parse(insExpiry.Text));
+                p.UpdateProduct(int.Parse(insFarmerID.Text), insName.Text, Decimal.Parse(insContact.Text), insBatch.Text, insPolicy.Text, insAddress.Text, int.Parse(insQuantity.Text), DateTime.Parse(insExpiry.Text));
                 productForm pF = new productForm(username);
                 pF.Show();
                 this.Close();
@@ -75,7 +75,7 @@ namespace A3_M2.Forms
             try
             {
                 int id;
-                if (!int.TryParse(insProductID.Text, out id))
+                if (!int.TryParse(insFarmerID.Text, out id))
                 {
                     MessageBox.Show("Invalid ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -83,7 +83,7 @@ namespace A3_M2.Forms
 
                 // Convert insPrice to decimal
                 decimal price;
-                if (!decimal.TryParse(insPrice.Text, out price))
+                if (!decimal.TryParse(insContact.Text, out price))
                 {
                     MessageBox.Show("Invalid price format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;

@@ -261,6 +261,13 @@ namespace A3_M2
             this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
             ApplyPagination();
         }
+
+        private void farmersButton_Click(object sender, EventArgs e)
+        {
+            farmersForm pF = new farmersForm(username);
+            pF.Show();
+            this.Close();
+        }
     }
 
     

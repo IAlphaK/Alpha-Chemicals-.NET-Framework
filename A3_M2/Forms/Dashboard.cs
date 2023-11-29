@@ -83,5 +83,12 @@ namespace A3_M2
             pF.Show();
             this.Close();
         }
+
+        private void farmersButton_Click(object sender, EventArgs e)
+        {
+            farmersForm pF = new farmersForm(username);
+            pF.Show();
+            this.Close();
+        }
     }
 }

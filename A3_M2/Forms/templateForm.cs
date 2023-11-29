@@ -76,5 +76,12 @@ namespace A3_M2
             MessageBox.Show("Successfully Logged Out");
             Application.Exit();
         }
+
+        private void farmersButton_Click(object sender, EventArgs e)
+        {
+            farmersForm pF = new farmersForm(username);
+            pF.Show();
+            this.Close();
+        }
     }
 }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.InsertButton = new System.Windows.Forms.Button();
             this.insFarmerID = new System.Windows.Forms.TextBox();
             this.insAddress = new System.Windows.Forms.TextBox();
             this.farmeridlabel = new System.Windows.Forms.Label();
@@ -39,9 +36,12 @@
             this.BalanceLabel = new System.Windows.Forms.Label();
             this.ContactLabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
-            this.insBatch = new System.Windows.Forms.TextBox();
+            this.insBalance = new System.Windows.Forms.TextBox();
             this.insContact = new System.Windows.Forms.TextBox();
             this.insName = new System.Windows.Forms.TextBox();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.InsertButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.BalanceLabel);
             this.panel1.Controls.Add(this.ContactLabel);
             this.panel1.Controls.Add(this.namelabel);
-            this.panel1.Controls.Add(this.insBatch);
+            this.panel1.Controls.Add(this.insBalance);
             this.panel1.Controls.Add(this.insContact);
             this.panel1.Controls.Add(this.insName);
             this.panel1.Controls.Add(this.CloseButton);
@@ -66,42 +66,6 @@
             this.panel1.Size = new System.Drawing.Size(560, 349);
             this.panel1.TabIndex = 0;
             // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CloseButton.ForeColor = System.Drawing.Color.Lime;
-            this.CloseButton.Location = new System.Drawing.Point(298, 281);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(89, 49);
-            this.CloseButton.TabIndex = 16;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(179, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 28);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Farmer Insertion Form";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // InsertButton
-            // 
-            this.InsertButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.InsertButton.ForeColor = System.Drawing.Color.Lime;
-            this.InsertButton.Location = new System.Drawing.Point(183, 281);
-            this.InsertButton.Name = "InsertButton";
-            this.InsertButton.Size = new System.Drawing.Size(89, 49);
-            this.InsertButton.TabIndex = 0;
-            this.InsertButton.Text = "Insert";
-            this.InsertButton.UseVisualStyleBackColor = false;
-            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
-            // 
             // insFarmerID
             // 
             this.insFarmerID.AcceptsReturn = true;
@@ -112,7 +76,6 @@
             this.insFarmerID.ForeColor = System.Drawing.Color.Lime;
             this.insFarmerID.Location = new System.Drawing.Point(418, 77);
             this.insFarmerID.Name = "insFarmerID";
-            this.insFarmerID.ReadOnly = true;
             this.insFarmerID.Size = new System.Drawing.Size(112, 27);
             this.insFarmerID.TabIndex = 25;
             // 
@@ -195,18 +158,18 @@
             this.namelabel.TabIndex = 20;
             this.namelabel.Text = "Farmer Name";
             // 
-            // insBatch
+            // insBalance
             // 
-            this.insBatch.AcceptsReturn = true;
-            this.insBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.insBalance.AcceptsReturn = true;
+            this.insBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insBatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.insBatch.ForeColor = System.Drawing.Color.Lime;
-            this.insBatch.Location = new System.Drawing.Point(153, 176);
-            this.insBatch.Name = "insBatch";
-            this.insBatch.Size = new System.Drawing.Size(112, 27);
-            this.insBatch.TabIndex = 19;
+            this.insBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insBalance.ForeColor = System.Drawing.Color.Lime;
+            this.insBalance.Location = new System.Drawing.Point(153, 176);
+            this.insBalance.Name = "insBalance";
+            this.insBalance.Size = new System.Drawing.Size(112, 27);
+            this.insBalance.TabIndex = 19;
             // 
             // insContact
             // 
@@ -233,6 +196,42 @@
             this.insName.Name = "insName";
             this.insName.Size = new System.Drawing.Size(112, 27);
             this.insName.TabIndex = 17;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CloseButton.ForeColor = System.Drawing.Color.Lime;
+            this.CloseButton.Location = new System.Drawing.Point(298, 281);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(89, 49);
+            this.CloseButton.TabIndex = 16;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(179, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(263, 28);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Farmer Insertion Form";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // InsertButton
+            // 
+            this.InsertButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.InsertButton.ForeColor = System.Drawing.Color.Lime;
+            this.InsertButton.Location = new System.Drawing.Point(183, 281);
+            this.InsertButton.Name = "InsertButton";
+            this.InsertButton.Size = new System.Drawing.Size(89, 49);
+            this.InsertButton.TabIndex = 0;
+            this.InsertButton.Text = "Insert";
+            this.InsertButton.UseVisualStyleBackColor = false;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // farmersInsertForm
             // 
@@ -268,7 +267,7 @@
         private System.Windows.Forms.Label BalanceLabel;
         private System.Windows.Forms.Label ContactLabel;
         private System.Windows.Forms.Label namelabel;
-        private System.Windows.Forms.TextBox insBatch;
+        private System.Windows.Forms.TextBox insBalance;
         private System.Windows.Forms.TextBox insContact;
         private System.Windows.Forms.TextBox insName;
     }

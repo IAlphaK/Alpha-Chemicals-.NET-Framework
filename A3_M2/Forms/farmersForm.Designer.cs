@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(farmersForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(farmersForm));
             this.topBar = new System.Windows.Forms.Panel();
             this.loggedUserInfoPanel = new System.Windows.Forms.Panel();
             this.logoutPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.imagePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.companyLogoNav = new System.Windows.Forms.PictureBox();
             this.navPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.reportButton = new System.Windows.Forms.Button();
@@ -58,7 +60,16 @@
             this.filterByBox = new System.Windows.Forms.ComboBox();
             this.sortByBox = new System.Windows.Forms.ComboBox();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.productView = new System.Windows.Forms.DataGridView();
+            this.farmersView = new System.Windows.Forms.DataGridView();
+            this.FarmerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Update = new System.Windows.Forms.DataGridViewImageColumn();
+            this.farmerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alpha_chemicalsDataSet3 = new A3_M2.alpha_chemicalsDataSet3();
             this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.alpha_chemicalsDataSet = new A3_M2.alpha_chemicalsDataSet();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -68,22 +79,13 @@
             this.productTableAdapter1 = new A3_M2.alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.companyLogoNav = new System.Windows.Forms.PictureBox();
-            this.alpha_chemicalsDataSet3 = new A3_M2.alpha_chemicalsDataSet3();
-            this.farmerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.farmerTableAdapter = new A3_M2.alpha_chemicalsDataSet3TableAdapters.FarmerTableAdapter();
-            this.FarmerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContactInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Update = new System.Windows.Forms.DataGridViewImageColumn();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.imagePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).BeginInit();
             this.navPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -92,16 +94,14 @@
             this.navPanel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.farmersView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.farmerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.farmerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // topBar
@@ -137,6 +137,20 @@
             this.logoutPanel.Name = "logoutPanel";
             this.logoutPanel.Size = new System.Drawing.Size(85, 85);
             this.logoutPanel.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // usernameLabel
             // 
@@ -181,6 +195,19 @@
             this.panel2.Size = new System.Drawing.Size(843, 62);
             this.panel2.TabIndex = 1;
             // 
+            // companyLogoNav
+            // 
+            this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
+            this.companyLogoNav.Location = new System.Drawing.Point(5, 4);
+            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.companyLogoNav.Name = "companyLogoNav";
+            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.companyLogoNav.Size = new System.Drawing.Size(129, 70);
+            this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.companyLogoNav.TabIndex = 0;
+            this.companyLogoNav.TabStop = false;
+            // 
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -220,7 +247,7 @@
             this.reportButton.Location = new System.Drawing.Point(0, 0);
             this.reportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.reportButton.Padding = new System.Windows.Forms.Padding(5);
             this.reportButton.Size = new System.Drawing.Size(131, 82);
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
@@ -251,7 +278,7 @@
             this.companyButton.Location = new System.Drawing.Point(0, 0);
             this.companyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.companyButton.Name = "companyButton";
-            this.companyButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.companyButton.Padding = new System.Windows.Forms.Padding(5);
             this.companyButton.Size = new System.Drawing.Size(131, 82);
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
@@ -282,7 +309,7 @@
             this.creditsButton.Location = new System.Drawing.Point(0, 0);
             this.creditsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditsButton.Name = "creditsButton";
-            this.creditsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.creditsButton.Padding = new System.Windows.Forms.Padding(5);
             this.creditsButton.Size = new System.Drawing.Size(131, 82);
             this.creditsButton.TabIndex = 4;
             this.creditsButton.Text = "Credits";
@@ -313,11 +340,12 @@
             this.productsButton.Location = new System.Drawing.Point(0, 0);
             this.productsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.productsButton.Padding = new System.Windows.Forms.Padding(5);
             this.productsButton.Size = new System.Drawing.Size(131, 82);
             this.productsButton.TabIndex = 3;
             this.productsButton.Text = "Products";
             this.productsButton.UseVisualStyleBackColor = false;
+            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
             this.productsButton.MouseEnter += new System.EventHandler(this.productsButton_MouseEnter);
             this.productsButton.MouseLeave += new System.EventHandler(this.productsButton_MouseLeave);
             // 
@@ -344,7 +372,7 @@
             this.farmersButton.Location = new System.Drawing.Point(0, 0);
             this.farmersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.farmersButton.Name = "farmersButton";
-            this.farmersButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.farmersButton.Padding = new System.Windows.Forms.Padding(5);
             this.farmersButton.Size = new System.Drawing.Size(131, 82);
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
@@ -358,9 +386,9 @@
             this.mainPanel.Controls.Add(this.panel3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(138, 85);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(11);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(11);
             this.mainPanel.Size = new System.Drawing.Size(1462, 653);
             this.mainPanel.TabIndex = 2;
             // 
@@ -371,9 +399,9 @@
             this.panel3.Controls.Add(this.filterByBox);
             this.panel3.Controls.Add(this.sortByBox);
             this.panel3.Controls.Add(this.searchBox);
-            this.panel3.Controls.Add(this.productView);
+            this.panel3.Controls.Add(this.farmersView);
             this.panel3.Location = new System.Drawing.Point(15, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1429, 623);
             this.panel3.TabIndex = 2;
@@ -385,7 +413,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(109, 538);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 62);
             this.button2.TabIndex = 6;
@@ -406,7 +434,7 @@
             "50",
             "100"});
             this.rowsByBox.Location = new System.Drawing.Point(1268, 46);
-            this.rowsByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rowsByBox.Margin = new System.Windows.Forms.Padding(4);
             this.rowsByBox.Name = "rowsByBox";
             this.rowsByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rowsByBox.Size = new System.Drawing.Size(113, 25);
@@ -425,7 +453,7 @@
             "ASC",
             "DESC"});
             this.filterByBox.Location = new System.Drawing.Point(1085, 44);
-            this.filterByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filterByBox.Margin = new System.Windows.Forms.Padding(4);
             this.filterByBox.Name = "filterByBox";
             this.filterByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.filterByBox.Size = new System.Drawing.Size(160, 25);
@@ -449,7 +477,7 @@
             "ExpiryDate",
             "Description"});
             this.sortByBox.Location = new System.Drawing.Point(899, 44);
-            this.sortByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortByBox.Margin = new System.Windows.Forms.Padding(4);
             this.sortByBox.Name = "sortByBox";
             this.sortByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.sortByBox.Size = new System.Drawing.Size(160, 25);
@@ -475,12 +503,12 @@
             this.searchBox.MouseEnter += new System.EventHandler(this.searchBox_MouseEnter);
             this.searchBox.MouseLeave += new System.EventHandler(this.searchBox_MouseLeave);
             // 
-            // productView
+            // farmersView
             // 
-            this.productView.AutoGenerateColumns = false;
-            this.productView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.productView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.productView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.farmersView.AutoGenerateColumns = false;
+            this.farmersView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.farmersView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.farmersView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -489,10 +517,10 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.productView.ColumnHeadersHeight = 40;
-            this.productView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.productView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.farmersView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.farmersView.ColumnHeadersHeight = 40;
+            this.farmersView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.farmersView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FarmerID,
             this.nameDataGridViewTextBoxColumn,
             this.Address,
@@ -500,7 +528,7 @@
             this.Balance,
             this.Delete,
             this.Update});
-            this.productView.DataSource = this.farmerBindingSource;
+            this.farmersView.DataSource = this.farmerBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -508,118 +536,27 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productView.EnableHeadersVisualStyles = false;
-            this.productView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.productView.Location = new System.Drawing.Point(109, 79);
-            this.productView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.productView.Name = "productView";
-            this.productView.RowHeadersVisible = false;
-            this.productView.RowHeadersWidth = 51;
+            this.farmersView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.farmersView.EnableHeadersVisualStyles = false;
+            this.farmersView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.farmersView.Location = new System.Drawing.Point(109, 79);
+            this.farmersView.Margin = new System.Windows.Forms.Padding(4);
+            this.farmersView.Name = "farmersView";
+            this.farmersView.RowHeadersVisible = false;
+            this.farmersView.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(4);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lime;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.productView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.productView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
-            this.productView.RowTemplate.Height = 30;
-            this.productView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.productView.Size = new System.Drawing.Size(1273, 439);
-            this.productView.TabIndex = 0;
-            this.productView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productView_CellContentClick);
-            // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataMember = "Product";
-            this.productBindingSource2.DataSource = this.alpha_chemicalsDataSet;
-            // 
-            // alpha_chemicalsDataSet
-            // 
-            this.alpha_chemicalsDataSet.DataSetName = "alpha_chemicalsDataSet";
-            this.alpha_chemicalsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataMember = "Product";
-            this.productBindingSource1.DataSource = this.alpha_chemicalsDataSet2;
-            // 
-            // alpha_chemicalsDataSet2
-            // 
-            this.alpha_chemicalsDataSet2.DataSetName = "alpha_chemicalsDataSet2";
-            this.alpha_chemicalsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.alpha_chemicalsDataSet;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // productTableAdapter1
-            // 
-            this.productTableAdapter1.ClearBeforeFill = true;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Delete";
-            this.dataGridViewImageColumn1.Image = global::A3_M2.Properties.Resources.icons8_delete_30;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::A3_M2.Properties.Resources.pencil;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // companyLogoNav
-            // 
-            this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
-            this.companyLogoNav.Location = new System.Drawing.Point(5, 4);
-            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.companyLogoNav.Name = "companyLogoNav";
-            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.companyLogoNav.Size = new System.Drawing.Size(129, 70);
-            this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.companyLogoNav.TabIndex = 0;
-            this.companyLogoNav.TabStop = false;
-            // 
-            // alpha_chemicalsDataSet3
-            // 
-            this.alpha_chemicalsDataSet3.DataSetName = "alpha_chemicalsDataSet3";
-            this.alpha_chemicalsDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // farmerBindingSource
-            // 
-            this.farmerBindingSource.DataMember = "Farmer";
-            this.farmerBindingSource.DataSource = this.alpha_chemicalsDataSet3;
-            // 
-            // farmerTableAdapter
-            // 
-            this.farmerTableAdapter.ClearBeforeFill = true;
+            this.farmersView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.farmersView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
+            this.farmersView.RowTemplate.Height = 30;
+            this.farmersView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.farmersView.Size = new System.Drawing.Size(1273, 439);
+            this.farmersView.TabIndex = 0;
+            this.farmersView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.farmersView_CellContentClick);
             // 
             // FarmerID
             // 
@@ -678,6 +615,70 @@
             this.Update.Name = "Update";
             this.Update.Width = 50;
             // 
+            // farmerBindingSource
+            // 
+            this.farmerBindingSource.DataMember = "Farmer";
+            this.farmerBindingSource.DataSource = this.alpha_chemicalsDataSet3;
+            // 
+            // alpha_chemicalsDataSet3
+            // 
+            this.alpha_chemicalsDataSet3.DataSetName = "alpha_chemicalsDataSet3";
+            this.alpha_chemicalsDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataMember = "Product";
+            this.productBindingSource2.DataSource = this.alpha_chemicalsDataSet;
+            // 
+            // alpha_chemicalsDataSet
+            // 
+            this.alpha_chemicalsDataSet.DataSetName = "alpha_chemicalsDataSet";
+            this.alpha_chemicalsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.alpha_chemicalsDataSet2;
+            // 
+            // alpha_chemicalsDataSet2
+            // 
+            this.alpha_chemicalsDataSet2.DataSetName = "alpha_chemicalsDataSet2";
+            this.alpha_chemicalsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.alpha_chemicalsDataSet;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Delete";
+            this.dataGridViewImageColumn1.Image = global::A3_M2.Properties.Resources.icons8_delete_30;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::A3_M2.Properties.Resources.pencil;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // farmerTableAdapter
+            // 
+            this.farmerTableAdapter.ClearBeforeFill = true;
+            // 
             // farmersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -698,7 +699,9 @@
             this.loggedUserInfoPanel.ResumeLayout(false);
             this.loggedUserInfoPanel.PerformLayout();
             this.logoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.imagePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).EndInit();
             this.navPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -708,16 +711,14 @@
             this.mainPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.farmersView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.farmerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyLogoNav)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha_chemicalsDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.farmerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,7 +747,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView productView;
+        private System.Windows.Forms.DataGridView farmersView;
         private alpha_chemicalsDataSet alpha_chemicalsDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
         private alpha_chemicalsDataSetTableAdapters.ProductTableAdapter productTableAdapter;

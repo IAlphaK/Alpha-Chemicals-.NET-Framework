@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace A3_M2.Forms
 {
@@ -19,13 +11,16 @@ namespace A3_M2.Forms
             InitializeComponent();
             this.username = username;
         }
-
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            productForm pF = new productForm(username);
-            pF.Show();
+            farmersForm fF = new farmersForm(username);
+            fF.Show();
         }
+
         private void InsertButton_Click(object sender, EventArgs e)
         {
             // Validate input before insertion
@@ -36,10 +31,9 @@ namespace A3_M2.Forms
                 {
                     // Close the form and notify the main form that the insertion was successful
                     this.DialogResult = DialogResult.OK;
-                    productForm pF = new productForm(username);
-                    pF.Show();
+                    farmersForm fF = new farmersForm(username);
+                    fF.Show();
                     this.Close();
-
                 }
                 else
                 {
@@ -56,13 +50,9 @@ namespace A3_M2.Forms
         private bool ValidateInput()
         {
             return !string.IsNullOrWhiteSpace(insName.Text)
-                && !string.IsNullOrWhiteSpace(insPrice.Text)
-                && !string.IsNullOrWhiteSpace(insBatch.Text)
-                && !string.IsNullOrWhiteSpace(insPolicy.Text)
-                && !string.IsNullOrWhiteSpace(insDesc.Text)
-                && !string.IsNullOrWhiteSpace(insQuantity.Text)
-                && !string.IsNullOrWhiteSpace(insExp.Text)
-                && !string.IsNullOrWhiteSpace(insID.Text);
+                && !string.IsNullOrWhiteSpace(insAddress.Text)
+                && !string.IsNullOrWhiteSpace(insContact.Text)
+                && !string.IsNullOrWhiteSpace(insBalance.Text);
         }
 
         // Example insertion method (customize based on your requirements)
@@ -70,40 +60,28 @@ namespace A3_M2.Forms
         {
             try
             {
-                int id;
-                if (!int.TryParse(insID.Text, out id))
+                // Convert insBalance to decimal
+                decimal balance;
+                if (!decimal.TryParse(insBalance.Text, out balance))
                 {
-                    MessageBox.Show("Invalid ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid balance format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
-                // Convert insPrice to decimal
-                decimal price;
-                if (!decimal.TryParse(insPrice.Text, out price))
+                // Create an instance of the Farmer class
+                Farmer farmer = new Farmer();
+
+                // Perform the insertion
+                if (farmer.InsertFarmer(int.Parse(insFarmerID.Text), insName.Text, insAddress.Text, insContact.Text, balance))
                 {
-                    MessageBox.Show("Invalid price format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Insertion successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Insertion failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-
-                // Convert insQuantity to int
-                int quantity;
-                if (!int.TryParse(insQuantity.Text, out quantity))
-                {
-                    MessageBox.Show("Invalid quantity format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-
-                // Convert insExp to DateTime
-                DateTime expDate;
-                if (!DateTime.TryParse(insExp.Text, out expDate))
-                {
-                    MessageBox.Show("Invalid expiration date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-
-                product p = new product();
-                p.InsertProduct(id, insName.Text, price, insBatch.Text, insPolicy.Text, insDesc.Text, quantity, expDate);
-                return true;
             }
             catch (Exception ex)
             {
@@ -112,12 +90,6 @@ namespace A3_M2.Forms
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // Other methods and events for your InsertProductForm
+        // Other methods and events for your farmersInsertForm...
     }
 }
-

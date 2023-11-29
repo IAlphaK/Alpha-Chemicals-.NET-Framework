@@ -25,8 +25,6 @@ namespace A3_M2
             usernameLabel.Text = username;
             searchBox.Height = 50;
 
-
-
             searchBox.Enter += searchBox_MouseEnter;
             sortByBox.Leave += searchBox_MouseLeave;
 
@@ -35,8 +33,7 @@ namespace A3_M2
 
             rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
 
-            productView.CellContentClick += productView_CellContentClick;
-
+            farmersView.CellContentClick += farmersView_CellContentClick;
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -102,7 +99,7 @@ namespace A3_M2
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
             //this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            //this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
 
 
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
@@ -115,10 +112,10 @@ namespace A3_M2
             string searchText = searchBox.Text.Trim();
 
             // Filter the data in the DataTable based on the search text
-            alpha_chemicalsDataSet.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
+            alpha_chemicalsDataSet3.Farmer.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
 
             // Update the DataGridView with the filtered data
-            productView.DataSource = alpha_chemicalsDataSet.Product.DefaultView.ToTable();
+            farmersView.DataSource = alpha_chemicalsDataSet3.Farmer.DefaultView.ToTable();
         }
 
         private void searchBox_MouseEnter(object sender, EventArgs e)
@@ -152,7 +149,7 @@ namespace A3_M2
             // Sort the DataGridView based on the selected column and sort order
             if (!string.IsNullOrEmpty(selectedColumn))
             {
-                alpha_chemicalsDataSet.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
+                alpha_chemicalsDataSet3.Farmer.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
                 ApplyPagination();
             }
         }
@@ -181,12 +178,12 @@ namespace A3_M2
             try
             {
                 // Clone the DefaultView to avoid affecting the original sorting
-                DataView sortedView = alpha_chemicalsDataSet.Product.DefaultView.ToTable().DefaultView;
+                DataView sortedView = alpha_chemicalsDataSet3.Farmer.DefaultView.ToTable().DefaultView;
 
                 // Display only the specified number of rows
                 DataTable paginatedTable = sortedView.ToTable().AsEnumerable().Take(rowsPerPage).CopyToDataTable();
 
-                productView.DataSource = paginatedTable;
+                farmersView.DataSource = paginatedTable;
             }
 
             catch (Exception ex) 
@@ -196,33 +193,32 @@ namespace A3_M2
             
         }
 
-        private void productView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void farmersView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < productView.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < productView.Columns.Count)
+            if (e.RowIndex >= 0 && e.RowIndex < farmersView.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < farmersView.Columns.Count)
             {
-                DataGridViewColumn clickedColumn = productView.Columns[e.ColumnIndex];
+                DataGridViewColumn clickedColumn = farmersView.Columns[e.ColumnIndex];
 
                 if (clickedColumn != null)
                 {
-
                     if (clickedColumn.Name == "Delete")
                     {
                         // Confirm deletion with the user
-                        DialogResult result = MessageBox.Show("Are you sure you want to delete this row? Any Related Transactions/Ledgers with corresponding ID in other tables will also be deleted", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
                             // Get the ID of the selected row
-                            int productId = Convert.ToInt32(productView.Rows[e.RowIndex].Cells[0].Value);
+                            int farmerId = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells[0].Value);
 
-                            product p = new product();
-                            // Assuming you have a method to delete a row by ID, replace "DeleteProduct" with your actual method
-                            if (p.DeleteProduct(productId))
+                            Farmer farmer = new Farmer();
+                            // Assuming you have a method to delete a row by ID, replace "DeleteFarmer" with your actual method
+                            if (farmer.DeleteFarmer(farmerId))
                             {
                                 MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 // Refresh the DataGridView after deletion
-                                this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+                                this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
                                 ApplyPagination();
                             }
                             else
@@ -235,16 +231,16 @@ namespace A3_M2
                     {
                         if (MessageBox.Show("Are you sure you want to edit this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            int productId = Convert.ToInt32(productView.Rows[e.RowIndex].Cells[0].Value);
+                            int farmerId = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells[0].Value);
 
-                            // Fetch the data of the selected row based on productId
-                            // Assuming you have a method to retrieve a product by ID, replace "GetProductByID" with your actual method
-                            product p = new product();
-                            product selectedProduct = p.GetProductByID(productId);
+                            // Fetch the data of the selected row based on farmerId
+                            // Assuming you have a method to retrieve a farmer by ID, replace "GetFarmerByID" with your actual method
+                            Farmer farmer = new Farmer();
+                            Farmer selectedFarmer = farmer.GetFarmerByID(farmerId);
 
-                            // Create an instance of productEditForm and pass the data
-                            productEditForm editForm = new productEditForm(username);
-                            editForm.setfields(selectedProduct.ProductID, selectedProduct.Name, selectedProduct.Price, selectedProduct.Policy, selectedProduct.Quantity, selectedProduct.BatchNo, selectedProduct.ExpiryDate, selectedProduct.Description);
+                            // Create an instance of farmersEditForm and pass the data
+                            farmersEditForm editForm = new farmersEditForm(username);
+                            editForm.setfields(selectedFarmer.FarmerID, selectedFarmer.Name, selectedFarmer.Address, selectedFarmer.ContactInfo, selectedFarmer.Balance);
 
                             // Show the editForm and close the current form
                             editForm.ShowDialog();
@@ -257,11 +253,18 @@ namespace A3_M2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            productInsertForm insertForm = new productInsertForm(username);
+            farmersInsertForm insertForm = new farmersInsertForm(username);
             insertForm.Show();
             this.Close();
-            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
             ApplyPagination();
+        }
+
+        private void productsButton_Click(object sender, EventArgs e)
+        {
+            productForm pF = new productForm(username);
+            pF.Show();
+            this.Close();
         }
     }
 

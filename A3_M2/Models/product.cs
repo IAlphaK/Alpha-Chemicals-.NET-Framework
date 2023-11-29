@@ -23,6 +23,7 @@ internal class product : connection
         {
             OpenConnection();
 
+
             // Check if there are any related transactions in Transaction_Sell
             string checkSellTransactionsQuery = "SELECT COUNT(*) FROM Transaction_Sell WHERE ProductID = @ProductId";
 
@@ -85,6 +86,70 @@ internal class product : connection
                 }
             }
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // Check if there are any related transactions in Transaction_Sell
+            string checkSTransactionsQuery = "SELECT COUNT(*) FROM Transact_Sell WHERE ProductID = @ProductId";
+
+            using (SqlCommand checkSTransactionsCommand = new SqlCommand(checkSTransactionsQuery, _sqlConnection))
+            {
+                checkSTransactionsCommand.Parameters.AddWithValue("@ProductId", productId);
+
+                int sTransactionCount = (int)checkSTransactionsCommand.ExecuteScalar();
+
+                if (sTransactionCount > 0)
+                {
+                    // Delete related entries in Ledger_Farmer
+                    string deleteLgerFarmerQuery = "DELETE FROM Ledger_Farmer WHERE TS_ID IN (SELECT TS_ID FROM Transact_Sell WHERE ProductID = @ProductId)";
+
+                    using (SqlCommand deleteLgerFarmerCommand = new SqlCommand(deleteLgerFarmerQuery, _sqlConnection))
+                    {
+                        deleteLgerFarmerCommand.Parameters.AddWithValue("@ProductId", productId);
+                        deleteLgerFarmerCommand.ExecuteNonQuery();
+                    }
+
+                    // Now delete related transactions in Transaction_Sell
+                    string deleteSTransactionsQuery = "DELETE FROM Transact_Sell WHERE ProductID = @ProductId";
+
+                    using (SqlCommand deleteSTransactionsCommand = new SqlCommand(deleteSTransactionsQuery, _sqlConnection))
+                    {
+                        deleteSTransactionsCommand.Parameters.AddWithValue("@ProductId", productId);
+                        deleteSTransactionsCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            // Check if there are any related transactions in Transaction_Buy
+            string checkBTransactionsQuery = "SELECT COUNT(*) FROM Transact_Buy WHERE ProductID = @ProductId";
+
+            using (SqlCommand checkBTransactionsCommand = new SqlCommand(checkBTransactionsQuery, _sqlConnection))
+            {
+                checkBTransactionsCommand.Parameters.AddWithValue("@ProductId", productId);
+
+                int byTransactionCount = (int)checkBTransactionsCommand.ExecuteScalar();
+
+                if (byTransactionCount > 0)
+                {
+                    // Delete related entries in Ledger_Company
+                    string deleteLdgerCompanyQuery = "DELETE FROM Ledger_Company WHERE TB_ID IN (SELECT TB_ID FROM Transact_Buy WHERE ProductID = @ProductId)";
+
+                    using (SqlCommand deleteLdgerCompanyCommand = new SqlCommand(deleteLdgerCompanyQuery, _sqlConnection))
+                    {
+                        deleteLdgerCompanyCommand.Parameters.AddWithValue("@ProductId", productId);
+                        deleteLdgerCompanyCommand.ExecuteNonQuery();
+                    }
+
+                    // Now delete related transactions in Transaction_Buy
+                    string deleteByTransactionsQuery = "DELETE FROM Transact_Buy WHERE ProductID = @ProductId";
+
+                    using (SqlCommand deleteByTransactionsCommand = new SqlCommand(deleteByTransactionsQuery, _sqlConnection))
+                    {
+                        deleteByTransactionsCommand.Parameters.AddWithValue("@ProductId", productId);
+                        deleteByTransactionsCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // Finally, delete the product
             string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductId";
 

@@ -38,7 +38,7 @@
             this.BalanceLabel = new System.Windows.Forms.Label();
             this.ContactLabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
-            this.insBatch = new System.Windows.Forms.TextBox();
+            this.insBalance = new System.Windows.Forms.TextBox();
             this.insContact = new System.Windows.Forms.TextBox();
             this.insName = new System.Windows.Forms.TextBox();
             this.EditButton = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.BalanceLabel);
             this.panel1.Controls.Add(this.ContactLabel);
             this.panel1.Controls.Add(this.namelabel);
-            this.panel1.Controls.Add(this.insBatch);
+            this.panel1.Controls.Add(this.insBalance);
             this.panel1.Controls.Add(this.insContact);
             this.panel1.Controls.Add(this.insName);
             this.panel1.Controls.Add(this.EditButton);
@@ -184,18 +184,18 @@
             this.namelabel.TabIndex = 4;
             this.namelabel.Text = "Farmer Name";
             // 
-            // insBatch
+            // insBalance
             // 
-            this.insBatch.AcceptsReturn = true;
-            this.insBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.insBalance.AcceptsReturn = true;
+            this.insBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insBatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.insBatch.ForeColor = System.Drawing.Color.Lime;
-            this.insBatch.Location = new System.Drawing.Point(156, 153);
-            this.insBatch.Name = "insBatch";
-            this.insBatch.Size = new System.Drawing.Size(112, 27);
-            this.insBatch.TabIndex = 3;
+            this.insBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insBalance.ForeColor = System.Drawing.Color.Lime;
+            this.insBalance.Location = new System.Drawing.Point(156, 153);
+            this.insBalance.Name = "insBalance";
+            this.insBalance.Size = new System.Drawing.Size(112, 27);
+            this.insBalance.TabIndex = 3;
             // 
             // insContact
             // 
@@ -262,7 +262,7 @@
         private System.Windows.Forms.TextBox insName;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Label namelabel;
-        private System.Windows.Forms.TextBox insBatch;
+        private System.Windows.Forms.TextBox insBalance;
         private System.Windows.Forms.TextBox insContact;
         private System.Windows.Forms.Label Addresslabel;
         private System.Windows.Forms.Label BalanceLabel;

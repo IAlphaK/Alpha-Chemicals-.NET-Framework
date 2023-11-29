@@ -73,6 +73,7 @@
             this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Update = new System.Windows.Forms.DataGridViewImageColumn();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
@@ -462,7 +463,8 @@
             this.batchNoDataGridViewTextBoxColumn,
             this.expiryDateDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.Delete});
+            this.Delete,
+            this.Update});
             this.productView.DataSource = this.productBindingSource1;
             this.productView.Location = new System.Drawing.Point(241, 115);
             this.productView.Margin = new System.Windows.Forms.Padding(4);
@@ -607,6 +609,15 @@
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.Width = 50;
+            // 
+            // Update
+            // 
+            this.Update.HeaderText = "";
+            this.Update.Image = global::A3_M2.Properties.Resources.pencil;
+            this.Update.MinimumWidth = 6;
+            this.Update.Name = "Update";
+            this.Update.Width = 50;
             // 
             // productForm
             // 
@@ -684,6 +695,7 @@
         private alpha_chemicalsDataSet2 alpha_chemicalsDataSet2;
         private System.Windows.Forms.BindingSource productBindingSource1;
         private alpha_chemicalsDataSet2TableAdapters.ProductTableAdapter productTableAdapter1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -693,6 +705,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn Update;
     }
 }

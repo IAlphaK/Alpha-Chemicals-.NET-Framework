@@ -71,6 +71,12 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\farmersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\farmersForm.Designer.cs">
+      <DependentUpon>farmersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\productEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\farmersForm.resx">
+      <DependentUpon>farmersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\productEditForm.resx">
       <DependentUpon>productEditForm.cs</DependentUpon>

@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace A3_M2
 {
-    public partial class productForm : Form
+    public partial class farmersForm : Form
     {
         string username;
         private int rowsPerPage = 10;
-        public productForm(string username)
+        public farmersForm(string username)
         {
             InitializeComponent();
             this.username = username;

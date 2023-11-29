@@ -1,6 +1,6 @@
 ﻿namespace A3_M2
 {
-    partial class productForm
+    partial class farmersForm
     {
         /// <summary>
         /// Required designer variable.

@@ -98,7 +98,7 @@
             this.topBar.Controls.Add(this.imagePanel);
             this.topBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.topBar.Location = new System.Drawing.Point(0, 0);
-            this.topBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topBar.Margin = new System.Windows.Forms.Padding(2);
             this.topBar.Name = "topBar";
             this.topBar.Size = new System.Drawing.Size(1200, 69);
             this.topBar.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.loggedUserInfoPanel.Controls.Add(this.welcomeLabel);
             this.loggedUserInfoPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.loggedUserInfoPanel.Location = new System.Drawing.Point(846, 0);
-            this.loggedUserInfoPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loggedUserInfoPanel.Margin = new System.Windows.Forms.Padding(2);
             this.loggedUserInfoPanel.Name = "loggedUserInfoPanel";
             this.loggedUserInfoPanel.Size = new System.Drawing.Size(354, 69);
             this.loggedUserInfoPanel.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.logoutPanel.Controls.Add(this.pictureBox1);
             this.logoutPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.logoutPanel.Location = new System.Drawing.Point(290, 0);
-            this.logoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.logoutPanel.Name = "logoutPanel";
             this.logoutPanel.Size = new System.Drawing.Size(64, 69);
             this.logoutPanel.TabIndex = 2;
@@ -131,7 +131,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +171,7 @@
             this.imagePanel.Controls.Add(this.companyLogoNav);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
-            this.imagePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imagePanel.Margin = new System.Windows.Forms.Padding(2);
             this.imagePanel.Name = "imagePanel";
             this.imagePanel.Size = new System.Drawing.Size(104, 69);
             this.imagePanel.TabIndex = 1;
@@ -179,7 +179,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(104, 3);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(632, 50);
             this.panel2.TabIndex = 1;
@@ -189,13 +189,14 @@
             this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
             this.companyLogoNav.Location = new System.Drawing.Point(4, 3);
-            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(10);
             this.companyLogoNav.Name = "companyLogoNav";
-            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(10);
             this.companyLogoNav.Size = new System.Drawing.Size(97, 57);
             this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.companyLogoNav.TabIndex = 0;
             this.companyLogoNav.TabStop = false;
+            this.companyLogoNav.Click += new System.EventHandler(this.companyLogoNav_Click);
             // 
             // navPanel
             // 
@@ -208,7 +209,7 @@
             this.navPanel.Controls.Add(this.navPanel1);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 69);
-            this.navPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.navPanel.Margin = new System.Windows.Forms.Padding(2);
             this.navPanel.Name = "navPanel";
             this.navPanel.Size = new System.Drawing.Size(104, 531);
             this.navPanel.TabIndex = 1;
@@ -217,7 +218,7 @@
             // 
             this.panel6.Controls.Add(this.reportButton);
             this.panel6.Location = new System.Drawing.Point(2, 290);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(98, 67);
             this.panel6.TabIndex = 6;
@@ -234,9 +235,9 @@
             this.reportButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.reportButton.ForeColor = System.Drawing.Color.Lime;
             this.reportButton.Location = new System.Drawing.Point(0, 0);
-            this.reportButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportButton.Margin = new System.Windows.Forms.Padding(2);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportButton.Padding = new System.Windows.Forms.Padding(4);
             this.reportButton.Size = new System.Drawing.Size(98, 67);
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
@@ -248,7 +249,7 @@
             // 
             this.panel5.Controls.Add(this.companyButton);
             this.panel5.Location = new System.Drawing.Point(2, 219);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
@@ -265,9 +266,9 @@
             this.companyButton.Font = new System.Drawing.Font("Segoe UI", 11.2F, System.Drawing.FontStyle.Italic);
             this.companyButton.ForeColor = System.Drawing.Color.Lime;
             this.companyButton.Location = new System.Drawing.Point(0, 0);
-            this.companyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.companyButton.Margin = new System.Windows.Forms.Padding(2);
             this.companyButton.Name = "companyButton";
-            this.companyButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyButton.Padding = new System.Windows.Forms.Padding(4);
             this.companyButton.Size = new System.Drawing.Size(98, 67);
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
@@ -279,7 +280,7 @@
             // 
             this.panel4.Controls.Add(this.creditsButton);
             this.panel4.Location = new System.Drawing.Point(2, 146);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(98, 67);
             this.panel4.TabIndex = 4;
@@ -296,9 +297,9 @@
             this.creditsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.creditsButton.ForeColor = System.Drawing.Color.Lime;
             this.creditsButton.Location = new System.Drawing.Point(0, 0);
-            this.creditsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditsButton.Margin = new System.Windows.Forms.Padding(2);
             this.creditsButton.Name = "creditsButton";
-            this.creditsButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.creditsButton.Padding = new System.Windows.Forms.Padding(4);
             this.creditsButton.Size = new System.Drawing.Size(98, 67);
             this.creditsButton.TabIndex = 4;
             this.creditsButton.Text = "Credits";
@@ -310,7 +311,7 @@
             // 
             this.panel1.Controls.Add(this.productsButton);
             this.panel1.Location = new System.Drawing.Point(2, 75);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(98, 67);
             this.panel1.TabIndex = 3;
@@ -327,9 +328,9 @@
             this.productsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.productsButton.ForeColor = System.Drawing.Color.Lime;
             this.productsButton.Location = new System.Drawing.Point(0, 0);
-            this.productsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.productsButton.Margin = new System.Windows.Forms.Padding(2);
             this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productsButton.Padding = new System.Windows.Forms.Padding(4);
             this.productsButton.Size = new System.Drawing.Size(98, 67);
             this.productsButton.TabIndex = 3;
             this.productsButton.Text = "Products";
@@ -342,7 +343,7 @@
             // 
             this.navPanel1.Controls.Add(this.farmersButton);
             this.navPanel1.Location = new System.Drawing.Point(2, 2);
-            this.navPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.navPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.navPanel1.Name = "navPanel1";
             this.navPanel1.Size = new System.Drawing.Size(98, 67);
             this.navPanel1.TabIndex = 2;
@@ -359,9 +360,9 @@
             this.farmersButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.farmersButton.ForeColor = System.Drawing.Color.Lime;
             this.farmersButton.Location = new System.Drawing.Point(0, 0);
-            this.farmersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.farmersButton.Margin = new System.Windows.Forms.Padding(2);
             this.farmersButton.Name = "farmersButton";
-            this.farmersButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmersButton.Padding = new System.Windows.Forms.Padding(4);
             this.farmersButton.Size = new System.Drawing.Size(98, 67);
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
@@ -601,7 +602,7 @@
             this.Controls.Add(this.topBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Dashboard";
             this.topBar.ResumeLayout(false);

@@ -136,5 +136,10 @@ namespace A3_M2
         {
             LoadChartData();
         }
+
+        private void companyLogoNav_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

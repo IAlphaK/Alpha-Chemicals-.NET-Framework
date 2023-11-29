@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.topBar = new System.Windows.Forms.Panel();
             this.loggedUserInfoPanel = new System.Windows.Forms.Panel();
             this.logoutPanel = new System.Windows.Forms.Panel();
@@ -63,6 +66,8 @@
             this.numCredits = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.chartPanel = new System.Windows.Forms.Panel();
+            this.dashboardChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
@@ -81,6 +86,8 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            this.chartPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).BeginInit();
             this.SuspendLayout();
             // 
             // topBar
@@ -94,7 +101,6 @@
             this.topBar.Name = "topBar";
             this.topBar.Size = new System.Drawing.Size(1200, 69);
             this.topBar.TabIndex = 0;
-          
             // 
             // loggedUserInfoPanel
             // 
@@ -107,7 +113,6 @@
             this.loggedUserInfoPanel.Name = "loggedUserInfoPanel";
             this.loggedUserInfoPanel.Size = new System.Drawing.Size(354, 69);
             this.loggedUserInfoPanel.TabIndex = 1;
-          
             // 
             // logoutPanel
             // 
@@ -118,7 +123,6 @@
             this.logoutPanel.Name = "logoutPanel";
             this.logoutPanel.Size = new System.Drawing.Size(64, 69);
             this.logoutPanel.TabIndex = 2;
-           
             // 
             // pictureBox1
             // 
@@ -146,7 +150,6 @@
             this.usernameLabel.Size = new System.Drawing.Size(101, 22);
             this.usernameLabel.TabIndex = 3;
             this.usernameLabel.Text = "NotVisible";
-            
             // 
             // welcomeLabel
             // 
@@ -160,7 +163,6 @@
             this.welcomeLabel.Size = new System.Drawing.Size(98, 22);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome";
-            
             // 
             // imagePanel
             // 
@@ -172,7 +174,6 @@
             this.imagePanel.Name = "imagePanel";
             this.imagePanel.Size = new System.Drawing.Size(104, 69);
             this.imagePanel.TabIndex = 1;
-           
             // 
             // panel2
             // 
@@ -181,7 +182,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(632, 50);
             this.panel2.TabIndex = 1;
-            
             // 
             // companyLogoNav
             // 
@@ -195,7 +195,6 @@
             this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.companyLogoNav.TabIndex = 0;
             this.companyLogoNav.TabStop = false;
-           
             // 
             // navPanel
             // 
@@ -212,7 +211,6 @@
             this.navPanel.Name = "navPanel";
             this.navPanel.Size = new System.Drawing.Size(104, 531);
             this.navPanel.TabIndex = 1;
-          
             // 
             // panel6
             // 
@@ -222,7 +220,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(98, 67);
             this.panel6.TabIndex = 6;
-            
             // 
             // reportButton
             // 
@@ -243,7 +240,6 @@
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
             this.reportButton.UseVisualStyleBackColor = false;
-           
             this.reportButton.MouseEnter += new System.EventHandler(this.reportButton_MouseEnter);
             this.reportButton.MouseLeave += new System.EventHandler(this.reportButton_MouseLeave);
             // 
@@ -255,7 +251,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
-            
             // 
             // companyButton
             // 
@@ -276,7 +271,6 @@
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
             this.companyButton.UseVisualStyleBackColor = false;
-            
             this.companyButton.MouseEnter += new System.EventHandler(this.companyButton_MouseEnter);
             this.companyButton.MouseLeave += new System.EventHandler(this.companyButton_MouseLeave);
             // 
@@ -288,7 +282,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(98, 67);
             this.panel4.TabIndex = 4;
-        
             // 
             // creditsButton
             // 
@@ -309,7 +302,6 @@
             this.creditsButton.TabIndex = 4;
             this.creditsButton.Text = "Credits";
             this.creditsButton.UseVisualStyleBackColor = false;
-            
             this.creditsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
             this.creditsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
             // 
@@ -321,7 +313,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(98, 67);
             this.panel1.TabIndex = 3;
-           
             // 
             // productsButton
             // 
@@ -354,7 +345,6 @@
             this.navPanel1.Name = "navPanel1";
             this.navPanel1.Size = new System.Drawing.Size(98, 67);
             this.navPanel1.TabIndex = 2;
-            
             // 
             // farmersButton
             // 
@@ -375,7 +365,6 @@
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
             this.farmersButton.UseVisualStyleBackColor = false;
-            
             this.farmersButton.MouseEnter += new System.EventHandler(this.farmersButton_MouseEnter);
             this.farmersButton.MouseLeave += new System.EventHandler(this.farmersButton_MouseLeave);
             // 
@@ -398,7 +387,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1078, 97);
             this.tableLayoutPanel1.TabIndex = 0;
-            
             // 
             // panel3
             // 
@@ -411,7 +399,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(261, 88);
             this.panel3.TabIndex = 0;
-            
             // 
             // numOrders
             // 
@@ -426,7 +413,6 @@
             this.numOrders.TabIndex = 2;
             this.numOrders.Text = "Number";
             this.numOrders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label1
             // 
@@ -440,7 +426,6 @@
             this.label1.Size = new System.Drawing.Size(84, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "All Orders";
-        
             // 
             // panel7
             // 
@@ -453,7 +438,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(261, 88);
             this.panel7.TabIndex = 1;
-           
             // 
             // numFarmers
             // 
@@ -468,7 +452,6 @@
             this.numFarmers.TabIndex = 3;
             this.numFarmers.Text = "Number";
             this.numFarmers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-           
             // 
             // label2
             // 
@@ -482,7 +465,6 @@
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Farmers";
-           
             // 
             // panel8
             // 
@@ -495,7 +477,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(256, 88);
             this.panel8.TabIndex = 2;
-          
             // 
             // numCompany
             // 
@@ -510,7 +491,6 @@
             this.numCompany.TabIndex = 4;
             this.numCompany.Text = "Number";
             this.numCompany.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-          
             // 
             // label4
             // 
@@ -524,7 +504,6 @@
             this.label4.Size = new System.Drawing.Size(83, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Company";
-       
             // 
             // panel9
             // 
@@ -537,7 +516,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(268, 88);
             this.panel9.TabIndex = 3;
-        
             // 
             // numCredits
             // 
@@ -552,7 +530,6 @@
             this.numCredits.TabIndex = 5;
             this.numCredits.Text = "Number";
             this.numCredits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        
             // 
             // label6
             // 
@@ -570,6 +547,7 @@
             // mainPanel
             // 
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.chartPanel);
             this.mainPanel.Controls.Add(this.tableLayoutPanel1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(104, 69);
@@ -578,7 +556,39 @@
             this.mainPanel.Padding = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.mainPanel.Size = new System.Drawing.Size(1096, 531);
             this.mainPanel.TabIndex = 2;
-          
+            // 
+            // chartPanel
+            // 
+            this.chartPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartPanel.Controls.Add(this.dashboardChart);
+            this.chartPanel.Location = new System.Drawing.Point(11, 131);
+            this.chartPanel.Name = "chartPanel";
+            this.chartPanel.Size = new System.Drawing.Size(1065, 386);
+            this.chartPanel.TabIndex = 1;
+            // 
+            // dashboardChart
+            // 
+            this.dashboardChart.BackColor = System.Drawing.Color.Lime;
+            this.dashboardChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            this.dashboardChart.BorderlineColor = System.Drawing.SystemColors.ActiveCaptionText;
+            chartArea1.Name = "ChartArea1";
+            this.dashboardChart.ChartAreas.Add(chartArea1);
+            this.dashboardChart.Location = new System.Drawing.Point(13, 15);
+            this.dashboardChart.Name = "dashboardChart";
+            this.dashboardChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Sales";
+            this.dashboardChart.Series.Add(series1);
+            this.dashboardChart.Size = new System.Drawing.Size(1033, 357);
+            this.dashboardChart.TabIndex = 0;
+            this.dashboardChart.Text = "Total Sales by 2023";
+            title1.Name = "Total Sales By Month (2023)";
+            title1.Text = "Total Sales By Month (2023)";
+            this.dashboardChart.Titles.Add(title1);
             // 
             // Dashboard
             // 
@@ -618,6 +628,8 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.mainPanel.ResumeLayout(false);
+            this.chartPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,5 +670,7 @@
         private System.Windows.Forms.Label numCredits;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Panel chartPanel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart dashboardChart;
     }
 }

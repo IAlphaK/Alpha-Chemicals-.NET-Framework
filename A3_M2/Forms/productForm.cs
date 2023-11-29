@@ -14,11 +14,28 @@ namespace A3_M2
     public partial class productForm : Form
     {
         string username;
+        private int rowsPerPage = 10;
         public productForm(string username)
         {
             InitializeComponent();
             this.username = username;
             usernameLabel.Text = username;
+            searchBox.Height = 50;
+
+            
+
+            searchBox.Enter += searchBox_MouseEnter;
+            sortByBox.Leave += searchBox_MouseLeave;
+
+            sortByBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            filterByBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+
+            rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
+
+
+
+
+
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -77,169 +94,80 @@ namespace A3_M2
             this.Close();
         }
 
-        private void welcomeLabel_Click(object sender, EventArgs e)
+        private void productForm_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
+            rowsByBox_SelectedIndexChanged(rowsByBox, EventArgs.Empty);
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
+        private void searchBox_TextChanged(object sender, EventArgs e)
         {
+          
+            string searchText = searchBox.Text.Trim();
 
+            // Filter the data in the DataTable based on the search text
+            alpha_chemicalsDataSet.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
+
+            // Update the DataGridView with the filtered data
+            productView.DataSource = alpha_chemicalsDataSet.Product.DefaultView.ToTable();
         }
 
-        private void topBar_Paint(object sender, PaintEventArgs e)
+        private void searchBox_MouseEnter(object sender, EventArgs e)
         {
-
+            
+            if (searchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+                searchBox.ForeColor = Color.White;
+            }
         }
 
-        private void loggedUserInfoPanel_Paint(object sender, PaintEventArgs e)
+        private void searchBox_MouseLeave(object sender, EventArgs e)
         {
-
+            
+            if (string.IsNullOrWhiteSpace(searchBox.Text))
+            {
+                searchBox.ForeColor = Color.Silver;
+            }
         }
 
-        private void logoutPanel_Paint(object sender, PaintEventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the selected column name from the sortByBox
+            string selectedColumn = sortByBox.SelectedItem?.ToString();
 
+            // Get the selected sort order from the filterByBox, defaulting to "DESC"
+            string sortOrder = filterByBox.SelectedItem?.ToString() ?? "DESC";
+
+            // Sort the DataGridView based on the selected column and sort order
+            if (!string.IsNullOrEmpty(selectedColumn))
+            {
+                alpha_chemicalsDataSet.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
+                ApplyPagination();
+            }
         }
 
-        private void panel10_Paint(object sender, PaintEventArgs e)
+        private void rowsByBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the selected number of rows per page from the rowsByBox
+            int.TryParse(rowsByBox.SelectedItem?.ToString(), out rowsPerPage);
 
+            // Apply pagination independently of other filters
+            ApplyPagination();
         }
 
-        private void usernameLabel_Click(object sender, EventArgs e)
+        // Helper method to apply pagination and update the DataGridView
+        private void ApplyPagination()
         {
+            // Clone the DefaultView to avoid affecting the original sorting
+            DataView sortedView = alpha_chemicalsDataSet.Product.DefaultView.ToTable().DefaultView;
 
-        }
+            // Display only the specified number of rows
+            DataTable paginatedTable = sortedView.ToTable().AsEnumerable().Take(rowsPerPage).CopyToDataTable();
 
-        private void imagePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void companyLogoNav_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void navPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void reportButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void companyButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void creditsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void productsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void navPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void farmersButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void numOrders_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numFarmers_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void numCompany_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void numCredits_Click(object sender, EventArgs e)
-        {
-
+            productView.DataSource = paginatedTable;
         }
     }
 }

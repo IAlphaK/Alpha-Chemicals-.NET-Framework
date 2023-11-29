@@ -75,7 +75,6 @@
             this.topBar.Name = "topBar";
             this.topBar.Size = new System.Drawing.Size(1200, 69);
             this.topBar.TabIndex = 0;
-            this.topBar.Paint += new System.Windows.Forms.PaintEventHandler(this.topBar_Paint);
             // 
             // loggedUserInfoPanel
             // 
@@ -88,7 +87,6 @@
             this.loggedUserInfoPanel.Name = "loggedUserInfoPanel";
             this.loggedUserInfoPanel.Size = new System.Drawing.Size(354, 69);
             this.loggedUserInfoPanel.TabIndex = 1;
-            this.loggedUserInfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loggedUserInfoPanel_Paint);
             // 
             // logoutPanel
             // 
@@ -99,7 +97,6 @@
             this.logoutPanel.Name = "logoutPanel";
             this.logoutPanel.Size = new System.Drawing.Size(64, 69);
             this.logoutPanel.TabIndex = 2;
-            this.logoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.logoutPanel_Paint);
             // 
             // pictureBox1
             // 
@@ -127,7 +124,6 @@
             this.usernameLabel.Size = new System.Drawing.Size(101, 22);
             this.usernameLabel.TabIndex = 3;
             this.usernameLabel.Text = "NotVisible";
-            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // welcomeLabel
             // 
@@ -141,7 +137,6 @@
             this.welcomeLabel.Size = new System.Drawing.Size(98, 22);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome";
-            this.welcomeLabel.Click += new System.EventHandler(this.welcomeLabel_Click);
             // 
             // imagePanel
             // 
@@ -153,7 +148,6 @@
             this.imagePanel.Name = "imagePanel";
             this.imagePanel.Size = new System.Drawing.Size(104, 69);
             this.imagePanel.TabIndex = 1;
-            this.imagePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.imagePanel_Paint);
             // 
             // panel2
             // 
@@ -162,7 +156,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(632, 50);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // companyLogoNav
             // 
@@ -176,7 +169,6 @@
             this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.companyLogoNav.TabIndex = 0;
             this.companyLogoNav.TabStop = false;
-            this.companyLogoNav.Click += new System.EventHandler(this.companyLogoNav_Click);
             // 
             // navPanel
             // 
@@ -193,7 +185,6 @@
             this.navPanel.Name = "navPanel";
             this.navPanel.Size = new System.Drawing.Size(104, 531);
             this.navPanel.TabIndex = 1;
-            this.navPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navPanel_Paint);
             // 
             // panel6
             // 
@@ -203,7 +194,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(98, 67);
             this.panel6.TabIndex = 6;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // reportButton
             // 
@@ -224,7 +214,6 @@
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
             this.reportButton.UseVisualStyleBackColor = false;
-            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             this.reportButton.MouseEnter += new System.EventHandler(this.reportButton_MouseEnter);
             this.reportButton.MouseLeave += new System.EventHandler(this.reportButton_MouseLeave);
             // 
@@ -236,7 +225,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // companyButton
             // 
@@ -257,7 +245,6 @@
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
             this.companyButton.UseVisualStyleBackColor = false;
-            this.companyButton.Click += new System.EventHandler(this.companyButton_Click);
             this.companyButton.MouseEnter += new System.EventHandler(this.companyButton_MouseEnter);
             this.companyButton.MouseLeave += new System.EventHandler(this.companyButton_MouseLeave);
             // 
@@ -269,7 +256,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(98, 67);
             this.panel4.TabIndex = 4;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // creditsButton
             // 
@@ -290,7 +276,6 @@
             this.creditsButton.TabIndex = 4;
             this.creditsButton.Text = "Credits";
             this.creditsButton.UseVisualStyleBackColor = false;
-            this.creditsButton.Click += new System.EventHandler(this.creditsButton_Click);
             this.creditsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
             this.creditsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
             // 
@@ -302,7 +287,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(98, 67);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // productsButton
             // 
@@ -323,7 +307,6 @@
             this.productsButton.TabIndex = 3;
             this.productsButton.Text = "Products";
             this.productsButton.UseVisualStyleBackColor = false;
-            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
             this.productsButton.MouseEnter += new System.EventHandler(this.productsButton_MouseEnter);
             this.productsButton.MouseLeave += new System.EventHandler(this.productsButton_MouseLeave);
             // 
@@ -335,7 +318,6 @@
             this.navPanel1.Name = "navPanel1";
             this.navPanel1.Size = new System.Drawing.Size(98, 67);
             this.navPanel1.TabIndex = 2;
-            this.navPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.navPanel1_Paint);
             // 
             // farmersButton
             // 
@@ -356,7 +338,6 @@
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
             this.farmersButton.UseVisualStyleBackColor = false;
-            this.farmersButton.Click += new System.EventHandler(this.farmersButton_Click);
             this.farmersButton.MouseEnter += new System.EventHandler(this.farmersButton_MouseEnter);
             this.farmersButton.MouseLeave += new System.EventHandler(this.farmersButton_MouseLeave);
             // 
@@ -370,7 +351,6 @@
             this.mainPanel.Padding = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.mainPanel.Size = new System.Drawing.Size(1096, 531);
             this.mainPanel.TabIndex = 2;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // templateForm
             // 

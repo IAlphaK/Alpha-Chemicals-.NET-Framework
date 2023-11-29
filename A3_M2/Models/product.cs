@@ -6,6 +6,16 @@ using System.Windows.Forms;
 
 internal class product : connection
 {
+
+    public int ProductID { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+    public string BatchNo { get; set; }
+    public string Policy { get; set; }
+    public string Description { get; set; }
+    public int Quantity { get; set; }
+    public DateTime ExpiryDate { get; set; }
+
     // Method to delete a row by ID from the database
     public bool DeleteProduct(int productId)
     {
@@ -135,4 +145,106 @@ internal class product : connection
         }
         finally { CloseConnection(); }
     }
+    public product GetProductByID(int productId)
+    {
+        try
+        {
+            OpenConnection();
+
+            // Assuming you have a SqlCommand prepared with parameters
+            using (SqlCommand command = new SqlCommand("SELECT * FROM Product WHERE ProductID = @ID", _sqlConnection))
+            {
+                // Add parameters to the SqlCommand
+                command.Parameters.AddWithValue("@ID", productId);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // Check if there is data
+                    if (reader.Read())
+                    {
+                        // Create a Product object with the fetched data
+                        product product = new product
+                        {
+                            ProductID = Convert.ToInt32(reader["ProductID"]),
+                            Name = Convert.ToString(reader["Name"]),
+                            Price = Convert.ToDecimal(reader["Price"]),
+                            BatchNo = Convert.ToString(reader["BatchNo"]),
+                            Policy = Convert.ToString(reader["Policy"]),
+                            Description = Convert.ToString(reader["Description"]),
+                            Quantity = Convert.ToInt32(reader["Quantity"]),
+                            ExpiryDate = Convert.ToDateTime(reader["ExpiryDate"])
+                        };
+
+                        // Return the product
+                        return product;
+                    }
+                }
+            }
+
+            // If no product is found, return null
+            return null;
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception (log, show error message, etc.)
+            MessageBox.Show($"Error: {ex.Message}");
+            return null;
+        }
+        finally
+        {
+            CloseConnection();
+        }
+    }
+
+    public bool UpdateProduct(int id, string productName, decimal price, string batchNumber, string policy, string description, int quantity, DateTime expDate)
+    {
+        try
+        {
+            OpenConnection();
+
+            // Assuming you have a SqlCommand prepared with parameters
+            using (SqlCommand command = new SqlCommand("UPDATE Product " +
+                                                       "SET Name = @ProductName, " +
+                                                       "    Price = @Price, " +
+                                                       "    BatchNo = @BatchNumber, " +
+                                                       "    Policy = @Policy, " +
+                                                       "    Description = @Description, " +
+                                                       "    Quantity = @Quantity, " +
+                                                       "    ExpiryDate = @ExpiryDate " +
+                                                       "WHERE ProductID = @ID", _sqlConnection))
+            {
+                // Add parameters to the SqlCommand
+                command.Parameters.AddWithValue("@ID", id);
+                command.Parameters.AddWithValue("@ProductName", productName);
+                command.Parameters.AddWithValue("@Price", price);
+                command.Parameters.AddWithValue("@BatchNumber", batchNumber);
+                command.Parameters.AddWithValue("@Policy", policy);
+                command.Parameters.AddWithValue("@Description", description);
+                command.Parameters.AddWithValue("@Quantity", quantity);
+                command.Parameters.AddWithValue("@ExpiryDate", expDate);
+
+                // Execute the SqlCommand
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Update Completed", "Successful", MessageBoxButtons.OK);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No rows were updated. ProductID may not exist.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception (log, show error message, etc.)
+            MessageBox.Show($"Error: {ex.Message}");
+            return false;
+        }
+        finally { CloseConnection(); }
+    }
+
 }

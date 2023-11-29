@@ -80,9 +80,9 @@
             this.TopHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TopHeader.Location = new System.Drawing.Point(0, 0);
-            this.TopHeader.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TopHeader.Margin = new System.Windows.Forms.Padding(5);
             this.TopHeader.Name = "TopHeader";
-            this.TopHeader.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TopHeader.Padding = new System.Windows.Forms.Padding(5);
             this.TopHeader.Size = new System.Drawing.Size(1180, 67);
             this.TopHeader.TabIndex = 0;
             // 
@@ -110,7 +110,7 @@
             this.logopanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.logopanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.logopanel.Location = new System.Drawing.Point(0, 67);
-            this.logopanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logopanel.Margin = new System.Windows.Forms.Padding(4);
             this.logopanel.Name = "logopanel";
             this.logopanel.Size = new System.Drawing.Size(405, 535);
             this.logopanel.TabIndex = 1;
@@ -162,7 +162,7 @@
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
             this.logo.Location = new System.Drawing.Point(21, 36);
-            this.logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logo.Margin = new System.Windows.Forms.Padding(4);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(360, 220);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +185,7 @@
             this.panellogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panellogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panellogin.Location = new System.Drawing.Point(405, 67);
-            this.panellogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panellogin.Margin = new System.Windows.Forms.Padding(4);
             this.panellogin.Name = "panellogin";
             this.panellogin.Size = new System.Drawing.Size(775, 535);
             this.panellogin.TabIndex = 2;
@@ -217,7 +217,7 @@
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.loginButton.ForeColor = System.Drawing.Color.Lime;
             this.loginButton.Location = new System.Drawing.Point(336, 363);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(268, 59);
             this.loginButton.TabIndex = 12;
@@ -232,7 +232,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(235, 212);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(472, 84);
             this.panel3.TabIndex = 11;
@@ -242,7 +242,7 @@
             this.panel4.Controls.Add(this.error2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 44);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(472, 23);
             this.panel4.TabIndex = 9;
@@ -267,7 +267,7 @@
             this.panel5.Controls.Add(this.passwordBox);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(472, 44);
             this.panel5.TabIndex = 3;
@@ -276,7 +276,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(11, 41);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(452, 1);
             this.panel6.TabIndex = 4;
@@ -288,7 +288,7 @@
             this.passwordBox.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.passwordBox.ForeColor = System.Drawing.Color.Gray;
             this.passwordBox.Location = new System.Drawing.Point(11, 5);
-            this.passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(452, 34);
             this.passwordBox.TabIndex = 2;
@@ -301,7 +301,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(43, 212);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(88, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -324,7 +324,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.emailHolder);
             this.panel1.Location = new System.Drawing.Point(235, 108);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(472, 84);
             this.panel1.TabIndex = 8;
@@ -334,7 +334,7 @@
             this.panel2.Controls.Add(this.invalidMsg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 44);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(472, 23);
             this.panel2.TabIndex = 9;
@@ -359,7 +359,7 @@
             this.emailHolder.Controls.Add(this.emailBox);
             this.emailHolder.Dock = System.Windows.Forms.DockStyle.Top;
             this.emailHolder.Location = new System.Drawing.Point(0, 0);
-            this.emailHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailHolder.Margin = new System.Windows.Forms.Padding(4);
             this.emailHolder.Name = "emailHolder";
             this.emailHolder.Size = new System.Drawing.Size(472, 44);
             this.emailHolder.TabIndex = 3;
@@ -368,7 +368,7 @@
             // 
             this.emailBar.BackColor = System.Drawing.Color.White;
             this.emailBar.Location = new System.Drawing.Point(11, 41);
-            this.emailBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailBar.Margin = new System.Windows.Forms.Padding(4);
             this.emailBar.Name = "emailBar";
             this.emailBar.Size = new System.Drawing.Size(452, 1);
             this.emailBar.TabIndex = 4;
@@ -380,7 +380,7 @@
             this.emailBox.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.emailBox.ForeColor = System.Drawing.Color.Gray;
             this.emailBox.Location = new System.Drawing.Point(11, 5);
-            this.emailBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(452, 34);
             this.emailBox.TabIndex = 2;
@@ -394,7 +394,7 @@
             this.userPic.BackColor = System.Drawing.Color.White;
             this.userPic.Image = ((System.Drawing.Image)(resources.GetObject("userPic.Image")));
             this.userPic.Location = new System.Drawing.Point(43, 108);
-            this.userPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userPic.Margin = new System.Windows.Forms.Padding(4);
             this.userPic.Name = "userPic";
             this.userPic.Size = new System.Drawing.Size(88, 44);
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -434,7 +434,7 @@
             this.Controls.Add(this.TopHeader);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "loginForm";
             this.Text = "loginForm";
             this.TopHeader.ResumeLayout(false);

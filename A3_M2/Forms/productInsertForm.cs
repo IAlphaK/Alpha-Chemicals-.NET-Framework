@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace A3_M2.Forms
 {
     public partial class productInsertForm : Form
     {
-        public productInsertForm()
+        string username;
+        public productInsertForm(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            productForm pF = new productForm(username);
+            pF.Show();
         }
         private void InsertButton_Click(object sender, EventArgs e)
         {
@@ -31,7 +36,10 @@ namespace A3_M2.Forms
                 {
                     // Close the form and notify the main form that the insertion was successful
                     this.DialogResult = DialogResult.OK;
+                    productForm pF = new productForm(username);
+                    pF.Show();
                     this.Close();
+
                 }
                 else
                 {

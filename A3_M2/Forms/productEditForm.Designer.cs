@@ -31,17 +31,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.insExpiry = new System.Windows.Forms.TextBox();
+            this.insQuantity = new System.Windows.Forms.TextBox();
+            this.insProductID = new System.Windows.Forms.TextBox();
+            this.insDescription = new System.Windows.Forms.TextBox();
             this.insPolicy = new System.Windows.Forms.TextBox();
-            this.insExp = new System.Windows.Forms.Label();
-            this.insQuantity = new System.Windows.Forms.Label();
-            this.insDescription = new System.Windows.Forms.Label();
+            this.Expirylabel = new System.Windows.Forms.Label();
+            this.productidlabel = new System.Windows.Forms.Label();
+            this.Quantitylabel = new System.Windows.Forms.Label();
+            this.Descriptionlabel = new System.Windows.Forms.Label();
             this.policyLabel = new System.Windows.Forms.Label();
             this.batchLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
             this.insBatch = new System.Windows.Forms.TextBox();
             this.insPrice = new System.Windows.Forms.TextBox();
             this.insName = new System.Windows.Forms.TextBox();
@@ -53,17 +55,19 @@
             // 
             this.panel1.Controls.Add(this.CloseButton);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.insPolicy);
-            this.panel1.Controls.Add(this.insExp);
+            this.panel1.Controls.Add(this.insExpiry);
             this.panel1.Controls.Add(this.insQuantity);
+            this.panel1.Controls.Add(this.insProductID);
             this.panel1.Controls.Add(this.insDescription);
+            this.panel1.Controls.Add(this.insPolicy);
+            this.panel1.Controls.Add(this.Expirylabel);
+            this.panel1.Controls.Add(this.productidlabel);
+            this.panel1.Controls.Add(this.Quantitylabel);
+            this.panel1.Controls.Add(this.Descriptionlabel);
             this.panel1.Controls.Add(this.policyLabel);
             this.panel1.Controls.Add(this.batchLabel);
             this.panel1.Controls.Add(this.priceLabel);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.namelabel);
             this.panel1.Controls.Add(this.insBatch);
             this.panel1.Controls.Add(this.insPrice);
             this.panel1.Controls.Add(this.insName);
@@ -73,6 +77,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 349);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // CloseButton
             // 
@@ -93,48 +98,62 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(179, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 23);
+            this.label4.Size = new System.Drawing.Size(277, 28);
             this.label4.TabIndex = 15;
             this.label4.Text = "Product Updation Form";
             // 
-            // textBox6
+            // insExpiry
             // 
-            this.textBox6.AcceptsReturn = true;
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.insExpiry.AcceptsReturn = true;
+            this.insExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox6.ForeColor = System.Drawing.Color.Lime;
-            this.textBox6.Location = new System.Drawing.Point(421, 153);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(112, 23);
-            this.textBox6.TabIndex = 14;
+            this.insExpiry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insExpiry.ForeColor = System.Drawing.Color.Lime;
+            this.insExpiry.Location = new System.Drawing.Point(421, 204);
+            this.insExpiry.Name = "insExpiry";
+            this.insExpiry.Size = new System.Drawing.Size(112, 27);
+            this.insExpiry.TabIndex = 14;
             // 
-            // textBox5
+            // insQuantity
             // 
-            this.textBox5.AcceptsReturn = true;
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.insQuantity.AcceptsReturn = true;
+            this.insQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox5.ForeColor = System.Drawing.Color.Lime;
-            this.textBox5.Location = new System.Drawing.Point(421, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 23);
-            this.textBox5.TabIndex = 13;
+            this.insQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insQuantity.ForeColor = System.Drawing.Color.Lime;
+            this.insQuantity.Location = new System.Drawing.Point(421, 156);
+            this.insQuantity.Name = "insQuantity";
+            this.insQuantity.Size = new System.Drawing.Size(112, 27);
+            this.insQuantity.TabIndex = 13;
             // 
-            // textBox4
+            // insProductID
             // 
-            this.textBox4.AcceptsReturn = true;
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.insProductID.AcceptsReturn = true;
+            this.insProductID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox4.ForeColor = System.Drawing.Color.Lime;
-            this.textBox4.Location = new System.Drawing.Point(421, 54);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 23);
-            this.textBox4.TabIndex = 12;
+            this.insProductID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insProductID.ForeColor = System.Drawing.Color.Lime;
+            this.insProductID.Location = new System.Drawing.Point(421, 54);
+            this.insProductID.Name = "insProductID";
+            this.insProductID.ReadOnly = true;
+            this.insProductID.Size = new System.Drawing.Size(112, 27);
+            this.insProductID.TabIndex = 12;
+            // 
+            // insDescription
+            // 
+            this.insDescription.AcceptsReturn = true;
+            this.insDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insDescription.ForeColor = System.Drawing.Color.Lime;
+            this.insDescription.Location = new System.Drawing.Point(421, 105);
+            this.insDescription.Name = "insDescription";
+            this.insDescription.Size = new System.Drawing.Size(112, 27);
+            this.insDescription.TabIndex = 12;
             // 
             // insPolicy
             // 
@@ -146,47 +165,61 @@
             this.insPolicy.ForeColor = System.Drawing.Color.Lime;
             this.insPolicy.Location = new System.Drawing.Point(156, 203);
             this.insPolicy.Name = "insPolicy";
-            this.insPolicy.Size = new System.Drawing.Size(112, 23);
+            this.insPolicy.Size = new System.Drawing.Size(112, 27);
             this.insPolicy.TabIndex = 11;
             // 
-            // insExp
+            // Expirylabel
             // 
-            this.insExp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Expirylabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insExp.AutoSize = true;
-            this.insExp.ForeColor = System.Drawing.Color.White;
-            this.insExp.Location = new System.Drawing.Point(307, 156);
-            this.insExp.Name = "insExp";
-            this.insExp.Size = new System.Drawing.Size(66, 17);
-            this.insExp.TabIndex = 10;
-            this.insExp.Text = "Exp Date";
+            this.Expirylabel.AutoSize = true;
+            this.Expirylabel.ForeColor = System.Drawing.Color.White;
+            this.Expirylabel.Location = new System.Drawing.Point(307, 207);
+            this.Expirylabel.Name = "Expirylabel";
+            this.Expirylabel.Size = new System.Drawing.Size(87, 21);
+            this.Expirylabel.TabIndex = 10;
+            this.Expirylabel.Text = "Exp Date";
             // 
-            // insQuantity
+            // productidlabel
             // 
-            this.insQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.productidlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insQuantity.AutoSize = true;
-            this.insQuantity.ForeColor = System.Drawing.Color.White;
-            this.insQuantity.Location = new System.Drawing.Point(307, 108);
-            this.insQuantity.Name = "insQuantity";
-            this.insQuantity.Size = new System.Drawing.Size(63, 17);
-            this.insQuantity.TabIndex = 9;
-            this.insQuantity.Text = "Quantity";
+            this.productidlabel.AutoSize = true;
+            this.productidlabel.ForeColor = System.Drawing.Color.White;
+            this.productidlabel.Location = new System.Drawing.Point(307, 60);
+            this.productidlabel.Name = "productidlabel";
+            this.productidlabel.Size = new System.Drawing.Size(99, 21);
+            this.productidlabel.TabIndex = 8;
+            this.productidlabel.Text = "Product ID";
+            this.productidlabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // insDescription
+            // Quantitylabel
             // 
-            this.insDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Quantitylabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insDescription.AutoSize = true;
-            this.insDescription.ForeColor = System.Drawing.Color.White;
-            this.insDescription.Location = new System.Drawing.Point(307, 60);
-            this.insDescription.Name = "insDescription";
-            this.insDescription.Size = new System.Drawing.Size(80, 17);
-            this.insDescription.TabIndex = 8;
-            this.insDescription.Text = "Description";
+            this.Quantitylabel.AutoSize = true;
+            this.Quantitylabel.ForeColor = System.Drawing.Color.White;
+            this.Quantitylabel.Location = new System.Drawing.Point(307, 159);
+            this.Quantitylabel.Name = "Quantitylabel";
+            this.Quantitylabel.Size = new System.Drawing.Size(82, 21);
+            this.Quantitylabel.TabIndex = 9;
+            this.Quantitylabel.Text = "Quantity";
+            // 
+            // Descriptionlabel
+            // 
+            this.Descriptionlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Descriptionlabel.AutoSize = true;
+            this.Descriptionlabel.ForeColor = System.Drawing.Color.White;
+            this.Descriptionlabel.Location = new System.Drawing.Point(307, 111);
+            this.Descriptionlabel.Name = "Descriptionlabel";
+            this.Descriptionlabel.Size = new System.Drawing.Size(103, 21);
+            this.Descriptionlabel.TabIndex = 8;
+            this.Descriptionlabel.Text = "Description";
             // 
             // policyLabel
             // 
@@ -197,7 +230,7 @@
             this.policyLabel.ForeColor = System.Drawing.Color.White;
             this.policyLabel.Location = new System.Drawing.Point(30, 206);
             this.policyLabel.Name = "policyLabel";
-            this.policyLabel.Size = new System.Drawing.Size(45, 17);
+            this.policyLabel.Size = new System.Drawing.Size(56, 21);
             this.policyLabel.TabIndex = 7;
             this.policyLabel.Text = "Policy";
             // 
@@ -210,7 +243,7 @@
             this.batchLabel.ForeColor = System.Drawing.Color.White;
             this.batchLabel.Location = new System.Drawing.Point(30, 159);
             this.batchLabel.Name = "batchLabel";
-            this.batchLabel.Size = new System.Drawing.Size(101, 17);
+            this.batchLabel.Size = new System.Drawing.Size(131, 21);
             this.batchLabel.TabIndex = 6;
             this.batchLabel.Text = "Batch Number";
             // 
@@ -224,22 +257,22 @@
             this.priceLabel.Location = new System.Drawing.Point(30, 111);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.priceLabel.Size = new System.Drawing.Size(39, 17);
+            this.priceLabel.Size = new System.Drawing.Size(50, 21);
             this.priceLabel.TabIndex = 5;
             this.priceLabel.Text = "Price";
             // 
-            // label1
+            // namelabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.namelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Product Name";
+            this.namelabel.AutoSize = true;
+            this.namelabel.ForeColor = System.Drawing.Color.White;
+            this.namelabel.Location = new System.Drawing.Point(28, 60);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(132, 21);
+            this.namelabel.TabIndex = 4;
+            this.namelabel.Text = "Product Name";
             // 
             // insBatch
             // 
@@ -251,7 +284,7 @@
             this.insBatch.ForeColor = System.Drawing.Color.Lime;
             this.insBatch.Location = new System.Drawing.Point(156, 153);
             this.insBatch.Name = "insBatch";
-            this.insBatch.Size = new System.Drawing.Size(112, 23);
+            this.insBatch.Size = new System.Drawing.Size(112, 27);
             this.insBatch.TabIndex = 3;
             // 
             // insPrice
@@ -264,7 +297,7 @@
             this.insPrice.ForeColor = System.Drawing.Color.Lime;
             this.insPrice.Location = new System.Drawing.Point(156, 105);
             this.insPrice.Name = "insPrice";
-            this.insPrice.Size = new System.Drawing.Size(112, 23);
+            this.insPrice.Size = new System.Drawing.Size(112, 27);
             this.insPrice.TabIndex = 2;
             // 
             // insName
@@ -277,7 +310,7 @@
             this.insName.ForeColor = System.Drawing.Color.Lime;
             this.insName.Location = new System.Drawing.Point(156, 54);
             this.insName.Name = "insName";
-            this.insName.Size = new System.Drawing.Size(112, 23);
+            this.insName.Size = new System.Drawing.Size(112, 27);
             this.insName.TabIndex = 1;
             // 
             // EditButton
@@ -318,20 +351,22 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox insName;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.TextBox insBatch;
         private System.Windows.Forms.TextBox insPrice;
-        private System.Windows.Forms.Label insQuantity;
-        private System.Windows.Forms.Label insDescription;
+        private System.Windows.Forms.Label Quantitylabel;
+        private System.Windows.Forms.Label Descriptionlabel;
         private System.Windows.Forms.Label policyLabel;
         private System.Windows.Forms.Label batchLabel;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox insExpiry;
+        private System.Windows.Forms.TextBox insQuantity;
+        private System.Windows.Forms.TextBox insDescription;
         private System.Windows.Forms.TextBox insPolicy;
-        private System.Windows.Forms.Label insExp;
+        private System.Windows.Forms.Label Expirylabel;
         private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.TextBox insProductID;
+        private System.Windows.Forms.Label productidlabel;
     }
 }

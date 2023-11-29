@@ -74,7 +74,7 @@ namespace A3_M2
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Successfully Logged Out");
-            this.Close();
+            Application.Exit();
         }
 
         private void productsButton_Click(object sender, EventArgs e)

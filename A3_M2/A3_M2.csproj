@@ -51,6 +51,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alpha_chemicalsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="alpha_chemicalsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DB\connection.cs" />
     <Compile Include="Forms\Dashboard.cs">
       <SubType>Form</SubType>
@@ -64,6 +72,12 @@
     <Compile Include="Forms\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\productForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\productForm.designer.cs">
+      <DependentUpon>productForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Program.cs" />
@@ -74,11 +88,17 @@
     <Compile Include="Forms\templateForm.Designer.cs">
       <DependentUpon>templateForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Config\RoundButton.resx">
+      <DependentUpon>RoundButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\productForm.resx">
+      <DependentUpon>productForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +122,17 @@
     </None>
     <None Include="alpha_chemicalsDataSet.xss">
       <DependentUpon>alpha_chemicalsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet1.xsc">
+      <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet1.xss">
+      <DependentUpon>alpha_chemicalsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,6 +8,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace A3_M2
 {
@@ -19,6 +20,9 @@ namespace A3_M2
             InitializeComponent();
             this.username = username;
             usernameLabel.Text = username;
+
+            this.Load += new System.EventHandler(this.dashboardChart_Load);
+
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -83,12 +87,54 @@ namespace A3_M2
             pF.Show();
             this.Close();
         }
-
-        private void farmersButton_Click(object sender, EventArgs e)
+        private void LoadChartData()
         {
-            farmersForm pF = new farmersForm(username);
-            pF.Show();
-            this.Close();
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;");
+
+            DataTable dt = new DataTable();
+            con.Open();
+
+            // Modify your SQL query to extract the month and aggregate amounts
+            string query = @"
+                SELECT 
+                    MONTH(Transaction_Date) AS Month,
+                    SUM(Amount) AS TotalAmount
+                    FROM dbo.Transact_Sell
+                    GROUP BY MONTH(Transaction_Date)
+                    ORDER BY MONTH(Transaction_Date)";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            da.Fill(dt);
+
+            con.Close();
+
+            // Output DataTable content for debugging
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine($"Month: {row["Month"]}, TotalAmount: {row["TotalAmount"]}");
+            }
+
+            // Assuming your chart control is configured with the name "dashboardChart" and has a series named "Sales"
+            dashboardChart.Series.Clear(); // Clear existing series if any
+            dashboardChart.Series.Add("Sales"); // Add a new series
+            dashboardChart.Series["Sales"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column; // Set chart type to Bar
+
+            // Set X and Y values programmatically
+            dashboardChart.Series["Sales"].Points.DataBindXY(
+                dt.Rows.Cast<DataRow>().Select(r => GetMonthName(Convert.ToInt32(r["Month"]))).ToArray(),
+                dt.Rows.Cast<DataRow>().Select(r => Convert.ToDouble(r["TotalAmount"])).ToArray()
+            );
+
+            dashboardChart.ChartAreas[0].AxisX.Interval = 1; // Display every month
+        }
+
+        private string GetMonthName(int month)
+        {
+            return new DateTime(2023, month, 1).ToString("MMMM");
+        }
+
+        private void dashboardChart_Load(object sender, EventArgs e)
+        {
+            LoadChartData();
         }
     }
 }

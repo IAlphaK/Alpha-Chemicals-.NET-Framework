@@ -1,6 +1,8 @@
 ﻿using A3_M2.DB;
 using System.Data.SqlClient;
 using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 internal class product : connection
 {
@@ -92,5 +94,45 @@ internal class product : connection
         {
             CloseConnection();
         }
+    }
+
+    // Method to Insert a new Product
+    public bool InsertProduct(int id, string productName, decimal price, string batchNumber, string policy, string description, int quantity, DateTime expDate)
+    {
+        try
+        {
+           
+                OpenConnection();
+
+                // Assuming you have a SqlCommand prepared with parameters
+                using (SqlCommand command = new SqlCommand("INSERT INTO Product (ProductID, Name, Price, Policy, Quantity, BatchNo, ExpiryDate, Description) " +
+                                                           "VALUES (@ID, @ProductName, @Price, @Policy , @Quantity, @BatchNumber, @ExpiryDate, @Description)", _sqlConnection))
+                {
+                    // Add parameters to the SqlCommand
+                    command.Parameters.AddWithValue("@ID", id);
+                    command.Parameters.AddWithValue("@ProductName", productName);
+                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@BatchNumber", batchNumber);
+                    command.Parameters.AddWithValue("@Policy", policy);
+                    command.Parameters.AddWithValue("@Description", description);
+                    command.Parameters.AddWithValue("@Quantity", quantity);
+                    command.Parameters.AddWithValue("@ExpiryDate", expDate);
+
+                    // Execute the SqlCommand
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Insertion Completed", "Successful", MessageBoxButtons.OK);
+                }
+            
+
+                // Return true to indicate successful insertion
+                return true;
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception (log, show error message, etc.)
+            MessageBox.Show($"Error: {ex.Message}");
+            return false;
+        }
+        finally { CloseConnection(); }
     }
 }

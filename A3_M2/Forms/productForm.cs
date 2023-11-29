@@ -1,4 +1,5 @@
-﻿using A3_M2.Models;
+﻿using A3_M2.Forms;
+using A3_M2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace A3_M2
             usernameLabel.Text = username;
             searchBox.Height = 50;
 
-            
+
 
             searchBox.Enter += searchBox_MouseEnter;
             sortByBox.Leave += searchBox_MouseLeave;
@@ -34,9 +35,7 @@ namespace A3_M2
 
             rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
 
-
-
-
+            productView.CellContentClick += productView_CellContentClick;
 
         }
 
@@ -110,7 +109,7 @@ namespace A3_M2
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-          
+
             string searchText = searchBox.Text.Trim();
 
             // Filter the data in the DataTable based on the search text
@@ -122,7 +121,7 @@ namespace A3_M2
 
         private void searchBox_MouseEnter(object sender, EventArgs e)
         {
-            
+
             if (searchBox.Text == "Search")
             {
                 searchBox.Text = "";
@@ -133,7 +132,7 @@ namespace A3_M2
 
         private void searchBox_MouseLeave(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrWhiteSpace(searchBox.Text))
             {
                 searchBox.ForeColor = Color.Silver;
@@ -165,6 +164,14 @@ namespace A3_M2
             ApplyPagination();
         }
 
+        private void SetRowBackgroundColor(DataGridViewRow row, Color color)
+        {
+            foreach (DataGridViewCell cell in row.Cells)
+            {
+                cell.Style.BackColor = color;
+            }
+        }
+
         // Helper method to apply pagination and update the DataGridView
         private void ApplyPagination()
         {
@@ -179,6 +186,32 @@ namespace A3_M2
 
         private void productView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (e.ColumnIndex == selectionCheckBox.Index && e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = productView.Rows[e.RowIndex];
+
+            //    // Check if the selectionCheckBox column is not null
+            //    DataGridViewCheckBoxCell checkBoxCell = row.Cells[selectionCheckBox.Index] as DataGridViewCheckBoxCell;
+            //    if (checkBoxCell != null)
+            //    {
+            //        // Toggle the value of the CheckBox cell
+            //        checkBoxCell.Value = !(checkBoxCell.Value as bool?) ?? true;
+
+            //        // Set the background color based on the CheckBox value
+            //        if ((bool)checkBoxCell.Value)
+            //        {
+            //            SetRowBackgroundColor(row, Color.Lime);
+            //            row.DefaultCellStyle.ForeColor = Color.Black;
+            //        }
+            //        else
+            //        {
+            //            // Set the default background color when CheckBox is unchecked
+            //            row.DefaultCellStyle.BackColor = productView.DefaultCellStyle.BackColor;
+            //        }
+            //    }
+            //}
+
+
             if (productView.Columns[e.ColumnIndex].Name == "Delete")
             {
                 if (MessageBox.Show("Are you sure you want to delete this row? Any Related Transactions/Ledgers with corresponding ID in other tables will also be deleted", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -206,10 +239,20 @@ namespace A3_M2
             {
                 if (MessageBox.Show("Are you sure you want to edit this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    
+                    int productId = Convert.ToInt32(productView.Rows[e.RowIndex].Cells[0].Value);
+
+                    productEditForm editForm = new productEditForm();
+
                 }
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            productInsertForm insertForm = new productInsertForm();
+            insertForm.Show();
+        }
     }
+
+    
 }

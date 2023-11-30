@@ -16,6 +16,7 @@ namespace A3_M2
         public loginForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             emailBox.KeyPress += TextBox_KeyPress;
             passwordBox.KeyPress += TextBox_KeyPress;
         }

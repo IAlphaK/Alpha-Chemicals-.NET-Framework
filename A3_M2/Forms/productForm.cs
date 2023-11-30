@@ -25,7 +25,7 @@ namespace A3_M2
             usernameLabel.Text = username;
             searchBox.Height = 50;
 
-
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             searchBox.Enter += searchBox_MouseEnter;
             sortByBox.Leave += searchBox_MouseLeave;
@@ -98,9 +98,9 @@ namespace A3_M2
         private void productForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
+            //this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
-            //this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
 
 
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0

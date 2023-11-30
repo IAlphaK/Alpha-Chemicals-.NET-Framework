@@ -25,6 +25,8 @@ namespace A3_M2
             usernameLabel.Text = username;
             searchBox.Height = 50;
 
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             searchBox.Enter += searchBox_MouseEnter;
             sortByBox.Leave += searchBox_MouseLeave;
 
@@ -34,6 +36,8 @@ namespace A3_M2
             rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
 
             farmersView.CellContentClick += farmersView_CellContentClick;
+
+            farmersView.CellClick += dataGridViewFarmers_CellClick;
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -94,13 +98,11 @@ namespace A3_M2
 
         private void productForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet4.Farmer' table. You can move, or remove it, as needed.
+            this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet3.Farmer' table. You can move, or remove it, as needed.
-            this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
-            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
-            //this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
-            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
-            //this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
-
+            //this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
+            
 
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
             rowsByBox_SelectedIndexChanged(rowsByBox, EventArgs.Empty);
@@ -250,6 +252,21 @@ namespace A3_M2
                 }
             }
         }
+
+        private void dataGridViewFarmers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is in the FarmerID column
+            if (e.RowIndex >= 0 && e.ColumnIndex == farmersView.Columns["FarmerID"].Index)
+            {
+                // Get the selected FarmerID
+                int selectedFarmerID = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells["FarmerID"].Value);
+
+                // Open the FarmerLedgerForm with the selected FarmerID
+                farmerLedgerForm ledgerForm = new farmerLedgerForm(selectedFarmerID);
+                ledgerForm.Show();
+            }
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

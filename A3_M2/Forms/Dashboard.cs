@@ -21,6 +21,8 @@ namespace A3_M2
             this.username = username;
             usernameLabel.Text = username;
 
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             this.Load += new System.EventHandler(this.dashboardChart_Load);
 
         }
@@ -87,6 +89,13 @@ namespace A3_M2
             pF.Show();
             this.Close();
         }
+
+        private void farmersButton_Click(object sender, EventArgs e)
+        {
+            farmersForm fF = new farmersForm(username);
+            fF.Show();
+            this.Close();
+        }
         private void LoadChartData()
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;");
@@ -141,5 +150,6 @@ namespace A3_M2
         {
 
         }
+
     }
 }

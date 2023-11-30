@@ -78,15 +78,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alpha_chemicalsDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="alpha_chemicalsDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="alpha_chemicalsDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alpha_chemicalsDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Config\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DB\connection.cs" />
+    <Compile Include="Forms\companyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\companyForm.designer.cs">
+      <DependentUpon>companyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\companyLedgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\companyLedgerForm.Designer.cs">
+      <DependentUpon>companyLedgerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\farmerLedgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\farmerLedgerForm.Designer.cs">
+      <DependentUpon>farmerLedgerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\farmersEditForm.cs">
       <SubType>Form</SubType>
@@ -145,8 +173,17 @@
     <EmbeddedResource Include="Config\RoundButton.resx">
       <DependentUpon>RoundButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\companyForm.resx">
+      <DependentUpon>companyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\companyLedgerForm.resx">
+      <DependentUpon>companyLedgerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\farmerLedgerForm.resx">
+      <DependentUpon>farmerLedgerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\farmersEditForm.resx">
       <DependentUpon>farmersEditForm.cs</DependentUpon>
@@ -225,6 +262,28 @@
     </None>
     <None Include="alpha_chemicalsDataSet3.xss">
       <DependentUpon>alpha_chemicalsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet4.xsc">
+      <DependentUpon>alpha_chemicalsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet4.xss">
+      <DependentUpon>alpha_chemicalsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet5.xsc">
+      <DependentUpon>alpha_chemicalsDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="alpha_chemicalsDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>alpha_chemicalsDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="alpha_chemicalsDataSet5.xss">
+      <DependentUpon>alpha_chemicalsDataSet5.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

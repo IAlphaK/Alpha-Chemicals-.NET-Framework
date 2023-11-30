@@ -25,7 +25,7 @@ namespace A3_M2
             usernameLabel.Text = username;
             searchBox.Height = 50;
 
-
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             searchBox.Enter += searchBox_MouseEnter;
             sortByBox.Leave += searchBox_MouseLeave;
@@ -36,6 +36,9 @@ namespace A3_M2
             rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
 
             productView.CellContentClick += productView_CellContentClick;
+
+            productsButton.ForeColor = Color.Black;
+            productsButton.BackColor = Color.Lime;
 
         }
 
@@ -49,15 +52,15 @@ namespace A3_M2
             farmersButton.ForeColor = Color.Lime;
         }
 
-        private void productsButton_MouseEnter(object sender, EventArgs e)
-        {
-            productsButton.ForeColor = Color.Black;
-        }
+        //private void productsButton_MouseEnter(object sender, EventArgs e)
+        //{
+        //    productsButton.ForeColor = Color.Black;
+        //}
 
-        private void productsButton_MouseLeave(object sender, EventArgs e)
-        {
-            productsButton.ForeColor = Color.Lime;
-        }
+        //private void productsButton_MouseLeave(object sender, EventArgs e)
+        //{
+        //    productsButton.ForeColor = Color.Lime;
+        //}
 
         private void creditsButton_MouseEnter(object sender, EventArgs e)
         {
@@ -98,9 +101,9 @@ namespace A3_M2
         private void productForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet2.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
+            //this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet.Product' table. You can move, or remove it, as needed.
-            //this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
+            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
 
 
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
@@ -269,12 +272,26 @@ namespace A3_M2
             this.Close();
         }
 
-        private void companyLogoNav_Click(object sender, EventArgs e)
+        //private void companyLogoNav_Click(object sender, EventArgs e)
+        //{
+        //    Dashboard df = new Dashboard(username);
+        //    df.Show();
+        //    this.Close();
+
+        //}
+
+        private void companyLogoNav_Click_1(object sender, EventArgs e)
         {
             Dashboard df = new Dashboard(username);
             df.Show();
             this.Close();
+        }
 
+        private void companyButton_Click(object sender, EventArgs e)
+        {
+            companyForm cF = new companyForm(username);
+            cF.Show();
+            this.Close();
         }
     }
 

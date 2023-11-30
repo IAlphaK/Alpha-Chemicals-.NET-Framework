@@ -116,10 +116,10 @@ namespace A3_M2
             string searchText = searchBox.Text.Trim();
 
             // Filter the data in the DataTable based on the search text
-            alpha_chemicalsDataSet2.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
+            alpha_chemicalsDataSet.Product.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
 
             // Update the DataGridView with the filtered data
-            productView.DataSource = alpha_chemicalsDataSet2.Product.DefaultView.ToTable();
+            productView.DataSource = alpha_chemicalsDataSet.Product.DefaultView.ToTable();
         }
 
         private void searchBox_MouseEnter(object sender, EventArgs e)
@@ -139,6 +139,7 @@ namespace A3_M2
             if (string.IsNullOrWhiteSpace(searchBox.Text))
             {
                 searchBox.ForeColor = Color.Silver;
+                ApplyPagination();
             }
         }
 
@@ -153,7 +154,7 @@ namespace A3_M2
             // Sort the DataGridView based on the selected column and sort order
             if (!string.IsNullOrEmpty(selectedColumn))
             {
-                alpha_chemicalsDataSet2.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
+                alpha_chemicalsDataSet.Product.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
                 ApplyPagination();
             }
         }
@@ -182,7 +183,7 @@ namespace A3_M2
             try
             {
                 // Clone the DefaultView to avoid affecting the original sorting
-                DataView sortedView = alpha_chemicalsDataSet2.Product.DefaultView.ToTable().DefaultView;
+                DataView sortedView = alpha_chemicalsDataSet.Product.DefaultView.ToTable().DefaultView;
 
                 // Display only the specified number of rows
                 DataTable paginatedTable = sortedView.ToTable().AsEnumerable().Take(rowsPerPage).CopyToDataTable();
@@ -223,16 +224,18 @@ namespace A3_M2
                                 MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 // Refresh the DataGridView after deletion
-                                this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
+                                this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
                                 ApplyPagination();
                             }
                             else
                             {
                                 MessageBox.Show("Failed to delete the row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+                            // if clicked column is being updated null here it throws exception at the clickedColumn.Name
+                            //clickedColumn = null;
                         }
                     }
-                    else if (clickedColumn.Name == "Update")
+                    if (clickedColumn.Name == "Update")
                     {
                         if (MessageBox.Show("Are you sure you want to edit this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
@@ -253,6 +256,7 @@ namespace A3_M2
                         }
                     }
                 }
+                
             }
         }
 
@@ -261,7 +265,7 @@ namespace A3_M2
             productInsertForm insertForm = new productInsertForm(username);
             insertForm.Show();
             this.Close();
-            this.productTableAdapter1.Fill(this.alpha_chemicalsDataSet2.Product);
+            this.productTableAdapter.Fill(this.alpha_chemicalsDataSet.Product);
             ApplyPagination();
         }
 
@@ -292,6 +296,11 @@ namespace A3_M2
             companyForm cF = new companyForm(username);
             cF.Show();
             this.Close();
+        }
+
+        private void productsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

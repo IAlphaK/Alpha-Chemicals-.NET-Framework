@@ -76,8 +76,8 @@
             this.insFarmerID.ForeColor = System.Drawing.Color.Lime;
             this.insFarmerID.Location = new System.Drawing.Point(418, 77);
             this.insFarmerID.Name = "insFarmerID";
-            this.insFarmerID.Size = new System.Drawing.Size(112, 27);
-            this.insFarmerID.TabIndex = 25;
+            this.insFarmerID.Size = new System.Drawing.Size(112, 23);
+            this.insFarmerID.TabIndex = 4;
             // 
             // insAddress
             // 
@@ -89,8 +89,8 @@
             this.insAddress.ForeColor = System.Drawing.Color.Lime;
             this.insAddress.Location = new System.Drawing.Point(418, 128);
             this.insAddress.Name = "insAddress";
-            this.insAddress.Size = new System.Drawing.Size(112, 27);
-            this.insAddress.TabIndex = 26;
+            this.insAddress.Size = new System.Drawing.Size(112, 23);
+            this.insAddress.TabIndex = 5;
             // 
             // farmeridlabel
             // 
@@ -101,7 +101,7 @@
             this.farmeridlabel.ForeColor = System.Drawing.Color.White;
             this.farmeridlabel.Location = new System.Drawing.Point(304, 83);
             this.farmeridlabel.Name = "farmeridlabel";
-            this.farmeridlabel.Size = new System.Drawing.Size(89, 21);
+            this.farmeridlabel.Size = new System.Drawing.Size(69, 17);
             this.farmeridlabel.TabIndex = 23;
             this.farmeridlabel.Text = "Farmer ID";
             // 
@@ -114,7 +114,7 @@
             this.Addresslabel.ForeColor = System.Drawing.Color.White;
             this.Addresslabel.Location = new System.Drawing.Point(304, 134);
             this.Addresslabel.Name = "Addresslabel";
-            this.Addresslabel.Size = new System.Drawing.Size(77, 21);
+            this.Addresslabel.Size = new System.Drawing.Size(57, 17);
             this.Addresslabel.TabIndex = 24;
             this.Addresslabel.Text = "Address";
             // 
@@ -127,7 +127,7 @@
             this.BalanceLabel.ForeColor = System.Drawing.Color.White;
             this.BalanceLabel.Location = new System.Drawing.Point(27, 182);
             this.BalanceLabel.Name = "BalanceLabel";
-            this.BalanceLabel.Size = new System.Drawing.Size(79, 21);
+            this.BalanceLabel.Size = new System.Drawing.Size(60, 17);
             this.BalanceLabel.TabIndex = 22;
             this.BalanceLabel.Text = "Balance";
             // 
@@ -141,7 +141,7 @@
             this.ContactLabel.Location = new System.Drawing.Point(27, 134);
             this.ContactLabel.Name = "ContactLabel";
             this.ContactLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ContactLabel.Size = new System.Drawing.Size(113, 21);
+            this.ContactLabel.Size = new System.Drawing.Size(87, 17);
             this.ContactLabel.TabIndex = 21;
             this.ContactLabel.Text = "ContactInfo";
             // 
@@ -154,7 +154,7 @@
             this.namelabel.ForeColor = System.Drawing.Color.White;
             this.namelabel.Location = new System.Drawing.Point(25, 83);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(122, 21);
+            this.namelabel.Size = new System.Drawing.Size(96, 17);
             this.namelabel.TabIndex = 20;
             this.namelabel.Text = "Farmer Name";
             // 
@@ -168,8 +168,8 @@
             this.insBalance.ForeColor = System.Drawing.Color.Lime;
             this.insBalance.Location = new System.Drawing.Point(153, 176);
             this.insBalance.Name = "insBalance";
-            this.insBalance.Size = new System.Drawing.Size(112, 27);
-            this.insBalance.TabIndex = 19;
+            this.insBalance.Size = new System.Drawing.Size(112, 23);
+            this.insBalance.TabIndex = 3;
             // 
             // insContact
             // 
@@ -181,8 +181,8 @@
             this.insContact.ForeColor = System.Drawing.Color.Lime;
             this.insContact.Location = new System.Drawing.Point(153, 128);
             this.insContact.Name = "insContact";
-            this.insContact.Size = new System.Drawing.Size(112, 27);
-            this.insContact.TabIndex = 18;
+            this.insContact.Size = new System.Drawing.Size(112, 23);
+            this.insContact.TabIndex = 2;
             // 
             // insName
             // 
@@ -194,8 +194,8 @@
             this.insName.ForeColor = System.Drawing.Color.Lime;
             this.insName.Location = new System.Drawing.Point(153, 77);
             this.insName.Name = "insName";
-            this.insName.Size = new System.Drawing.Size(112, 27);
-            this.insName.TabIndex = 17;
+            this.insName.Size = new System.Drawing.Size(112, 23);
+            this.insName.TabIndex = 1;
             // 
             // CloseButton
             // 
@@ -204,7 +204,7 @@
             this.CloseButton.Location = new System.Drawing.Point(298, 281);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(89, 49);
-            this.CloseButton.TabIndex = 16;
+            this.CloseButton.TabIndex = 7;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.button1_Click);
@@ -216,7 +216,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(179, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 28);
+            this.label4.Size = new System.Drawing.Size(205, 23);
             this.label4.TabIndex = 15;
             this.label4.Text = "Farmer Insertion Form";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -228,7 +228,7 @@
             this.InsertButton.Location = new System.Drawing.Point(183, 281);
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.Size = new System.Drawing.Size(89, 49);
-            this.InsertButton.TabIndex = 0;
+            this.InsertButton.TabIndex = 6;
             this.InsertButton.Text = "Insert";
             this.InsertButton.UseVisualStyleBackColor = false;
             this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);

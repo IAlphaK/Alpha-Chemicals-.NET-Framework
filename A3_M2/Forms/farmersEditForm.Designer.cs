@@ -74,7 +74,7 @@
             this.CloseButton.Location = new System.Drawing.Point(298, 281);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(89, 49);
-            this.CloseButton.TabIndex = 16;
+            this.CloseButton.TabIndex = 7;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.button1_Click);
@@ -86,7 +86,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(179, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(271, 28);
+            this.label4.Size = new System.Drawing.Size(215, 23);
             this.label4.TabIndex = 15;
             this.label4.Text = "Farmer Updation Form";
             // 
@@ -101,8 +101,8 @@
             this.insFarmerID.Location = new System.Drawing.Point(421, 54);
             this.insFarmerID.Name = "insFarmerID";
             this.insFarmerID.ReadOnly = true;
-            this.insFarmerID.Size = new System.Drawing.Size(112, 27);
-            this.insFarmerID.TabIndex = 12;
+            this.insFarmerID.Size = new System.Drawing.Size(112, 23);
+            this.insFarmerID.TabIndex = 4;
             // 
             // insAddress
             // 
@@ -114,8 +114,8 @@
             this.insAddress.ForeColor = System.Drawing.Color.Lime;
             this.insAddress.Location = new System.Drawing.Point(421, 105);
             this.insAddress.Name = "insAddress";
-            this.insAddress.Size = new System.Drawing.Size(112, 27);
-            this.insAddress.TabIndex = 12;
+            this.insAddress.Size = new System.Drawing.Size(112, 23);
+            this.insAddress.TabIndex = 5;
             // 
             // farmeridlabel
             // 
@@ -126,7 +126,7 @@
             this.farmeridlabel.ForeColor = System.Drawing.Color.White;
             this.farmeridlabel.Location = new System.Drawing.Point(307, 60);
             this.farmeridlabel.Name = "farmeridlabel";
-            this.farmeridlabel.Size = new System.Drawing.Size(89, 21);
+            this.farmeridlabel.Size = new System.Drawing.Size(69, 17);
             this.farmeridlabel.TabIndex = 8;
             this.farmeridlabel.Text = "Farmer ID";
             this.farmeridlabel.Click += new System.EventHandler(this.label2_Click);
@@ -140,7 +140,7 @@
             this.Addresslabel.ForeColor = System.Drawing.Color.White;
             this.Addresslabel.Location = new System.Drawing.Point(307, 111);
             this.Addresslabel.Name = "Addresslabel";
-            this.Addresslabel.Size = new System.Drawing.Size(77, 21);
+            this.Addresslabel.Size = new System.Drawing.Size(57, 17);
             this.Addresslabel.TabIndex = 8;
             this.Addresslabel.Text = "Address";
             // 
@@ -153,7 +153,7 @@
             this.BalanceLabel.ForeColor = System.Drawing.Color.White;
             this.BalanceLabel.Location = new System.Drawing.Point(30, 159);
             this.BalanceLabel.Name = "BalanceLabel";
-            this.BalanceLabel.Size = new System.Drawing.Size(79, 21);
+            this.BalanceLabel.Size = new System.Drawing.Size(60, 17);
             this.BalanceLabel.TabIndex = 6;
             this.BalanceLabel.Text = "Balance";
             // 
@@ -167,7 +167,7 @@
             this.ContactLabel.Location = new System.Drawing.Point(30, 111);
             this.ContactLabel.Name = "ContactLabel";
             this.ContactLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ContactLabel.Size = new System.Drawing.Size(113, 21);
+            this.ContactLabel.Size = new System.Drawing.Size(87, 17);
             this.ContactLabel.TabIndex = 5;
             this.ContactLabel.Text = "ContactInfo";
             // 
@@ -180,7 +180,7 @@
             this.namelabel.ForeColor = System.Drawing.Color.White;
             this.namelabel.Location = new System.Drawing.Point(28, 60);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(122, 21);
+            this.namelabel.Size = new System.Drawing.Size(96, 17);
             this.namelabel.TabIndex = 4;
             this.namelabel.Text = "Farmer Name";
             // 
@@ -194,7 +194,7 @@
             this.insBalance.ForeColor = System.Drawing.Color.Lime;
             this.insBalance.Location = new System.Drawing.Point(156, 153);
             this.insBalance.Name = "insBalance";
-            this.insBalance.Size = new System.Drawing.Size(112, 27);
+            this.insBalance.Size = new System.Drawing.Size(112, 23);
             this.insBalance.TabIndex = 3;
             // 
             // insContact
@@ -207,7 +207,7 @@
             this.insContact.ForeColor = System.Drawing.Color.Lime;
             this.insContact.Location = new System.Drawing.Point(156, 105);
             this.insContact.Name = "insContact";
-            this.insContact.Size = new System.Drawing.Size(112, 27);
+            this.insContact.Size = new System.Drawing.Size(112, 23);
             this.insContact.TabIndex = 2;
             // 
             // insName
@@ -220,7 +220,7 @@
             this.insName.ForeColor = System.Drawing.Color.Lime;
             this.insName.Location = new System.Drawing.Point(156, 54);
             this.insName.Name = "insName";
-            this.insName.Size = new System.Drawing.Size(112, 27);
+            this.insName.Size = new System.Drawing.Size(112, 23);
             this.insName.TabIndex = 1;
             // 
             // EditButton
@@ -230,7 +230,7 @@
             this.EditButton.Location = new System.Drawing.Point(183, 281);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(89, 49);
-            this.EditButton.TabIndex = 0;
+            this.EditButton.TabIndex = 6;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.InsertButton_Click);

@@ -140,6 +140,7 @@ namespace A3_M2
             if (string.IsNullOrWhiteSpace(searchBox.Text))
             {
                 searchBox.ForeColor = Color.Silver;
+                ApplyPagination();
             }
         }
 
@@ -223,7 +224,7 @@ namespace A3_M2
                                 MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 // Refresh the DataGridView after deletion
-                                this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
+                                this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
                                 ApplyPagination();
                             }
                             else
@@ -276,7 +277,7 @@ namespace A3_M2
             farmersInsertForm insertForm = new farmersInsertForm(username);
             insertForm.Show();
             this.Close();
-            this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
+            this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
             ApplyPagination();
         }
 

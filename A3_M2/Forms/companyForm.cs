@@ -103,11 +103,6 @@ namespace A3_M2
         {
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet5.Company' table. You can move, or remove it, as needed.
             this.companyTableAdapter.Fill(this.alpha_chemicalsDataSet5.Company);
-            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet4.Farmer' table. You can move, or remove it, as needed.
-            //this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
-            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet3.Farmer' table. You can move, or remove it, as needed.
-            //this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
-            
 
             rowsByBox.SelectedIndex = 0; // Assuming the default value is at index 0
             rowsByBox_SelectedIndexChanged(rowsByBox, EventArgs.Empty);
@@ -218,14 +213,15 @@ namespace A3_M2
                             // Get the ID of the selected row
                             int farmerId = Convert.ToInt32(companyView.Rows[e.RowIndex].Cells[0].Value);
 
-                            Farmer farmer = new Farmer();
+                            
+                            Company company = new Company();
                             // Assuming you have a method to delete a row by ID, replace "DeleteFarmer" with your actual method
-                            if (farmer.DeleteFarmer(farmerId))
+                            if (company.DeleteCompany(farmerId))
                             {
                                 MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 // Refresh the DataGridView after deletion
-                                this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
+                                this.companyTableAdapter.Fill(this.alpha_chemicalsDataSet5.Company);
                                 ApplyPagination();
                             }
                             else
@@ -242,12 +238,12 @@ namespace A3_M2
 
                             // Fetch the data of the selected row based on farmerId
                             // Assuming you have a method to retrieve a farmer by ID, replace "GetFarmerByID" with your actual method
-                            Farmer farmer = new Farmer();
-                            Farmer selectedFarmer = farmer.GetFarmerByID(farmerId);
+                            Company company = new Company();
+                            Company selectedCompany = company.GetCompanyByID(farmerId);
 
                             // Create an instance of farmersEditForm and pass the data
-                            farmersEditForm editForm = new farmersEditForm(username);
-                            editForm.setfields(selectedFarmer.FarmerID, selectedFarmer.Name, selectedFarmer.Address, selectedFarmer.ContactInfo, selectedFarmer.Balance);
+                            companyEditForm editForm = new companyEditForm(username);
+                            editForm.setfields(selectedCompany.CompanyID, selectedCompany.Name, selectedCompany.Address, selectedCompany.ContactInfo, selectedCompany.Balance);
 
                             // Show the editForm and close the current form
                             editForm.ShowDialog();
@@ -275,10 +271,10 @@ namespace A3_M2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            farmersInsertForm insertForm = new farmersInsertForm(username);
+            companyInsertForm insertForm = new companyInsertForm(username);
             insertForm.Show();
             this.Close();
-            this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
+            this.companyTableAdapter.Fill(this.alpha_chemicalsDataSet5.Company);
             ApplyPagination();
         }
 

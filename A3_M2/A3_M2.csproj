@@ -92,11 +92,23 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DB\connection.cs" />
+    <Compile Include="Forms\companyEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\companyEditForm.designer.cs">
+      <DependentUpon>companyEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\companyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\companyForm.designer.cs">
       <DependentUpon>companyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\companyInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\companyInsertForm.designer.cs">
+      <DependentUpon>companyInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\companyLedgerForm.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,7 @@
     <Compile Include="Forms\productForm.designer.cs">
       <DependentUpon>productForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\company.cs" />
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\farmers.cs" />
     <Compile Include="Models\login.cs" />
@@ -173,8 +186,14 @@
     <EmbeddedResource Include="Config\RoundButton.resx">
       <DependentUpon>RoundButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\companyEditForm.resx">
+      <DependentUpon>companyEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\companyForm.resx">
       <DependentUpon>companyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\companyInsertForm.resx">
+      <DependentUpon>companyInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\companyLedgerForm.resx">
       <DependentUpon>companyLedgerForm.cs</DependentUpon>

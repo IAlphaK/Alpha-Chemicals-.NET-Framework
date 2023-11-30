@@ -86,7 +86,7 @@
             this.CloseButton.Location = new System.Drawing.Point(298, 281);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(89, 49);
-            this.CloseButton.TabIndex = 16;
+            this.CloseButton.TabIndex = 10;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.button1_Click);
@@ -98,7 +98,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(179, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(277, 28);
+            this.label4.Size = new System.Drawing.Size(222, 23);
             this.label4.TabIndex = 15;
             this.label4.Text = "Product Updation Form";
             // 
@@ -112,8 +112,8 @@
             this.insExpiry.ForeColor = System.Drawing.Color.Lime;
             this.insExpiry.Location = new System.Drawing.Point(421, 204);
             this.insExpiry.Name = "insExpiry";
-            this.insExpiry.Size = new System.Drawing.Size(112, 27);
-            this.insExpiry.TabIndex = 14;
+            this.insExpiry.Size = new System.Drawing.Size(112, 23);
+            this.insExpiry.TabIndex = 8;
             // 
             // insQuantity
             // 
@@ -125,8 +125,8 @@
             this.insQuantity.ForeColor = System.Drawing.Color.Lime;
             this.insQuantity.Location = new System.Drawing.Point(421, 156);
             this.insQuantity.Name = "insQuantity";
-            this.insQuantity.Size = new System.Drawing.Size(112, 27);
-            this.insQuantity.TabIndex = 13;
+            this.insQuantity.Size = new System.Drawing.Size(112, 23);
+            this.insQuantity.TabIndex = 7;
             // 
             // insProductID
             // 
@@ -139,8 +139,8 @@
             this.insProductID.Location = new System.Drawing.Point(421, 54);
             this.insProductID.Name = "insProductID";
             this.insProductID.ReadOnly = true;
-            this.insProductID.Size = new System.Drawing.Size(112, 27);
-            this.insProductID.TabIndex = 12;
+            this.insProductID.Size = new System.Drawing.Size(112, 23);
+            this.insProductID.TabIndex = 5;
             // 
             // insDescription
             // 
@@ -152,8 +152,8 @@
             this.insDescription.ForeColor = System.Drawing.Color.Lime;
             this.insDescription.Location = new System.Drawing.Point(421, 105);
             this.insDescription.Name = "insDescription";
-            this.insDescription.Size = new System.Drawing.Size(112, 27);
-            this.insDescription.TabIndex = 12;
+            this.insDescription.Size = new System.Drawing.Size(112, 23);
+            this.insDescription.TabIndex = 6;
             // 
             // insPolicy
             // 
@@ -165,8 +165,8 @@
             this.insPolicy.ForeColor = System.Drawing.Color.Lime;
             this.insPolicy.Location = new System.Drawing.Point(156, 203);
             this.insPolicy.Name = "insPolicy";
-            this.insPolicy.Size = new System.Drawing.Size(112, 27);
-            this.insPolicy.TabIndex = 11;
+            this.insPolicy.Size = new System.Drawing.Size(112, 23);
+            this.insPolicy.TabIndex = 4;
             // 
             // Expirylabel
             // 
@@ -177,7 +177,7 @@
             this.Expirylabel.ForeColor = System.Drawing.Color.White;
             this.Expirylabel.Location = new System.Drawing.Point(307, 207);
             this.Expirylabel.Name = "Expirylabel";
-            this.Expirylabel.Size = new System.Drawing.Size(87, 21);
+            this.Expirylabel.Size = new System.Drawing.Size(66, 17);
             this.Expirylabel.TabIndex = 10;
             this.Expirylabel.Text = "Exp Date";
             // 
@@ -190,7 +190,7 @@
             this.productidlabel.ForeColor = System.Drawing.Color.White;
             this.productidlabel.Location = new System.Drawing.Point(307, 60);
             this.productidlabel.Name = "productidlabel";
-            this.productidlabel.Size = new System.Drawing.Size(99, 21);
+            this.productidlabel.Size = new System.Drawing.Size(76, 17);
             this.productidlabel.TabIndex = 8;
             this.productidlabel.Text = "Product ID";
             this.productidlabel.Click += new System.EventHandler(this.label2_Click);
@@ -204,7 +204,7 @@
             this.Quantitylabel.ForeColor = System.Drawing.Color.White;
             this.Quantitylabel.Location = new System.Drawing.Point(307, 159);
             this.Quantitylabel.Name = "Quantitylabel";
-            this.Quantitylabel.Size = new System.Drawing.Size(82, 21);
+            this.Quantitylabel.Size = new System.Drawing.Size(63, 17);
             this.Quantitylabel.TabIndex = 9;
             this.Quantitylabel.Text = "Quantity";
             // 
@@ -217,7 +217,7 @@
             this.Descriptionlabel.ForeColor = System.Drawing.Color.White;
             this.Descriptionlabel.Location = new System.Drawing.Point(307, 111);
             this.Descriptionlabel.Name = "Descriptionlabel";
-            this.Descriptionlabel.Size = new System.Drawing.Size(103, 21);
+            this.Descriptionlabel.Size = new System.Drawing.Size(80, 17);
             this.Descriptionlabel.TabIndex = 8;
             this.Descriptionlabel.Text = "Description";
             // 
@@ -230,7 +230,7 @@
             this.policyLabel.ForeColor = System.Drawing.Color.White;
             this.policyLabel.Location = new System.Drawing.Point(30, 206);
             this.policyLabel.Name = "policyLabel";
-            this.policyLabel.Size = new System.Drawing.Size(56, 21);
+            this.policyLabel.Size = new System.Drawing.Size(45, 17);
             this.policyLabel.TabIndex = 7;
             this.policyLabel.Text = "Policy";
             // 
@@ -243,7 +243,7 @@
             this.batchLabel.ForeColor = System.Drawing.Color.White;
             this.batchLabel.Location = new System.Drawing.Point(30, 159);
             this.batchLabel.Name = "batchLabel";
-            this.batchLabel.Size = new System.Drawing.Size(131, 21);
+            this.batchLabel.Size = new System.Drawing.Size(101, 17);
             this.batchLabel.TabIndex = 6;
             this.batchLabel.Text = "Batch Number";
             // 
@@ -257,7 +257,7 @@
             this.priceLabel.Location = new System.Drawing.Point(30, 111);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.priceLabel.Size = new System.Drawing.Size(50, 21);
+            this.priceLabel.Size = new System.Drawing.Size(39, 17);
             this.priceLabel.TabIndex = 5;
             this.priceLabel.Text = "Price";
             // 
@@ -270,7 +270,7 @@
             this.namelabel.ForeColor = System.Drawing.Color.White;
             this.namelabel.Location = new System.Drawing.Point(28, 60);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(132, 21);
+            this.namelabel.Size = new System.Drawing.Size(103, 17);
             this.namelabel.TabIndex = 4;
             this.namelabel.Text = "Product Name";
             // 
@@ -284,7 +284,7 @@
             this.insBatch.ForeColor = System.Drawing.Color.Lime;
             this.insBatch.Location = new System.Drawing.Point(156, 153);
             this.insBatch.Name = "insBatch";
-            this.insBatch.Size = new System.Drawing.Size(112, 27);
+            this.insBatch.Size = new System.Drawing.Size(112, 23);
             this.insBatch.TabIndex = 3;
             // 
             // insPrice
@@ -297,7 +297,7 @@
             this.insPrice.ForeColor = System.Drawing.Color.Lime;
             this.insPrice.Location = new System.Drawing.Point(156, 105);
             this.insPrice.Name = "insPrice";
-            this.insPrice.Size = new System.Drawing.Size(112, 27);
+            this.insPrice.Size = new System.Drawing.Size(112, 23);
             this.insPrice.TabIndex = 2;
             // 
             // insName
@@ -310,7 +310,7 @@
             this.insName.ForeColor = System.Drawing.Color.Lime;
             this.insName.Location = new System.Drawing.Point(156, 54);
             this.insName.Name = "insName";
-            this.insName.Size = new System.Drawing.Size(112, 27);
+            this.insName.Size = new System.Drawing.Size(112, 23);
             this.insName.TabIndex = 1;
             // 
             // EditButton
@@ -320,7 +320,7 @@
             this.EditButton.Location = new System.Drawing.Point(183, 281);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(89, 49);
-            this.EditButton.TabIndex = 0;
+            this.EditButton.TabIndex = 9;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.InsertButton_Click);

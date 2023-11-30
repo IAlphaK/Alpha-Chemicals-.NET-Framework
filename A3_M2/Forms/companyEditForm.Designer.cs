@@ -1,6 +1,6 @@
 ﻿namespace A3_M2.Forms
 {
-    partial class farmersEditForm
+    partial class companyEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -86,9 +86,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(179, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 23);
+            this.label4.Size = new System.Drawing.Size(244, 23);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Farmer Updation Form";
+            this.label4.Text = "Company Updation Form";
             // 
             // insFarmerID
             // 
@@ -126,9 +126,9 @@
             this.farmeridlabel.ForeColor = System.Drawing.Color.White;
             this.farmeridlabel.Location = new System.Drawing.Point(307, 60);
             this.farmeridlabel.Name = "farmeridlabel";
-            this.farmeridlabel.Size = new System.Drawing.Size(69, 17);
+            this.farmeridlabel.Size = new System.Drawing.Size(90, 17);
             this.farmeridlabel.TabIndex = 8;
-            this.farmeridlabel.Text = "Farmer ID";
+            this.farmeridlabel.Text = "Company ID";
             this.farmeridlabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // Addresslabel
@@ -180,9 +180,9 @@
             this.namelabel.ForeColor = System.Drawing.Color.White;
             this.namelabel.Location = new System.Drawing.Point(28, 60);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(96, 17);
+            this.namelabel.Size = new System.Drawing.Size(117, 17);
             this.namelabel.TabIndex = 4;
-            this.namelabel.Text = "Farmer Name";
+            this.namelabel.Text = "Company Name";
             // 
             // insBalance
             // 
@@ -235,7 +235,7 @@
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
-            // farmersEditForm
+            // companyEditForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -247,7 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "farmersEditForm";
+            this.Name = "companyEditForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

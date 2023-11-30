@@ -273,6 +273,7 @@
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
             this.companyButton.UseVisualStyleBackColor = false;
+            this.companyButton.Click += new System.EventHandler(this.companyButton_Click);
             this.companyButton.MouseEnter += new System.EventHandler(this.companyButton_MouseEnter);
             this.companyButton.MouseLeave += new System.EventHandler(this.companyButton_MouseLeave);
             // 
@@ -367,6 +368,7 @@
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
             this.farmersButton.UseVisualStyleBackColor = false;
+            this.farmersButton.Click += new System.EventHandler(this.farmersButton_Click_1);
             this.farmersButton.MouseEnter += new System.EventHandler(this.farmersButton_MouseEnter);
             this.farmersButton.MouseLeave += new System.EventHandler(this.farmersButton_MouseLeave);
             // 

@@ -37,6 +37,9 @@ namespace A3_M2
 
             productView.CellContentClick += productView_CellContentClick;
 
+            productsButton.ForeColor = Color.Black;
+            productsButton.BackColor = Color.Lime;
+
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -49,15 +52,15 @@ namespace A3_M2
             farmersButton.ForeColor = Color.Lime;
         }
 
-        private void productsButton_MouseEnter(object sender, EventArgs e)
-        {
-            productsButton.ForeColor = Color.Black;
-        }
+        //private void productsButton_MouseEnter(object sender, EventArgs e)
+        //{
+        //    productsButton.ForeColor = Color.Black;
+        //}
 
-        private void productsButton_MouseLeave(object sender, EventArgs e)
-        {
-            productsButton.ForeColor = Color.Lime;
-        }
+        //private void productsButton_MouseLeave(object sender, EventArgs e)
+        //{
+        //    productsButton.ForeColor = Color.Lime;
+        //}
 
         private void creditsButton_MouseEnter(object sender, EventArgs e)
         {
@@ -269,12 +272,26 @@ namespace A3_M2
             this.Close();
         }
 
-        private void companyLogoNav_Click(object sender, EventArgs e)
+        //private void companyLogoNav_Click(object sender, EventArgs e)
+        //{
+        //    Dashboard df = new Dashboard(username);
+        //    df.Show();
+        //    this.Close();
+
+        //}
+
+        private void companyLogoNav_Click_1(object sender, EventArgs e)
         {
             Dashboard df = new Dashboard(username);
             df.Show();
             this.Close();
+        }
 
+        private void companyButton_Click(object sender, EventArgs e)
+        {
+            companyForm cF = new companyForm(username);
+            cF.Show();
+            this.Close();
         }
     }
 

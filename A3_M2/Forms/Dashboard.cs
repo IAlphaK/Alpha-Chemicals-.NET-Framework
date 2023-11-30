@@ -92,9 +92,7 @@ namespace A3_M2
 
         private void farmersButton_Click(object sender, EventArgs e)
         {
-            farmersForm fF = new farmersForm(username);
-            fF.Show();
-            this.Close();
+            
         }
         private void LoadChartData()
         {
@@ -151,5 +149,18 @@ namespace A3_M2
 
         }
 
+        private void companyButton_Click(object sender, EventArgs e)
+        {
+            companyForm cF = new companyForm(username);
+            cF.Show();
+            this.Close();
+        }
+
+        private void farmersButton_Click_1(object sender, EventArgs e)
+        {
+            farmersForm fF = new farmersForm(username);
+            fF.Show();
+            this.Close();
+        }
     }
 }

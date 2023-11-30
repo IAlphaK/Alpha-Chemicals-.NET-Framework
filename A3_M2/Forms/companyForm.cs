@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace A3_M2
 {
-    public partial class farmersForm : Form
+    public partial class companyForm : Form
     {
         string username;
         private int rowsPerPage = 10;
-        public farmersForm(string username)
+        public companyForm(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -35,23 +35,23 @@ namespace A3_M2
 
             rowsByBox.SelectedIndexChanged += rowsByBox_SelectedIndexChanged;
 
-            farmersView.CellContentClick += farmersView_CellContentClick;
+            companyView.CellContentClick += farmersView_CellContentClick;
 
-            farmersView.CellClick += dataGridViewFarmers_CellClick;
+            companyView.CellClick += dataGridViewCompany_CellClick;
 
-            farmersButton.ForeColor = Color.Black;
-            farmersButton.BackColor = Color.Lime;
+            companyButton.ForeColor = Color.Black;
+            companyButton.BackColor = Color.Lime;
         }
 
-        //private void farmersButton_MouseEnter(object sender, EventArgs e)
-        //{
-        //    farmersButton.ForeColor = Color.Black;
-        //}
+        private void farmersButton_MouseEnter(object sender, EventArgs e)
+        {
+            farmersButton.ForeColor = Color.Black;
+        }
 
-        //private void farmersButton_MouseLeave(object sender, EventArgs e)
-        //{
-        //    farmersButton.ForeColor = Color.Lime;
-        //}
+        private void farmersButton_MouseLeave(object sender, EventArgs e)
+        {
+            farmersButton.ForeColor = Color.Lime;
+        }
 
         private void productsButton_MouseEnter(object sender, EventArgs e)
         {
@@ -73,15 +73,15 @@ namespace A3_M2
             creditsButton.ForeColor = Color.Lime;
         }
 
-        private void companyButton_MouseEnter(object sender, EventArgs e)
-        {
-            companyButton.ForeColor = Color.Black;
-        }
+        //private void companyButton_MouseEnter(object sender, EventArgs e)
+        //{
+        //    companyButton.ForeColor = Color.Black;
+        //}
 
-        private void companyButton_MouseLeave(object sender, EventArgs e)
-        {
-            companyButton.ForeColor = Color.Lime;
-        }
+        //private void companyButton_MouseLeave(object sender, EventArgs e)
+        //{
+        //    companyButton.ForeColor = Color.Lime;
+        //}
 
         private void reportButton_MouseEnter(object sender, EventArgs e)
         {
@@ -101,8 +101,10 @@ namespace A3_M2
 
         private void productForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'alpha_chemicalsDataSet5.Company' table. You can move, or remove it, as needed.
+            this.companyTableAdapter.Fill(this.alpha_chemicalsDataSet5.Company);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet4.Farmer' table. You can move, or remove it, as needed.
-            this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
+            //this.farmerTableAdapter1.Fill(this.alpha_chemicalsDataSet4.Farmer);
             // TODO: This line of code loads data into the 'alpha_chemicalsDataSet3.Farmer' table. You can move, or remove it, as needed.
             //this.farmerTableAdapter.Fill(this.alpha_chemicalsDataSet3.Farmer);
             
@@ -117,10 +119,10 @@ namespace A3_M2
             string searchText = searchBox.Text.Trim();
 
             // Filter the data in the DataTable based on the search text
-            alpha_chemicalsDataSet4.Farmer.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
+            alpha_chemicalsDataSet5.Company.DefaultView.RowFilter = $"Name LIKE '%{searchText}%'";
 
             // Update the DataGridView with the filtered data
-            farmersView.DataSource = alpha_chemicalsDataSet4.Farmer.DefaultView.ToTable();
+            companyView.DataSource = alpha_chemicalsDataSet5.Company.DefaultView.ToTable();
         }
 
         private void searchBox_MouseEnter(object sender, EventArgs e)
@@ -154,7 +156,7 @@ namespace A3_M2
             // Sort the DataGridView based on the selected column and sort order
             if (!string.IsNullOrEmpty(selectedColumn))
             {
-                alpha_chemicalsDataSet4.Farmer.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
+                alpha_chemicalsDataSet5.Company.DefaultView.Sort = $"{selectedColumn} {sortOrder}";
                 ApplyPagination();
             }
         }
@@ -183,12 +185,12 @@ namespace A3_M2
             try
             {
                 // Clone the DefaultView to avoid affecting the original sorting
-                DataView sortedView = alpha_chemicalsDataSet4.Farmer.DefaultView.ToTable().DefaultView;
+                DataView sortedView = alpha_chemicalsDataSet5.Company.DefaultView.ToTable().DefaultView;
 
                 // Display only the specified number of rows
                 DataTable paginatedTable = sortedView.ToTable().AsEnumerable().Take(rowsPerPage).CopyToDataTable();
 
-                farmersView.DataSource = paginatedTable;
+                companyView.DataSource = paginatedTable;
             }
 
             catch (Exception ex) 
@@ -200,9 +202,9 @@ namespace A3_M2
 
         private void farmersView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < farmersView.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < farmersView.Columns.Count)
+            if (e.RowIndex >= 0 && e.RowIndex < companyView.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < companyView.Columns.Count)
             {
-                DataGridViewColumn clickedColumn = farmersView.Columns[e.ColumnIndex];
+                DataGridViewColumn clickedColumn = companyView.Columns[e.ColumnIndex];
 
                 if (clickedColumn != null)
                 {
@@ -214,7 +216,7 @@ namespace A3_M2
                         if (result == DialogResult.Yes)
                         {
                             // Get the ID of the selected row
-                            int farmerId = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells[0].Value);
+                            int farmerId = Convert.ToInt32(companyView.Rows[e.RowIndex].Cells[0].Value);
 
                             Farmer farmer = new Farmer();
                             // Assuming you have a method to delete a row by ID, replace "DeleteFarmer" with your actual method
@@ -236,7 +238,7 @@ namespace A3_M2
                     {
                         if (MessageBox.Show("Are you sure you want to edit this row?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            int farmerId = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells[0].Value);
+                            int farmerId = Convert.ToInt32(companyView.Rows[e.RowIndex].Cells[0].Value);
 
                             // Fetch the data of the selected row based on farmerId
                             // Assuming you have a method to retrieve a farmer by ID, replace "GetFarmerByID" with your actual method
@@ -256,16 +258,16 @@ namespace A3_M2
             }
         }
 
-        private void dataGridViewFarmers_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewCompany_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check if the clicked cell is in the FarmerID column
-            if (e.RowIndex >= 0 && e.ColumnIndex == farmersView.Columns["FarmerID"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == companyView.Columns["CompanyID"].Index)
             {
                 // Get the selected FarmerID
-                int selectedFarmerID = Convert.ToInt32(farmersView.Rows[e.RowIndex].Cells["FarmerID"].Value);
+                int selectedCompanyID = Convert.ToInt32(companyView.Rows[e.RowIndex].Cells["CompanyID"].Value);
 
                 // Open the FarmerLedgerForm with the selected FarmerID
-                farmerLedgerForm ledgerForm = new farmerLedgerForm(selectedFarmerID);
+                companyLedgerForm ledgerForm = new companyLedgerForm(selectedCompanyID);
                 ledgerForm.Show();
             }
         }
@@ -295,10 +297,10 @@ namespace A3_M2
 
         }
 
-        private void companyButton_Click(object sender, EventArgs e)
+        private void farmersButton_Click(object sender, EventArgs e)
         {
-            companyForm cF = new companyForm(username);
-            cF.Show();
+            farmersForm fF = new farmersForm(username);
+            fF.Show();
             this.Close();
         }
     }

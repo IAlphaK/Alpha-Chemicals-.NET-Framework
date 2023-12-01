@@ -170,9 +170,16 @@
     <Compile Include="Forms\productForm.designer.cs">
       <DependentUpon>productForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\transactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\transactionForm.Designer.cs">
+      <DependentUpon>transactionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\company.cs" />
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\farmers.cs" />
+    <Compile Include="Models\helper.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Models\product.cs" />
     <Compile Include="Program.cs" />
@@ -224,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\productForm.resx">
       <DependentUpon>productForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\transactionForm.resx">
+      <DependentUpon>transactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

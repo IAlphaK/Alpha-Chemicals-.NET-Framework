@@ -49,12 +49,12 @@ namespace A3_M2
 
         private void creditsButton_MouseEnter(object sender, EventArgs e)
         {
-            creditsButton.ForeColor = Color.Black;
+            transactionsButton.ForeColor = Color.Black;
         }
 
         private void creditsButton_MouseLeave(object sender, EventArgs e)
         {
-            creditsButton.ForeColor = Color.Lime;
+            transactionsButton.ForeColor = Color.Lime;
         }
 
         private void companyButton_MouseEnter(object sender, EventArgs e)
@@ -160,6 +160,13 @@ namespace A3_M2
         {
             farmersForm fF = new farmersForm(username);
             fF.Show();
+            this.Close();
+        }
+
+        private void creditsButton_Click(object sender, EventArgs e)
+        {
+            transactionForm tF = new transactionForm(username);
+            tF.Show();
             this.Close();
         }
     }

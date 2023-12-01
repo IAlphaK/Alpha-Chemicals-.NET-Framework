@@ -1,6 +1,6 @@
 ﻿namespace A3_M2
 {
-    partial class Dashboard
+    partial class transactionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(transactionForm));
             this.topBar = new System.Windows.Forms.Panel();
             this.loggedUserInfoPanel = new System.Windows.Forms.Panel();
             this.logoutPanel = new System.Windows.Forms.Panel();
@@ -46,29 +42,31 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.reportButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.companyButton = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.transactionsButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.companyButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.productsButton = new System.Windows.Forms.Button();
             this.navPanel1 = new System.Windows.Forms.Panel();
             this.farmersButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.numOrders = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.numFarmers = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.numCompany = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.numCredits = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.dashboardChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.selectionBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.insID = new System.Windows.Forms.TextBox();
+            this.insDate = new System.Windows.Forms.TextBox();
+            this.insProID = new System.Windows.Forms.TextBox();
+            this.insType = new System.Windows.Forms.TextBox();
+            this.insStatus = new System.Windows.Forms.TextBox();
+            this.insAmount = new System.Windows.Forms.TextBox();
+            this.insTransID = new System.Windows.Forms.TextBox();
+            this.InsertButton = new System.Windows.Forms.Button();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
@@ -81,14 +79,8 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.navPanel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // topBar
@@ -254,6 +246,37 @@
             this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
             // 
+            // transactionsButton
+            // 
+            this.transactionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.transactionsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transactionsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.transactionsButton.FlatAppearance.BorderSize = 0;
+            this.transactionsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.transactionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transactionsButton.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Italic);
+            this.transactionsButton.ForeColor = System.Drawing.Color.Lime;
+            this.transactionsButton.Location = new System.Drawing.Point(0, 0);
+            this.transactionsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.transactionsButton.Name = "transactionsButton";
+            this.transactionsButton.Padding = new System.Windows.Forms.Padding(4);
+            this.transactionsButton.Size = new System.Drawing.Size(98, 67);
+            this.transactionsButton.TabIndex = 4;
+            this.transactionsButton.Text = "Transaction";
+            this.transactionsButton.UseVisualStyleBackColor = false;
+            this.transactionsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
+            this.transactionsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.companyButton);
+            this.panel4.Location = new System.Drawing.Point(2, 146);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(98, 67);
+            this.panel4.TabIndex = 4;
+            // 
             // companyButton
             // 
             this.companyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -276,38 +299,6 @@
             this.companyButton.Click += new System.EventHandler(this.companyButton_Click);
             this.companyButton.MouseEnter += new System.EventHandler(this.companyButton_MouseEnter);
             this.companyButton.MouseLeave += new System.EventHandler(this.companyButton_MouseLeave);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.companyButton);
-            this.panel4.Location = new System.Drawing.Point(2, 146);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(98, 67);
-            this.panel4.TabIndex = 4;
-            // 
-            // transactionsButton
-            // 
-            this.transactionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.transactionsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.transactionsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.transactionsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.transactionsButton.FlatAppearance.BorderSize = 0;
-            this.transactionsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.transactionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transactionsButton.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Italic);
-            this.transactionsButton.ForeColor = System.Drawing.Color.Lime;
-            this.transactionsButton.Location = new System.Drawing.Point(0, 0);
-            this.transactionsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.transactionsButton.Name = "transactionsButton";
-            this.transactionsButton.Padding = new System.Windows.Forms.Padding(4);
-            this.transactionsButton.Size = new System.Drawing.Size(98, 67);
-            this.transactionsButton.TabIndex = 4;
-            this.transactionsButton.Text = "Transaction";
-            this.transactionsButton.UseVisualStyleBackColor = true;
-            this.transactionsButton.Click += new System.EventHandler(this.creditsButton_Click);
-            this.transactionsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
-            this.transactionsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
             // 
             // panel1
             // 
@@ -373,187 +364,10 @@
             this.farmersButton.MouseEnter += new System.EventHandler(this.farmersButton_MouseEnter);
             this.farmersButton.MouseLeave += new System.EventHandler(this.farmersButton_MouseLeave);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.5F));
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 9);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1078, 97);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.numOrders);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0, 0, 8, 9);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(261, 88);
-            this.panel3.TabIndex = 0;
-            // 
-            // numOrders
-            // 
-            this.numOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numOrders.BackColor = System.Drawing.Color.Transparent;
-            this.numOrders.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numOrders.ForeColor = System.Drawing.Color.Black;
-            this.numOrders.Location = new System.Drawing.Point(46, 58);
-            this.numOrders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.numOrders.Name = "numOrders";
-            this.numOrders.Size = new System.Drawing.Size(204, 16);
-            this.numOrders.TabIndex = 2;
-            this.numOrders.Text = "Number";
-            this.numOrders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "All Orders";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel7.Controls.Add(this.numFarmers);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(269, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0, 0, 8, 9);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(261, 88);
-            this.panel7.TabIndex = 1;
-            // 
-            // numFarmers
-            // 
-            this.numFarmers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numFarmers.BackColor = System.Drawing.Color.Transparent;
-            this.numFarmers.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numFarmers.ForeColor = System.Drawing.Color.Black;
-            this.numFarmers.Location = new System.Drawing.Point(50, 58);
-            this.numFarmers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.numFarmers.Name = "numFarmers";
-            this.numFarmers.Size = new System.Drawing.Size(200, 16);
-            this.numFarmers.TabIndex = 3;
-            this.numFarmers.Text = "Number";
-            this.numFarmers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Farmers";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel8.Controls.Add(this.numCompany);
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(538, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 0, 8, 9);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(256, 88);
-            this.panel8.TabIndex = 2;
-            // 
-            // numCompany
-            // 
-            this.numCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numCompany.BackColor = System.Drawing.Color.Transparent;
-            this.numCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numCompany.ForeColor = System.Drawing.Color.Black;
-            this.numCompany.Location = new System.Drawing.Point(66, 58);
-            this.numCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.numCompany.Name = "numCompany";
-            this.numCompany.Size = new System.Drawing.Size(188, 16);
-            this.numCompany.TabIndex = 4;
-            this.numCompany.Text = "Number";
-            this.numCompany.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(20, 11);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Company";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel9.Controls.Add(this.numCredits);
-            this.panel9.Controls.Add(this.label6);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(802, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0, 0, 8, 9);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(268, 88);
-            this.panel9.TabIndex = 3;
-            // 
-            // numCredits
-            // 
-            this.numCredits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numCredits.BackColor = System.Drawing.Color.Transparent;
-            this.numCredits.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numCredits.ForeColor = System.Drawing.Color.Black;
-            this.numCredits.Location = new System.Drawing.Point(58, 58);
-            this.numCredits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.numCredits.Name = "numCredits";
-            this.numCredits.Size = new System.Drawing.Size(208, 16);
-            this.numCredits.TabIndex = 5;
-            this.numCredits.Text = "Number";
-            this.numCredits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(14, 11);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 19);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Credits";
-            // 
             // mainPanel
             // 
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Controls.Add(this.panel10);
-            this.mainPanel.Controls.Add(this.tableLayoutPanel1);
+            this.mainPanel.Controls.Add(this.panel3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(104, 69);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
@@ -562,38 +376,271 @@
             this.mainPanel.Size = new System.Drawing.Size(1096, 531);
             this.mainPanel.TabIndex = 2;
             // 
-            // panel10
+            // panel3
             // 
-            this.panel10.Controls.Add(this.dashboardChart);
-            this.panel10.Location = new System.Drawing.Point(11, 124);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1065, 393);
-            this.panel10.TabIndex = 1;
+            this.panel3.Controls.Add(this.selectionBox);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.insID);
+            this.panel3.Controls.Add(this.insDate);
+            this.panel3.Controls.Add(this.insProID);
+            this.panel3.Controls.Add(this.insType);
+            this.panel3.Controls.Add(this.insStatus);
+            this.panel3.Controls.Add(this.insAmount);
+            this.panel3.Controls.Add(this.insTransID);
+            this.panel3.Controls.Add(this.InsertButton);
+            this.panel3.Location = new System.Drawing.Point(55, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(980, 505);
+            this.panel3.TabIndex = 0;
             // 
-            // dashboardChart
+            // selectionBox
             // 
-            this.dashboardChart.BackColor = System.Drawing.Color.DarkGreen;
-            this.dashboardChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            this.dashboardChart.BorderlineColor = System.Drawing.Color.Violet;
-            chartArea1.Name = "ChartArea1";
-            this.dashboardChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.dashboardChart.Legends.Add(legend1);
-            this.dashboardChart.Location = new System.Drawing.Point(3, 3);
-            this.dashboardChart.Name = "dashboardChart";
-            this.dashboardChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.dashboardChart.Series.Add(series1);
-            this.dashboardChart.Size = new System.Drawing.Size(1059, 387);
-            this.dashboardChart.TabIndex = 0;
-            this.dashboardChart.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Monthly Sales (2023)";
-            this.dashboardChart.Titles.Add(title1);
+            this.selectionBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.selectionBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.selectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectionBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectionBox.FormattingEnabled = true;
+            this.selectionBox.ItemHeight = 13;
+            this.selectionBox.Items.AddRange(new object[] {
+            "Company",
+            "Farmer"});
+            this.selectionBox.Location = new System.Drawing.Point(431, 36);
+            this.selectionBox.Name = "selectionBox";
+            this.selectionBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.selectionBox.Size = new System.Drawing.Size(135, 21);
+            this.selectionBox.TabIndex = 28;
+            this.selectionBox.Text = "SELECT";
+            this.selectionBox.SelectedIndexChanged += new System.EventHandler(this.filterByBox_SelectedIndexChanged);
             // 
-            // Dashboard
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(558, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Date";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(558, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Amount";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(558, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Status";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(139, 319);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Type";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(139, 248);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Product ID";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(139, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 20);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "ID";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(139, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Transaction ID";
+            // 
+            // insID
+            // 
+            this.insID.AcceptsReturn = true;
+            this.insID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insID.ForeColor = System.Drawing.Color.Lime;
+            this.insID.Location = new System.Drawing.Point(288, 172);
+            this.insID.Multiline = true;
+            this.insID.Name = "insID";
+            this.insID.Size = new System.Drawing.Size(112, 29);
+            this.insID.TabIndex = 18;
+            this.insID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insDate
+            // 
+            this.insDate.AcceptsReturn = true;
+            this.insDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insDate.ForeColor = System.Drawing.Color.Silver;
+            this.insDate.Location = new System.Drawing.Point(703, 245);
+            this.insDate.Multiline = true;
+            this.insDate.Name = "insDate";
+            this.insDate.Size = new System.Drawing.Size(112, 29);
+            this.insDate.TabIndex = 17;
+            this.insDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insProID
+            // 
+            this.insProID.AcceptsReturn = true;
+            this.insProID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insProID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insProID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insProID.ForeColor = System.Drawing.Color.Lime;
+            this.insProID.Location = new System.Drawing.Point(288, 245);
+            this.insProID.Multiline = true;
+            this.insProID.Name = "insProID";
+            this.insProID.Size = new System.Drawing.Size(112, 29);
+            this.insProID.TabIndex = 16;
+            this.insProID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insType
+            // 
+            this.insType.AcceptsReturn = true;
+            this.insType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insType.ForeColor = System.Drawing.Color.Lime;
+            this.insType.Location = new System.Drawing.Point(288, 316);
+            this.insType.Multiline = true;
+            this.insType.Name = "insType";
+            this.insType.Size = new System.Drawing.Size(112, 29);
+            this.insType.TabIndex = 15;
+            this.insType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insStatus
+            // 
+            this.insStatus.AcceptsReturn = true;
+            this.insStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insStatus.ForeColor = System.Drawing.Color.Lime;
+            this.insStatus.Location = new System.Drawing.Point(703, 101);
+            this.insStatus.Multiline = true;
+            this.insStatus.Name = "insStatus";
+            this.insStatus.Size = new System.Drawing.Size(112, 29);
+            this.insStatus.TabIndex = 13;
+            this.insStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insAmount
+            // 
+            this.insAmount.AcceptsReturn = true;
+            this.insAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insAmount.ForeColor = System.Drawing.Color.Lime;
+            this.insAmount.Location = new System.Drawing.Point(703, 172);
+            this.insAmount.Multiline = true;
+            this.insAmount.Name = "insAmount";
+            this.insAmount.Size = new System.Drawing.Size(112, 29);
+            this.insAmount.TabIndex = 12;
+            this.insAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // insTransID
+            // 
+            this.insTransID.AcceptsReturn = true;
+            this.insTransID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insTransID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.insTransID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insTransID.ForeColor = System.Drawing.Color.Lime;
+            this.insTransID.Location = new System.Drawing.Point(288, 101);
+            this.insTransID.Multiline = true;
+            this.insTransID.Name = "insTransID";
+            this.insTransID.Size = new System.Drawing.Size(112, 29);
+            this.insTransID.TabIndex = 11;
+            this.insTransID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // InsertButton
+            // 
+            this.InsertButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.InsertButton.Enabled = false;
+            this.InsertButton.ForeColor = System.Drawing.Color.Lime;
+            this.InsertButton.Location = new System.Drawing.Point(391, 405);
+            this.InsertButton.Name = "InsertButton";
+            this.InsertButton.Size = new System.Drawing.Size(239, 49);
+            this.InsertButton.TabIndex = 10;
+            this.InsertButton.Text = "Insert";
+            this.InsertButton.UseVisualStyleBackColor = false;
+            // 
+            // transactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -607,7 +654,7 @@
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "Dashboard";
+            this.Name = "transactionForm";
             this.topBar.ResumeLayout(false);
             this.loggedUserInfoPanel.ResumeLayout(false);
             this.loggedUserInfoPanel.PerformLayout();
@@ -621,18 +668,9 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.navPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.mainPanel.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,21 +697,23 @@
         private System.Windows.Forms.Button transactionsButton;
         private System.Windows.Forms.Button productsButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label numOrders;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label numFarmers;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label numCompany;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label numCredits;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart dashboardChart;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button InsertButton;
+        private System.Windows.Forms.TextBox insTransID;
+        private System.Windows.Forms.TextBox insID;
+        private System.Windows.Forms.TextBox insDate;
+        private System.Windows.Forms.TextBox insProID;
+        private System.Windows.Forms.TextBox insType;
+        private System.Windows.Forms.TextBox insStatus;
+        private System.Windows.Forms.TextBox insAmount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox selectionBox;
     }
 }

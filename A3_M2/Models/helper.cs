@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// I have helper
 namespace A3_M2.Models
 {
     public class helper : connection

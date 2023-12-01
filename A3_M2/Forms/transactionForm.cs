@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using A3_M2.Models;
 
 namespace A3_M2
 {
@@ -18,10 +19,18 @@ namespace A3_M2
         public transactionForm(string username)
         {
             InitializeComponent();
+
+
+            selectionBox.SelectedIndexChanged += selectionBox_SelectedIndexChanged;
+            Load += transactionForm_Load;
+
             this.username = username;
             usernameLabel.Text = username;
 
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            transactionsButton.ForeColor = Color.Black;
+            transactionsButton.BackColor = Color.Lime;
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
@@ -46,12 +55,12 @@ namespace A3_M2
 
         private void creditsButton_MouseEnter(object sender, EventArgs e)
         {
-            creditsButton.ForeColor = Color.Black;
+            transactionsButton.ForeColor = Color.Black;
         }
 
         private void creditsButton_MouseLeave(object sender, EventArgs e)
         {
-            creditsButton.ForeColor = Color.Lime;
+            transactionsButton.ForeColor = Color.Lime;
         }
 
         private void companyButton_MouseEnter(object sender, EventArgs e)
@@ -111,6 +120,58 @@ namespace A3_M2
         private void filterByBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private int FetchNextTransactionID_B()
+        {
+            helper help = new helper();
+            int result = 0;
+            result = help.FetchNextTransactionIDFromBuy();
+            return result;
+        }
+        
+
+        private int FetchNextTransactionID_S()
+        {
+            helper help = new helper();
+            int result = 0;
+            result = help.FetchNextTransactionIDFromSell();
+            return result;
+        }
+
+        private void selectionBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Enable the INSERT button when a selection is made
+            InsertButton.Enabled = true;
+
+            // Check the selected value
+            string selectedValue = selectionBox.SelectedItem?.ToString();
+            if (selectedValue == "Company")
+            {
+                // Change label for insID
+                label2.Text = "Company ID";
+                // Fetch and display the Transaction ID from Transact_Buy
+                insTransID.Text = FetchNextTransactionID_B().ToString();
+            }
+            else if (selectedValue == "Farmer")
+            {
+                // Change label for insID
+                label2.Text = "Farmer ID";
+                //Fetch and display the Transaction ID from Transact_Sell
+                insTransID.Text = FetchNextTransactionID_S().ToString();
+            }
+        }
+
+        
+
+
+
+        private void transactionForm_Load(object sender, EventArgs e)
+        {
+            // Prefill insDate with today's date
+            insDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            insDate.ReadOnly = true;
         }
     }
 }

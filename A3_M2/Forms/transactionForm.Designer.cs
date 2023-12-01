@@ -42,9 +42,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.reportButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.companyButton = new System.Windows.Forms.Button();
+            this.transactionsButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.creditsButton = new System.Windows.Forms.Button();
+            this.companyButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.productsButton = new System.Windows.Forms.Button();
             this.navPanel1 = new System.Windows.Forms.Panel();
@@ -239,12 +239,43 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.companyButton);
+            this.panel5.Controls.Add(this.transactionsButton);
             this.panel5.Location = new System.Drawing.Point(2, 219);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
+            // 
+            // transactionsButton
+            // 
+            this.transactionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.transactionsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transactionsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.transactionsButton.FlatAppearance.BorderSize = 0;
+            this.transactionsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.transactionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transactionsButton.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Italic);
+            this.transactionsButton.ForeColor = System.Drawing.Color.Lime;
+            this.transactionsButton.Location = new System.Drawing.Point(0, 0);
+            this.transactionsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.transactionsButton.Name = "transactionsButton";
+            this.transactionsButton.Padding = new System.Windows.Forms.Padding(4);
+            this.transactionsButton.Size = new System.Drawing.Size(98, 67);
+            this.transactionsButton.TabIndex = 4;
+            this.transactionsButton.Text = "Transaction";
+            this.transactionsButton.UseVisualStyleBackColor = false;
+            this.transactionsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
+            this.transactionsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.companyButton);
+            this.panel4.Location = new System.Drawing.Point(2, 146);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(98, 67);
+            this.panel4.TabIndex = 4;
             // 
             // companyButton
             // 
@@ -268,37 +299,6 @@
             this.companyButton.Click += new System.EventHandler(this.companyButton_Click);
             this.companyButton.MouseEnter += new System.EventHandler(this.companyButton_MouseEnter);
             this.companyButton.MouseLeave += new System.EventHandler(this.companyButton_MouseLeave);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.creditsButton);
-            this.panel4.Location = new System.Drawing.Point(2, 146);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(98, 67);
-            this.panel4.TabIndex = 4;
-            // 
-            // creditsButton
-            // 
-            this.creditsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.creditsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.creditsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.creditsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.creditsButton.FlatAppearance.BorderSize = 0;
-            this.creditsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.creditsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.creditsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
-            this.creditsButton.ForeColor = System.Drawing.Color.Lime;
-            this.creditsButton.Location = new System.Drawing.Point(0, 0);
-            this.creditsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.creditsButton.Name = "creditsButton";
-            this.creditsButton.Padding = new System.Windows.Forms.Padding(4);
-            this.creditsButton.Size = new System.Drawing.Size(98, 67);
-            this.creditsButton.TabIndex = 4;
-            this.creditsButton.Text = "Credits";
-            this.creditsButton.UseVisualStyleBackColor = false;
-            this.creditsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
-            this.creditsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
             // 
             // panel1
             // 
@@ -540,7 +540,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.insDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.insDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insDate.ForeColor = System.Drawing.Color.Lime;
+            this.insDate.ForeColor = System.Drawing.Color.Silver;
             this.insDate.Location = new System.Drawing.Point(703, 245);
             this.insDate.Multiline = true;
             this.insDate.Name = "insDate";
@@ -631,6 +631,7 @@
             // InsertButton
             // 
             this.InsertButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.InsertButton.Enabled = false;
             this.InsertButton.ForeColor = System.Drawing.Color.Lime;
             this.InsertButton.Location = new System.Drawing.Point(391, 405);
             this.InsertButton.Name = "InsertButton";
@@ -693,7 +694,7 @@
         private System.Windows.Forms.Panel logoutPanel;
         private System.Windows.Forms.Button reportButton;
         private System.Windows.Forms.Button companyButton;
-        private System.Windows.Forms.Button creditsButton;
+        private System.Windows.Forms.Button transactionsButton;
         private System.Windows.Forms.Button productsButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel mainPanel;

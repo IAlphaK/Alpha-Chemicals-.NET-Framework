@@ -179,6 +179,7 @@
     <Compile Include="Models\company.cs" />
     <Compile Include="Models\dashboard.cs" />
     <Compile Include="Models\farmers.cs" />
+    <Compile Include="Models\helper.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Models\product.cs" />
     <Compile Include="Program.cs" />

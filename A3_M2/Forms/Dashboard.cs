@@ -25,6 +25,8 @@ namespace A3_M2
 
             this.Load += new System.EventHandler(this.dashboardChart_Load);
 
+
+
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)

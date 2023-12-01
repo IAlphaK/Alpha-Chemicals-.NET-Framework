@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using OfficeOpenXml;
 using System.IO;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace A3_M2
 {
@@ -27,58 +29,59 @@ namespace A3_M2
 
             this.StartPosition = FormStartPosition.CenterScreen;
 
-           
+            button1.Click += button1_Click;
+            generateExcel.Click += generateExcel_Click;
 
         }
 
         private void farmersButton_MouseEnter(object sender, EventArgs e)
         {
-            farmersButton.ForeColor = Color.Black;
+            farmersButton.ForeColor = System.Drawing.Color.Black;
         }
 
         private void farmersButton_MouseLeave(object sender, EventArgs e)
         {
-            farmersButton.ForeColor = Color.Lime;
+            farmersButton.ForeColor = System.Drawing.Color.Lime;
         }
 
         private void productsButton_MouseEnter(object sender, EventArgs e)
         {
-            productsButton.ForeColor = Color.Black;
+            productsButton.ForeColor = System.Drawing.Color.Black;
         }
 
         private void productsButton_MouseLeave(object sender, EventArgs e)
         {
-            productsButton.ForeColor = Color.Lime;
+            productsButton.ForeColor = System.Drawing.Color.Lime;
         }
 
         private void creditsButton_MouseEnter(object sender, EventArgs e)
         {
-            transactionsButton.ForeColor = Color.Black;
+            transactionsButton.ForeColor = System.Drawing.Color.Black;
         }
 
         private void creditsButton_MouseLeave(object sender, EventArgs e)
         {
-            transactionsButton.ForeColor = Color.Lime;
+            transactionsButton.ForeColor = System.Drawing.Color.Lime;
         }
 
         private void companyButton_MouseEnter(object sender, EventArgs e)
         {
-            companyButton.ForeColor = Color.Black;
+            companyButton.ForeColor = System.Drawing.Color.Black;
         }
 
         private void companyButton_MouseLeave(object sender, EventArgs e)
         {
-            companyButton.ForeColor = Color.Lime;
+            companyButton.ForeColor = System.Drawing.Color.Lime;
         }
 
         private void reportButton_MouseEnter(object sender, EventArgs e)
         {
-            reportButton.ForeColor = Color.Black;
+            reportButton.ForeColor = System.Drawing.Color.Black;
         }
 
         private void reportButton_MouseLeave(object sender, EventArgs e)
         {
-            reportButton.ForeColor = Color.Lime;
+            reportButton.ForeColor = System.Drawing.Color.Lime;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -96,9 +99,9 @@ namespace A3_M2
 
         private void farmersButton_Click(object sender, EventArgs e)
         {
-            
+
         }
-        private DataTable LoadChartData()
+        private void LoadChartData()
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;");
 
@@ -114,18 +117,18 @@ namespace A3_M2
                         SELECT
                             C.CompanyID,
                             C.Name,
-                            TB.TB_ID,
-                            TB.ProductID,
-                            TB.TypeID,
-                            TB.Status,
-                            MONTH(TB.Transaction_Date) AS Month, -- Include the month information
-                            TB.Amount
+                            MONTH(TB.Transaction_Date) AS Month,
+                            SUM(TB.Amount) AS TotalAmount
                         FROM
                             dbo.Company AS C
                         INNER JOIN
                             dbo.Transact_Buy AS TB ON C.CompanyID = TB.CompanyID
                         WHERE
-                            C.Name = '{name}'";
+                            C.Name = '{name}'
+                        GROUP BY
+                            C.CompanyID,
+                            C.Name,
+                            MONTH(TB.Transaction_Date);";
 
             }
             else if (selectedItem == "Farmer")
@@ -134,18 +137,18 @@ namespace A3_M2
                         SELECT
                             F.FarmerID,
                             F.Name,
-                            TS.TS_ID,
-                            TS.ProductID,
-                            TS.TypeID,
-                            TS.Status,
-                            MONTH(TS.Transaction_Date) AS Month, -- Include the month information
-                            TS.Amount
+                            MONTH(TS.Transaction_Date) AS Month,
+                            SUM(TS.Amount) AS TotalAmount
                         FROM
                             dbo.Farmer AS F
                         INNER JOIN
                             dbo.Transact_Sell AS TS ON F.FarmerID = TS.FarmerID
                         WHERE
-                            F.Name = '{name}'";
+                            F.Name = '{name}'
+                        GROUP BY
+                            F.FarmerID,
+                            F.Name,
+                            MONTH(TS.Transaction_Date);";
 
             }
             //////////////////fetch and display
@@ -166,12 +169,12 @@ namespace A3_M2
             // Set X and Y values programmatically
             dashboardChart.Series["MoneySpent"].Points.DataBindXY(
             dt.Rows.Cast<DataRow>().Select(r => GetMonthName(Convert.ToInt32(r["Month"]))).ToArray(),
-            dt.Rows.Cast<DataRow>().Select(r => Convert.ToDouble(r["Amount"])).ToArray()
+            dt.Rows.Cast<DataRow>().Select(r => Convert.ToDouble(r["TotalAmount"])).ToArray()
             );
 
 
+
             dashboardChart.ChartAreas[0].AxisX.Interval = 1; // Display every month
-            return dt;
         }
 
         private string GetMonthName(int month)
@@ -186,7 +189,9 @@ namespace A3_M2
 
         private void companyLogoNav_Click(object sender, EventArgs e)
         {
-
+            Dashboard dF = new Dashboard(username);
+            dF.Show();
+            this.Close();
         }
 
         private void companyButton_Click(object sender, EventArgs e)
@@ -224,71 +229,131 @@ namespace A3_M2
         {
             if (selectionBox.SelectedIndex >= 0 && !string.IsNullOrWhiteSpace(namebox.Text))
             {
-                DataTable dt = new DataTable();
-                dt=LoadChartData();
-
-                DialogResult result = MessageBox.Show("Do you want to export the report to Excel?", "Export Report", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    ExportToExcel(dt);
-                }
+                LoadChartData();
             }
             else
             {
                 MessageBox.Show("Please select an item and enter a name before generating the report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void ExportToExcel(DataTable dt)
+
+        private void generateExcel_Click(object sender, EventArgs e)
         {
-            try
+            // Assuming your DataTable is named dt
+            DataTable dt = LoadDataForExcel();
+
+            // Create a new workbook and worksheet
+            var workbook = new XLWorkbook();
+            var worksheet = workbook.Worksheets.Add("Sheet1");
+
+            // Add DataTable headers to the worksheet
+            for (int i = 0; i < dt.Columns.Count; i++)
             {
+                worksheet.Cell(1, i + 1).Value = dt.Columns[i].ColumnName;
+            }
+
+            // Add DataTable data to the worksheet
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    object cellValue = dt.Rows[i][j];
+
+                    // Set the value to null for reference types or use the value directly for value types
+                    if (cellValue != null && cellValue != DBNull.Value)
+                    {
+                        worksheet.Cell(i + 2, j + 1).Value = cellValue.ToString();
+                    }
+                    else
+                    {
+                        worksheet.Cell(i + 2, j + 1).Value = '-';
+                    }
+                }
+            }
+
+            // Save the workbook to a MemoryStream
+            using (MemoryStream stream = new MemoryStream())
+            {
+                workbook.SaveAs(stream);
+                stream.Seek(0, SeekOrigin.Begin);
+
+                // Save the MemoryStream to a file
                 SaveFileDialog saveFileDialog = new SaveFileDialog
                 {
-                    Filter = "Excel files (*.xlsx)|*.xlsx",
-                    Title = "Save Excel File",
-                    FileName = "report.xlsx"
+                    Filter = "Excel Files|*.xlsx|All Files|*.*",
+                    FileName = "TransactionData.xlsx"
                 };
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    FileInfo file = new FileInfo(saveFileDialog.FileName);
-
-                    using (ExcelPackage package = new ExcelPackage(file))
+                    using (FileStream fileStream = File.Create(saveFileDialog.FileName))
                     {
-                        ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Report");
-                        worksheet.Cells.LoadFromDataTable(dt, true);
-                        package.Save();
+                        stream.CopyTo(fileStream);
                     }
-
-                    MessageBox.Show($"Report exported successfully to {saveFileDialog.FileName}", "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error exporting to Excel: {ex.Message}", "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            MessageBox.Show("Excel file generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        // This method fetches and returns the DataTable with the required data
+        private DataTable LoadDataForExcel()
         {
+            string selectedItem = selectionBox.SelectedItem.ToString();
+            string name = namebox.Text;
+            string query = "";
 
-            if (selectionBox.SelectedIndex >= 0 && !string.IsNullOrWhiteSpace(namebox.Text))
+            if (selectedItem == "Company")
             {
-                DataTable dt = new DataTable();
-                dt = LoadChartData();
+                query = $@"
+                    SELECT
+                        C.CompanyID,
+                        C.Name,
+                        TB.TB_ID,
+                        TB.ProductID,
+                        TB.TypeID,
+                        TB.Status,
+                        TB.Transaction_Date,
+                        TB.Amount
+                    FROM
+                        dbo.Company AS C
+                    INNER JOIN
+                        dbo.Transact_Buy AS TB ON C.CompanyID = TB.CompanyID
+                    WHERE
+                        C.Name = '{name}';";
 
-                DialogResult result = MessageBox.Show("Do you want to export the report to Excel?", "Export Report", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    ExportToExcel(dt);
-                }
             }
-            else
+            if (selectedItem == "Farmer")
             {
-                MessageBox.Show("Please select an item and enter a name before generating the report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                query = $@"
+                    SELECT
+                        F.FarmerID,
+                        F.Name,
+                        TS.TS_ID,
+                        TS.ProductID,
+                        TS.TypeID,
+                        TS.Status,
+                        TS.Transaction_Date,
+                        TS.Amount
+                    FROM
+                        dbo.Farmer AS F
+                    INNER JOIN
+                        dbo.Transact_Sell AS TS ON F.FarmerID = TS.FarmerID
+                    WHERE
+                        F.Name = '{name}';";
             }
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;"))
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+
+            return dt;
         }
+
+
     }
 }

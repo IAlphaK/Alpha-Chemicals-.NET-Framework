@@ -118,9 +118,9 @@
             this.topBar.Controls.Add(this.imagePanel);
             this.topBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.topBar.Location = new System.Drawing.Point(0, 0);
-            this.topBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.topBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.topBar.Name = "topBar";
-            this.topBar.Size = new System.Drawing.Size(1600, 85);
+            this.topBar.Size = new System.Drawing.Size(1200, 69);
             this.topBar.TabIndex = 0;
             // 
             // loggedUserInfoPanel
@@ -129,20 +129,20 @@
             this.loggedUserInfoPanel.Controls.Add(this.usernameLabel);
             this.loggedUserInfoPanel.Controls.Add(this.welcomeLabel);
             this.loggedUserInfoPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.loggedUserInfoPanel.Location = new System.Drawing.Point(1128, 0);
-            this.loggedUserInfoPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loggedUserInfoPanel.Location = new System.Drawing.Point(846, 0);
+            this.loggedUserInfoPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loggedUserInfoPanel.Name = "loggedUserInfoPanel";
-            this.loggedUserInfoPanel.Size = new System.Drawing.Size(472, 85);
+            this.loggedUserInfoPanel.Size = new System.Drawing.Size(354, 69);
             this.loggedUserInfoPanel.TabIndex = 1;
             // 
             // logoutPanel
             // 
             this.logoutPanel.Controls.Add(this.pictureBox1);
             this.logoutPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.logoutPanel.Location = new System.Drawing.Point(387, 0);
-            this.logoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logoutPanel.Location = new System.Drawing.Point(290, 0);
+            this.logoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logoutPanel.Name = "logoutPanel";
-            this.logoutPanel.Size = new System.Drawing.Size(85, 85);
+            this.logoutPanel.Size = new System.Drawing.Size(64, 69);
             this.logoutPanel.TabIndex = 2;
             // 
             // pictureBox1
@@ -151,9 +151,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -165,9 +165,10 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic);
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.usernameLabel.Location = new System.Drawing.Point(201, 43);
+            this.usernameLabel.Location = new System.Drawing.Point(151, 35);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(131, 28);
+            this.usernameLabel.Size = new System.Drawing.Size(101, 22);
             this.usernameLabel.TabIndex = 3;
             this.usernameLabel.Text = "NotVisible";
             // 
@@ -177,9 +178,10 @@
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic);
             this.welcomeLabel.ForeColor = System.Drawing.Color.Lime;
-            this.welcomeLabel.Location = new System.Drawing.Point(65, 43);
+            this.welcomeLabel.Location = new System.Drawing.Point(49, 35);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(129, 28);
+            this.welcomeLabel.Size = new System.Drawing.Size(98, 22);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome";
             // 
@@ -189,28 +191,28 @@
             this.imagePanel.Controls.Add(this.companyLogoNav);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
-            this.imagePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.imagePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(139, 85);
+            this.imagePanel.Size = new System.Drawing.Size(104, 69);
             this.imagePanel.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(139, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(104, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(843, 62);
+            this.panel2.Size = new System.Drawing.Size(632, 50);
             this.panel2.TabIndex = 1;
             // 
             // companyLogoNav
             // 
             this.companyLogoNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.companyLogoNav.Image = ((System.Drawing.Image)(resources.GetObject("companyLogoNav.Image")));
-            this.companyLogoNav.Location = new System.Drawing.Point(5, 4);
-            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.companyLogoNav.Location = new System.Drawing.Point(4, 3);
+            this.companyLogoNav.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.companyLogoNav.Name = "companyLogoNav";
-            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.companyLogoNav.Size = new System.Drawing.Size(129, 70);
+            this.companyLogoNav.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.companyLogoNav.Size = new System.Drawing.Size(97, 57);
             this.companyLogoNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.companyLogoNav.TabIndex = 0;
             this.companyLogoNav.TabStop = false;
@@ -226,19 +228,19 @@
             this.navPanel.Controls.Add(this.panel1);
             this.navPanel.Controls.Add(this.navPanel1);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navPanel.Location = new System.Drawing.Point(0, 85);
-            this.navPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.navPanel.Location = new System.Drawing.Point(0, 69);
+            this.navPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(138, 653);
+            this.navPanel.Size = new System.Drawing.Size(104, 531);
             this.navPanel.TabIndex = 1;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.reportButton);
-            this.panel6.Location = new System.Drawing.Point(3, 357);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Location = new System.Drawing.Point(2, 290);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(131, 82);
+            this.panel6.Size = new System.Drawing.Size(98, 67);
             this.panel6.TabIndex = 6;
             // 
             // reportButton
@@ -253,10 +255,10 @@
             this.reportButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.reportButton.ForeColor = System.Drawing.Color.Lime;
             this.reportButton.Location = new System.Drawing.Point(0, 0);
-            this.reportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reportButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.reportButton.Size = new System.Drawing.Size(131, 82);
+            this.reportButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportButton.Size = new System.Drawing.Size(98, 67);
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
             this.reportButton.UseVisualStyleBackColor = false;
@@ -266,11 +268,11 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.companyButton);
-            this.panel5.Location = new System.Drawing.Point(3, 270);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Controls.Add(this.creditsButton);
+            this.panel5.Location = new System.Drawing.Point(2, 219);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(131, 82);
+            this.panel5.Size = new System.Drawing.Size(98, 67);
             this.panel5.TabIndex = 5;
             // 
             // companyButton
@@ -285,10 +287,10 @@
             this.companyButton.Font = new System.Drawing.Font("Segoe UI", 11.2F, System.Drawing.FontStyle.Italic);
             this.companyButton.ForeColor = System.Drawing.Color.Lime;
             this.companyButton.Location = new System.Drawing.Point(0, 0);
-            this.companyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.companyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.companyButton.Name = "companyButton";
-            this.companyButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.companyButton.Size = new System.Drawing.Size(131, 82);
+            this.companyButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyButton.Size = new System.Drawing.Size(98, 67);
             this.companyButton.TabIndex = 5;
             this.companyButton.Text = "Company";
             this.companyButton.UseVisualStyleBackColor = false;
@@ -298,11 +300,11 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.creditsButton);
-            this.panel4.Location = new System.Drawing.Point(3, 180);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Controls.Add(this.companyButton);
+            this.panel4.Location = new System.Drawing.Point(2, 146);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(131, 82);
+            this.panel4.Size = new System.Drawing.Size(98, 67);
             this.panel4.TabIndex = 4;
             // 
             // creditsButton
@@ -314,26 +316,27 @@
             this.creditsButton.FlatAppearance.BorderSize = 0;
             this.creditsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.creditsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.creditsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
+            this.creditsButton.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Italic);
             this.creditsButton.ForeColor = System.Drawing.Color.Lime;
             this.creditsButton.Location = new System.Drawing.Point(0, 0);
-            this.creditsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.creditsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.creditsButton.Name = "creditsButton";
-            this.creditsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.creditsButton.Size = new System.Drawing.Size(131, 82);
+            this.creditsButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.creditsButton.Size = new System.Drawing.Size(98, 67);
             this.creditsButton.TabIndex = 4;
-            this.creditsButton.Text = "Credits";
+            this.creditsButton.Text = "Transaction";
             this.creditsButton.UseVisualStyleBackColor = false;
+            this.creditsButton.Click += new System.EventHandler(this.creditsButton_Click);
             this.creditsButton.MouseEnter += new System.EventHandler(this.creditsButton_MouseEnter);
             this.creditsButton.MouseLeave += new System.EventHandler(this.creditsButton_MouseLeave);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.productsButton);
-            this.panel1.Location = new System.Drawing.Point(3, 92);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 75);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 82);
+            this.panel1.Size = new System.Drawing.Size(98, 67);
             this.panel1.TabIndex = 3;
             // 
             // productsButton
@@ -348,10 +351,10 @@
             this.productsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.productsButton.ForeColor = System.Drawing.Color.Lime;
             this.productsButton.Location = new System.Drawing.Point(0, 0);
-            this.productsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.productsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.productsButton.Size = new System.Drawing.Size(131, 82);
+            this.productsButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productsButton.Size = new System.Drawing.Size(98, 67);
             this.productsButton.TabIndex = 3;
             this.productsButton.Text = "Products";
             this.productsButton.UseVisualStyleBackColor = false;
@@ -362,10 +365,10 @@
             // navPanel1
             // 
             this.navPanel1.Controls.Add(this.farmersButton);
-            this.navPanel1.Location = new System.Drawing.Point(3, 2);
-            this.navPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.navPanel1.Location = new System.Drawing.Point(2, 2);
+            this.navPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.navPanel1.Name = "navPanel1";
-            this.navPanel1.Size = new System.Drawing.Size(131, 82);
+            this.navPanel1.Size = new System.Drawing.Size(98, 67);
             this.navPanel1.TabIndex = 2;
             // 
             // farmersButton
@@ -380,10 +383,10 @@
             this.farmersButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.farmersButton.ForeColor = System.Drawing.Color.Lime;
             this.farmersButton.Location = new System.Drawing.Point(0, 0);
-            this.farmersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.farmersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.farmersButton.Name = "farmersButton";
-            this.farmersButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.farmersButton.Size = new System.Drawing.Size(131, 82);
+            this.farmersButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmersButton.Size = new System.Drawing.Size(98, 67);
             this.farmersButton.TabIndex = 2;
             this.farmersButton.Text = "Farmers";
             this.farmersButton.UseVisualStyleBackColor = false;
@@ -393,11 +396,11 @@
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainPanel.Controls.Add(this.panel3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mainPanel.Location = new System.Drawing.Point(138, 85);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.mainPanel.Location = new System.Drawing.Point(104, 69);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
-            this.mainPanel.Size = new System.Drawing.Size(1462, 653);
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.mainPanel.Size = new System.Drawing.Size(1096, 531);
             this.mainPanel.TabIndex = 2;
             // 
             // panel3
@@ -408,10 +411,9 @@
             this.panel3.Controls.Add(this.sortByBox);
             this.panel3.Controls.Add(this.searchBox);
             this.panel3.Controls.Add(this.farmersView);
-            this.panel3.Location = new System.Drawing.Point(15, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(11, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1429, 623);
+            this.panel3.Size = new System.Drawing.Size(1072, 506);
             this.panel3.TabIndex = 2;
             // 
             // button2
@@ -420,10 +422,9 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(233, 538);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(175, 437);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 62);
+            this.button2.Size = new System.Drawing.Size(105, 50);
             this.button2.TabIndex = 6;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = false;
@@ -441,11 +442,10 @@
             "25",
             "50",
             "100"});
-            this.rowsByBox.Location = new System.Drawing.Point(1080, 46);
-            this.rowsByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rowsByBox.Location = new System.Drawing.Point(810, 37);
             this.rowsByBox.Name = "rowsByBox";
             this.rowsByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rowsByBox.Size = new System.Drawing.Size(113, 25);
+            this.rowsByBox.Size = new System.Drawing.Size(86, 21);
             this.rowsByBox.TabIndex = 4;
             this.rowsByBox.Text = "10";
             this.rowsByBox.SelectedIndexChanged += new System.EventHandler(this.rowsByBox_SelectedIndexChanged);
@@ -460,11 +460,10 @@
             this.filterByBox.Items.AddRange(new object[] {
             "ASC",
             "DESC"});
-            this.filterByBox.Location = new System.Drawing.Point(911, 46);
-            this.filterByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filterByBox.Location = new System.Drawing.Point(683, 37);
             this.filterByBox.Name = "filterByBox";
             this.filterByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.filterByBox.Size = new System.Drawing.Size(160, 25);
+            this.filterByBox.Size = new System.Drawing.Size(121, 21);
             this.filterByBox.TabIndex = 3;
             this.filterByBox.Text = "Filter By";
             // 
@@ -481,11 +480,10 @@
             "Address",
             "ContractInfo",
             "Balance"});
-            this.sortByBox.Location = new System.Drawing.Point(741, 44);
-            this.sortByBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortByBox.Location = new System.Drawing.Point(556, 36);
             this.sortByBox.Name = "sortByBox";
             this.sortByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sortByBox.Size = new System.Drawing.Size(160, 25);
+            this.sortByBox.Size = new System.Drawing.Size(121, 21);
             this.sortByBox.TabIndex = 2;
             this.sortByBox.Text = "Sort By";
             this.sortByBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -497,10 +495,10 @@
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.ForeColor = System.Drawing.Color.Silver;
-            this.searchBox.Location = new System.Drawing.Point(233, 47);
+            this.searchBox.Location = new System.Drawing.Point(175, 38);
             this.searchBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(306, 23);
+            this.searchBox.Size = new System.Drawing.Size(230, 20);
             this.searchBox.TabIndex = 1;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -544,8 +542,7 @@
             this.farmersView.DefaultCellStyle = dataGridViewCellStyle2;
             this.farmersView.EnableHeadersVisualStyles = false;
             this.farmersView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.farmersView.Location = new System.Drawing.Point(233, 91);
-            this.farmersView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmersView.Location = new System.Drawing.Point(175, 74);
             this.farmersView.Name = "farmersView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -568,7 +565,7 @@
             this.farmersView.RowTemplate.Height = 30;
             this.farmersView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.farmersView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.farmersView.Size = new System.Drawing.Size(971, 439);
+            this.farmersView.Size = new System.Drawing.Size(728, 357);
             this.farmersView.TabIndex = 0;
             this.farmersView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.farmersView_CellContentClick);
             // 
@@ -709,17 +706,17 @@
             // 
             // farmersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1600, 738);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.ControlBox = false;
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navPanel);
             this.Controls.Add(this.topBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "farmersForm";
             this.Load += new System.EventHandler(this.productForm_Load);

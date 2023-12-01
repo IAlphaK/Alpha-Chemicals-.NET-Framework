@@ -309,6 +309,13 @@ namespace A3_M2
             rF.Show();
             this.Close();
         }
+
+        private void creditsButton_Click(object sender, EventArgs e)
+        {
+            transactionForm tF = new transactionForm(username);
+            tF.Show();
+            this.Close();
+        }
     }
 
     

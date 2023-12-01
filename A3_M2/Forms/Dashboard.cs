@@ -142,6 +142,7 @@ namespace A3_M2
         private void dashboardChart_Load(object sender, EventArgs e)
         {
             LoadChartData();
+            UpdateDashboardCounts();
         }
 
         private void companyLogoNav_Click(object sender, EventArgs e)
@@ -175,6 +176,45 @@ namespace A3_M2
             reportsForm rF = new reportsForm(username);
             rF.Show();
             this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private int FetchScalarValueFromDatabase(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-3UKGS5J\MSSQLSERVER01; Initial Catalog=alpha_chemicals; Integrated Security=True;"))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    var result = command.ExecuteScalar();
+
+                    // Check if result is not null and convert to int
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
+
+        private void UpdateDashboardCounts()
+        {
+            // Fetch counts from different tables
+            int productCount = FetchScalarValueFromDatabase("SELECT COUNT(*) FROM Product");
+            int companyCount = FetchScalarValueFromDatabase("SELECT COUNT(*) FROM Company");
+            int farmerCount = FetchScalarValueFromDatabase("SELECT COUNT(*) FROM Farmer");
+            int sellTransactionCount = FetchScalarValueFromDatabase("SELECT COUNT(*) FROM Transact_Sell");
+            int buyTransactionCount = FetchScalarValueFromDatabase("SELECT COUNT(*) FROM Transact_Buy");
+
+            // Calculate the total transaction count
+            int totalTransactionCount = sellTransactionCount + buyTransactionCount;
+
+            // Update the labels on the dashboard
+            numOrders.Text = totalTransactionCount.ToString();
+            numCompany.Text = companyCount.ToString();
+            numFarmers.Text = farmerCount.ToString();
+            numProducts.Text = productCount.ToString();
         }
     }
 }

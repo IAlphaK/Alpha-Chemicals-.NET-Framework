@@ -65,7 +65,7 @@
             this.filterByBox.Location = new System.Drawing.Point(639, 38);
             this.filterByBox.Name = "filterByBox";
             this.filterByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.filterByBox.Size = new System.Drawing.Size(121, 21);
+            this.filterByBox.Size = new System.Drawing.Size(121, 25);
             this.filterByBox.TabIndex = 4;
             this.filterByBox.Text = "Filter By";
             // 
@@ -88,7 +88,7 @@
             this.sortByBox.Location = new System.Drawing.Point(495, 38);
             this.sortByBox.Name = "sortByBox";
             this.sortByBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sortByBox.Size = new System.Drawing.Size(121, 21);
+            this.sortByBox.Size = new System.Drawing.Size(121, 25);
             this.sortByBox.TabIndex = 3;
             this.sortByBox.Text = "Sort By";
             this.sortByBox.SelectedIndexChanged += new System.EventHandler(this.sortByBox_SelectedIndexChanged);
@@ -140,6 +140,7 @@
             this.companyLedgerView.Margin = new System.Windows.Forms.Padding(5);
             this.companyLedgerView.Name = "companyLedgerView";
             this.companyLedgerView.RowHeadersVisible = false;
+            this.companyLedgerView.RowHeadersWidth = 51;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
@@ -148,10 +149,11 @@
             this.companyLedgerView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.companyLedgerView.Size = new System.Drawing.Size(714, 272);
             this.companyLedgerView.TabIndex = 0;
+            this.companyLedgerView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.companyLedgerView_CellContentClick);
             // 
             // companyLedgerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(834, 461);

@@ -14,6 +14,8 @@ namespace A3_M2
         [STAThread]
         static void Main()
         {
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             loginForm l = new loginForm();

@@ -1,6 +1,6 @@
 ﻿namespace A3_M2
 {
-    partial class Dashboard
+    partial class reportsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportsForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.topBar = new System.Windows.Forms.Panel();
             this.loggedUserInfoPanel = new System.Windows.Forms.Panel();
             this.logoutPanel = new System.Windows.Forms.Panel();
@@ -53,22 +53,13 @@
             this.productsButton = new System.Windows.Forms.Button();
             this.navPanel1 = new System.Windows.Forms.Panel();
             this.farmersButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.numOrders = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.numFarmers = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.numCompany = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.numCredits = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dashboardChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.selectionBox = new System.Windows.Forms.ComboBox();
+            this.namebox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.topBar.SuspendLayout();
             this.loggedUserInfoPanel.SuspendLayout();
             this.logoutPanel.SuspendLayout();
@@ -81,11 +72,6 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.navPanel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).BeginInit();
@@ -240,7 +226,6 @@
             this.reportButton.TabIndex = 6;
             this.reportButton.Text = "Report";
             this.reportButton.UseVisualStyleBackColor = false;
-            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             this.reportButton.MouseEnter += new System.EventHandler(this.reportButton_MouseEnter);
             this.reportButton.MouseLeave += new System.EventHandler(this.reportButton_MouseLeave);
             // 
@@ -372,179 +357,14 @@
             this.farmersButton.MouseEnter += new System.EventHandler(this.farmersButton_MouseEnter);
             this.farmersButton.MouseLeave += new System.EventHandler(this.farmersButton_MouseLeave);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.5F));
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 11);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1438, 119);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.numOrders);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0, 0, 11, 11);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(348, 108);
-            this.panel3.TabIndex = 0;
-            // 
-            // numOrders
-            // 
-            this.numOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numOrders.BackColor = System.Drawing.Color.Transparent;
-            this.numOrders.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numOrders.ForeColor = System.Drawing.Color.Black;
-            this.numOrders.Location = new System.Drawing.Point(61, 71);
-            this.numOrders.Name = "numOrders";
-            this.numOrders.Size = new System.Drawing.Size(272, 20);
-            this.numOrders.TabIndex = 2;
-            this.numOrders.Text = "Number";
-            this.numOrders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(16, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "All Orders";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel7.Controls.Add(this.numFarmers);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(359, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0, 0, 11, 11);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(348, 108);
-            this.panel7.TabIndex = 1;
-            // 
-            // numFarmers
-            // 
-            this.numFarmers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numFarmers.BackColor = System.Drawing.Color.Transparent;
-            this.numFarmers.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numFarmers.ForeColor = System.Drawing.Color.Black;
-            this.numFarmers.Location = new System.Drawing.Point(67, 71);
-            this.numFarmers.Name = "numFarmers";
-            this.numFarmers.Size = new System.Drawing.Size(267, 20);
-            this.numFarmers.TabIndex = 3;
-            this.numFarmers.Text = "Number";
-            this.numFarmers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(21, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Farmers";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel8.Controls.Add(this.numCompany);
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(718, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 0, 11, 11);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(341, 108);
-            this.panel8.TabIndex = 2;
-            // 
-            // numCompany
-            // 
-            this.numCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numCompany.BackColor = System.Drawing.Color.Transparent;
-            this.numCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numCompany.ForeColor = System.Drawing.Color.Black;
-            this.numCompany.Location = new System.Drawing.Point(88, 71);
-            this.numCompany.Name = "numCompany";
-            this.numCompany.Size = new System.Drawing.Size(251, 20);
-            this.numCompany.TabIndex = 4;
-            this.numCompany.Text = "Number";
-            this.numCompany.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(27, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Company";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel9.Controls.Add(this.numCredits);
-            this.panel9.Controls.Add(this.label6);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(1070, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0, 0, 11, 11);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(357, 108);
-            this.panel9.TabIndex = 3;
-            // 
-            // numCredits
-            // 
-            this.numCredits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numCredits.BackColor = System.Drawing.Color.Transparent;
-            this.numCredits.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.numCredits.ForeColor = System.Drawing.Color.Black;
-            this.numCredits.Location = new System.Drawing.Point(77, 71);
-            this.numCredits.Name = "numCredits";
-            this.numCredits.Size = new System.Drawing.Size(277, 20);
-            this.numCredits.TabIndex = 5;
-            this.numCredits.Text = "Number";
-            this.numCredits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(19, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 24);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Credits";
-            // 
             // mainPanel
             // 
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.button1);
+            this.mainPanel.Controls.Add(this.label2);
+            this.mainPanel.Controls.Add(this.namebox);
+            this.mainPanel.Controls.Add(this.selectionBox);
             this.mainPanel.Controls.Add(this.panel10);
-            this.mainPanel.Controls.Add(this.tableLayoutPanel1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(138, 85);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
@@ -567,26 +387,92 @@
             this.dashboardChart.BackColor = System.Drawing.Color.DarkGreen;
             this.dashboardChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.dashboardChart.BorderlineColor = System.Drawing.Color.Violet;
-            chartArea1.Name = "ChartArea1";
-            this.dashboardChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.dashboardChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.dashboardChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.dashboardChart.Legends.Add(legend3);
             this.dashboardChart.Location = new System.Drawing.Point(4, 4);
             this.dashboardChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dashboardChart.Name = "dashboardChart";
             this.dashboardChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.dashboardChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "MoneySpent";
+            this.dashboardChart.Series.Add(series3);
             this.dashboardChart.Size = new System.Drawing.Size(1412, 476);
             this.dashboardChart.TabIndex = 0;
             this.dashboardChart.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Monthly Sales (2023)";
-            this.dashboardChart.Titles.Add(title1);
+            title3.Name = "Title1";
+            title3.Text = "Monthly Sales (2023)";
+            this.dashboardChart.Titles.Add(title3);
+            this.dashboardChart.Click += new System.EventHandler(this.dashboardChart_Click);
             // 
-            // Dashboard
+            // selectionBox
+            // 
+            this.selectionBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.selectionBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.selectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectionBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectionBox.FormattingEnabled = true;
+            this.selectionBox.ItemHeight = 17;
+            this.selectionBox.Items.AddRange(new object[] {
+            "Company",
+            "Farmer"});
+            this.selectionBox.Location = new System.Drawing.Point(254, 35);
+            this.selectionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.selectionBox.Name = "selectionBox";
+            this.selectionBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.selectionBox.Size = new System.Drawing.Size(179, 25);
+            this.selectionBox.TabIndex = 29;
+            this.selectionBox.Text = "SELECT";
+            // 
+            // namebox
+            // 
+            this.namebox.AcceptsReturn = true;
+            this.namebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.namebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.namebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namebox.ForeColor = System.Drawing.Color.Lime;
+            this.namebox.Location = new System.Drawing.Point(254, 81);
+            this.namebox.Margin = new System.Windows.Forms.Padding(4);
+            this.namebox.Multiline = true;
+            this.namebox.Name = "namebox";
+            this.namebox.Size = new System.Drawing.Size(276, 35);
+            this.namebox.TabIndex = 30;
+            this.namebox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.namebox.TextChanged += new System.EventHandler(this.insID_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(157, 92);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 22);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Name";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Snow;
+            this.button1.Location = new System.Drawing.Point(537, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 34);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Generate Report";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // reportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -600,7 +486,7 @@
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.Name = "Dashboard";
+            this.Name = "reportsForm";
             this.topBar.ResumeLayout(false);
             this.loggedUserInfoPanel.ResumeLayout(false);
             this.loggedUserInfoPanel.PerformLayout();
@@ -614,16 +500,8 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.navPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dashboardChart)).EndInit();
             this.ResumeLayout(false);
@@ -652,21 +530,12 @@
         private System.Windows.Forms.Button transactionsButton;
         private System.Windows.Forms.Button productsButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label numOrders;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label numFarmers;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label numCompany;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label numCredits;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataVisualization.Charting.Chart dashboardChart;
+        private System.Windows.Forms.ComboBox selectionBox;
+        private System.Windows.Forms.TextBox namebox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

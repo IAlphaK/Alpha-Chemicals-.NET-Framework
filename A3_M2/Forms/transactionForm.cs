@@ -78,10 +78,10 @@ namespace A3_M2
             reportButton.ForeColor = Color.Black;
         }
 
-        private void reportButton_MouseLeave(object sender, EventArgs e)
-        {
-            reportButton.ForeColor = Color.Lime;
-        }
+        //private void reportButton_MouseLeave(object sender, EventArgs e)
+        //{
+        //    reportButton.ForeColor = Color.Lime;
+        //}
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

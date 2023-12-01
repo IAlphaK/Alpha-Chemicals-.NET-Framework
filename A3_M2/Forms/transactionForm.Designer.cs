@@ -233,7 +233,7 @@
             this.reportButton.Text = "Report";
             this.reportButton.UseVisualStyleBackColor = false;
             this.reportButton.MouseEnter += new System.EventHandler(this.reportButton_MouseEnter);
-            this.reportButton.MouseLeave += new System.EventHandler(this.reportButton_MouseLeave);
+            //this.reportButton.MouseLeave += new System.EventHandler(this.reportButton_MouseLeave);
             // 
             // panel5
             // 

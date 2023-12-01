@@ -92,6 +92,11 @@ namespace A3_M2.Forms
                 companyLedgerView.Refresh();
             }
         }
+
+        private void companyLedgerView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

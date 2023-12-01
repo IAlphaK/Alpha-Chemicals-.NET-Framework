@@ -299,6 +299,13 @@ namespace A3_M2
             fF.Show();
             this.Close();
         }
+
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            reportsForm rF = new reportsForm(username);
+            rF.Show();
+            this.Close();
+        }
     }
 
     
